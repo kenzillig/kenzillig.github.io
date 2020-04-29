@@ -2,7 +2,7 @@
 
 # Name of website
 title: Ecophysiology of Fish
-bigimg: [{src: "/img/Ice Edge.jpg", desc: "Ice Edge at Cape Royds, Ross Island, Antarctica"}]
+bigimg: "/img/Ice Edge.jpg"
 
 # Short description of your site
 url: "http://kenzillig.github.io"
