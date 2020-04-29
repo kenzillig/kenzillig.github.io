@@ -39,7 +39,7 @@ Row {data-height=350}
 
 ### Spatial Data
 
-Avian sampling through point count surveys has occurred at multiple locations throughout the Great Basin. Zoom in to see site where I have collected data on microclimate, plant phenology, and insect biomass. 
+I gathered data from eight populations of Chinook salmon. Check out their locations on the map.
 
 Row
 -------------------------------------
@@ -151,7 +151,6 @@ Row
 
 ### Upslope Movement
 
-Here is an example of within-season elevational movement data from Cassin's Finch (*Haemorhous cassinii*). You can see the raw data plotted, and the model output. Visit one corresponds to earliest in the season, and visit three to the latest in the season. The model output is the probability density function of the posterior distrubition of a MCMC model. The blue line is the mean, and the shaded areas are the 95% CI. Basically, the more of the distrubition above zero, the more confident we are that the interaction is positive (that Cassin's Finches are moving upslope).
 
 Column {.tabset}
 ------------------------------------------
