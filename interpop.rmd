@@ -1,0 +1,331 @@
+---
+title: "Salmonids with Latitude"
+author: "Ken Zillig"
+date: "4/27/2020"
+output: 
+  flexdashboard::flex_dashboard
+---
+
+
+```{r setup, include=FALSE}
+library(flexdashboard)
+knitr::opts_chunk$set(echo = FALSE, warning=FALSE)
+knitr::opts_knit$set(root.dir = normalizePath("../"))
+```
+
+# Project Background
+
+##  Overview {.sidebar}
+
+### Overview
+
+Chinook salmon ~Oncorhynchus tshawytsca~ span a huge latitudinal gradient with populations in the Yukon River in northern Alaksa all the way to populations in the Central Valley of California. Across this range juvenile fish experience a variety of different environmental conditions (climate, weather patterns, temperature, river intensity etc.) At the southern end of this range, in the Central Valley, Chinook salmon are contending with both the impacts of climate change as well as more local threats associated with expansion of agricultural, industrial and munincipal lands.
+
+Salmonids are famous for their long migration in which returning adults swim all the way back to the local river system where they hatched out 2-5 years earlier. This migration behavior (natal homing) isolates populations form one another an may allow for different popualtions to adapt to local environmental conditions. 
+
+
+Row {data-height=350}
+-----------------------------------------------------------------------
+
+#### Background
+
+
+
+
+
+# Populations 
+
+## Mapping {.sidebar}
+
+### Spatial Data
+
+Avian sampling through point count surveys has occurred at multiple locations throughout the Great Basin. Zoom in to see site where I have collected data on microclimate, plant phenology, and insect biomass. 
+
+Row
+-------------------------------------
+
+#### Popultion Sources for dissertation research 
+
+```{r echo=F, warning=F, message=F, fig.width=10, fig.height=6.5}
+# library(sf)
+# library(raster)
+# library(leaflet)
+# library(dplyr)
+# setwd("../WEBSITE/marthawohlfeil.github.io")
+# bug2 <- read.csv("rmd_files/logger_insect_2018.csv")
+# bird2 <- read.csv("rmd_files/bird_lat_long2.csv")
+# plant2 <- read.csv("rmd_files/plants_lat_long2.csv")
+# names(bug2)[names(bug2) == 'ï..logger'] <- 'location_id'
+# names(bird2)[names(bird2) == 'ï..trap_number'] <- 'location_id'
+# names(plant2)[names(plant2) == 'ï..trap_number'] <- 'location_id'
+# #adding in central points
+# central<- read.csv("rmd_files/central_utm.csv")
+# central<- plyr::rename(central, c("ï..point" = "point"))
+# central2<-central %>% 
+#   select(UTMx, UTMy)
+# library(rgdal)
+# utm <- SpatialPoints(central2, proj4string=CRS("+proj=utm +zone=11 +datum=WGS84")) 
+# geo <- spTransform(utm, CRS("+proj=longlat +datum=WGS84"))
+# c_geo <- as.data.frame(geo)
+# #adding Utah points
+# utah<- read.csv("rmd_files/Utah_survey_locations.csv")
+# utah<- plyr::rename(utah, c("ï..range" = "range"))
+# utah2<-utah %>% 
+#   select(UTMx, UTMy)
+# utah2<- na.omit(utah2) #get rid of all nas (5 rows deleated )
+# utm_u <- SpatialPoints(utah2, proj4string=CRS("+proj=utm +zone=12 +datum=WGS84")) #utah is zone 12
+# geo_u <- spTransform(utm_u, CRS("+proj=longlat +datum=WGS84"))
+# utah_points <- as.data.frame(geo_u)
+# #idaho
+# idaho <- read.csv("rmd_files/idaho_points.csv")
+# idaho <- plyr::rename(idaho, c("ï..canyon" = "canyon"))
+# idaho2<-idaho %>% 
+#   select(UTMx, UTMy)
+# idaho2<- na.omit(idaho2) #get rid of all nas (5 rows deleated )
+# utm_i <- SpatialPoints(idaho2, proj4string=CRS("+proj=utm +zone=11 +datum=WGS84"))
+# geo_i <- spTransform(utm_i, CRS("+proj=longlat +datum=WGS84"))
+# idaho_points <- as.data.frame(geo_i)
+# #states and GB outline
+# states <- sf::st_read("rmd_files/shapes/cb_2016_us_state_20m.shp", quiet = TRUE)
+# states2 <- st_transform(states, 4326)
+# greatbasin <- sf::st_read("rmd_files/shapes/GreatBasin_LCC.shp", quiet = TRUE)
+# greatbasin2 <- st_transform(greatbasin, 4326)
+# #color pallet
+# #install.packages("RcColorBrewer")
+# library(RColorBrewer)
+# mapcol <- brewer.pal(3, "Set2")
+# ####Map         #Plant phenology 2018 locations still need to be added 
+# leaflet() %>% 
+#   addTiles() %>% 
+#   setView(lng = -117, lat = 39, zoom = 6) %>%
+#   addProviderTiles(providers$Esri.WorldPhysical) %>% 
+#   
+#   
+#   #Insect data
+#   
+#   addCircleMarkers(data = bug2, group = "Insect Biomass + Microclimate", lat=~long, lng=~lat, 
+#                    opacity= .5, stroke = TRUE,
+#                    popup=paste0 ("Canyon: ", bug2$canyon, ", ",
+#                                  "Trap Number: ", bug2$location_id, ", "), 
+#                    weight=0.6,radius=10, fillColor = mapcol[1]) %>% 
+#   hideGroup("Insect Biomass + Microclimate") %>% 
+#   
+#   #Plant data
+#   
+#   addCircleMarkers(data = plant2, group = "Plant Phenology", lat=~lat, lng=~long, opacity = .5,
+#                    popup=paste0 ("Canyon: ", plant2$canyon, ", ",
+#                                  "Phenology Point: ", plant2$location_id, " "),
+#                    weight=0.6,radius=10, stroke=TRUE, fillColor = mapcol[2]) %>% 
+#   hideGroup("Plant Phenology") %>% 
+#   
+#   #bird data
+#   
+#   addCircleMarkers(data = bird2, group = "Bird Survey", lat=~lat, lng=~long, opacity = .5, 
+#                    popup=paste0("Canyon: ", bird2$canyon, ", ",
+#                                 "Survey Point: ", bird2$location_id, " "),
+#                    weight=0.6,radius=10, stroke=TRUE, fillColor = mapcol[3]) %>% 
+#   hideGroup("Bird Survey") %>% 
+#   
+#   #central bird points
+#   addCircleMarkers(data=c_geo, group = "Bird Survey", lat=~UTMy, lng = ~UTMx, opacity = .5, 
+#                    weight=0.6,radius=10, stroke=TRUE, fillColor = mapcol[3]) %>% 
+#   
+#   #utah and idaho bird points
+#   addCircleMarkers(data=utah_points, group = "Bird Survey", lat=~UTMy, lng = ~UTMx, opacity = .5, 
+#                    weight=0.6,radius=10, stroke=TRUE, fillColor = mapcol[3]) %>% 
+#   addCircleMarkers(data=idaho_points, group = "Bird Survey", lat=~UTMy, lng = ~UTMx, opacity = .5, 
+#                    weight=0.6,radius=10, stroke=TRUE, fillColor = mapcol[3]) %>% 
+#   
+#   #add states and gb shapes
+#   addPolygons(data = states2, color = "black", weight = 1.5, fillColor = "transparent") %>% 
+#   addPolygons(data = greatbasin2, color = "black", weight = 4, fillColor = "transparent") %>% 
+#   
+#   addLayersControl(
+#     overlayGroups = c("Bird Survey", "Insect Biomass + Microclimate", "Plant Phenology"),
+#     options = layersControlOptions(collapsed = F))
+```
+
+# Performance Metrics
+
+## Example {.sidebar}
+
+### Upslope Movement
+
+Here is an example of within-season elevational movement data from Cassin's Finch (*Haemorhous cassinii*). You can see the raw data plotted, and the model output. Visit one corresponds to earliest in the season, and visit three to the latest in the season. The model output is the probability density function of the posterior distrubition of a MCMC model. The blue line is the mean, and the shaded areas are the 95% CI. Basically, the more of the distrubition above zero, the more confident we are that the interaction is positive (that Cassin's Finches are moving upslope).
+
+Column {.tabset}
+------------------------------------------
+
+### Raw Data: Central Sites
+
+```{r echo=F, warning=F, message=F}
+# library(dplyr)
+# library (ggplot2)
+# library(reshape2)
+# library(tidyr)
+# setwd("../WEBSITE/marthawohlfeil.github.io")
+# western_birds <- read.csv("rmd_files/WGB_thru_2017.csv")
+# #cleaning up the data (getting rid of the X column):
+# western_birds <- western_birds %>% 
+#   select(POINT, POINT.ELEVATION, REGION, CANYON, MONTH, DAY, YEAR, SPECIES.CODE, VISIT)
+# central_birds <-read.csv("rmd_files/Central_elevation_clean.csv")
+# #Cleaning up data, selecting useful columns:
+# central_birds <- central_birds %>%
+#   select(POINT, POINT.ELEVATION, REGION, CANYON, MONTH, DAY, YEAR, SPECIES.CODE, VISIT)
+# #Western Great Basin Data:
+# western_birds %>% 
+#   group_by(VISIT, SPECIES.CODE, YEAR) %>% 
+#   summarise(MEAN_ELEVATION = mean(POINT.ELEVATION)) -> western_sum_all
+# western_birds %>% 
+#   filter(CANYON == "Bodie" | CANYON == "Corey" | CANYON == "Cottonwood" | CANYON == "Desert" | CANYON == "Powell" |   CANYON == "Summers" | CANYON == "Virgina" | CANYON == "Little Antelope") %>%
+#   group_by(VISIT, SPECIES.CODE, YEAR) %>% 
+#   summarise(MEAN_ELEVATION = mean(POINT.ELEVATION)) -> western_sum_tall
+# #Central Great Basin Data:
+# central_birds %>% 
+#   group_by(VISIT, SPECIES.CODE, YEAR) %>% 
+#   summarise(MEAN_ELEVATION= mean(POINT.ELEVATION)) -> central_sum_all
+# central_birds %>% 
+#   filter(CANYON == "Allison" | CANYON == "Antone" | CANYON == "Barrett" | CANYON == "Birch" | CANYON == "Dobbin East" | CANYON == "Dobbin West" | CANYON == "Meadow" | CANYON == "Moores East" | CANYON == "Moores West" | CANYON == "Northcumberland East" | CANYON == "Ophir" | CANYON == "Riles" | CANYON == "San Juan" | CANYON == "Summit" | CANYON == "Stewart" | CANYON == "Wall" | CANYON == "Washington" ) %>%
+#   group_by(VISIT, SPECIES.CODE, YEAR) %>% 
+#   summarise(MEAN_ELEVATION = mean(POINT.ELEVATION)) -> central_sum_tall
+# central_tally <- central_birds %>% 
+#   group_by(YEAR, VISIT, CANYON, SPECIES.CODE) %>% 
+#   tally 
+# central_tally2 <- central_birds %>% 
+#   group_by(CANYON, YEAR, SPECIES.CODE) %>% 
+#   tally
+# western_tally <- western_birds %>% 
+#   group_by(YEAR, VISIT, CANYON, SPECIES.CODE) %>% 
+#   tally 
+# western_tally2 <- western_birds %>% 
+#   group_by(CANYON, YEAR, SPECIES.CODE) %>% 
+#   tally
+# #adding the count data to the data frame 
+# W_counts_tall_sum <- left_join(western_sum_tall, western_tally)
+# C_counts_tall_sum <- left_join(central_sum_tall, central_tally)
+# central_sum_all %>% 
+#   filter(SPECIES.CODE == "CAFI") %>% 
+#   ggplot(aes(x=YEAR, y=MEAN_ELEVATION, color=factor(VISIT)))+
+#   geom_point(aes(color=factor(VISIT)), size=3)+
+#   labs(x="Year", y="Elevation (m)", color= "Visit #") +
+#   ggtitle("Cassin's Finch: Central Great Basin")+
+#   theme(plot.title = element_text(hjust = 0.5)) +
+#   scale_x_continuous(breaks = c(2002, 2004, 2006, 2008, 2010, 2012, 2014)) +
+#   ylim(2000, 2600)+
+#   theme_bw()
+```
+
+### Raw Data: Western Sites
+
+```{r echo=F, warning=F, message=F}
+# setwd("../WEBSITE/marthawohlfeil.github.io")
+# western_sum_all %>% 
+#   filter(SPECIES.CODE == "CAFI") %>% 
+#   ggplot(aes(x=YEAR, y=MEAN_ELEVATION, color=factor(VISIT)))+
+#   geom_point(aes(color=factor(VISIT)), size=3)+
+#   labs(x="Year", y="Elevation (m)", color= "Visit #") +
+#   ggtitle("Cassin's Finch: Western Great Basin")+
+#   theme(plot.title = element_text(hjust = 0.5)) +
+#   #scale_x_continuous(breaks = c(2002, 2004, 2006, 2008, 2010, 2012, 2014)) +
+#   ylim(2000, 2800)+
+#   theme_bw()
+```
+
+Column {.tabset}
+----------------------------------------------
+
+### Central Sites: Model Output 
+
+```{r echo=F, warning=F, message=F}
+# setwd("../WEBSITE/marthawohlfeil.github.io")
+# #library(lme4)
+# #library(interplot)
+# #library(effects)
+# #library(arm)
+# library(dplyr)
+# #library(MCMCglmm)
+# library(tidyverse)
+# #read in the data set
+# #central <- read_csv("rmd_files/central_GLMM.csv")
+# #central$VISIT <- as.factor(central$VISIT)
+# #central$POINT.ELEVATION <- scale(central$POINT.ELEVATION)
+# #central$YEAR <- scale(central$YEAR)
+# #western <- read_csv("rmd_files/western_GLMM.csv")
+# #western$VISIT <- as.factor(western$VISIT)
+# #western$POINT.ELEVATION <- scale(western$POINT.ELEVATION)
+# #western$YEAR <- scale(western$YEAR)
+# #Create a prior distrubtion:
+# #This prior is naive 
+# #prior = list(R = list(V = 1, n = 0, fix = 1), G = list(G1 = list(V = 1, n = 1),
+#                                                       # G2 = list(V = 1, n = 1) ))
+# #G = random, R = fixed 
+# #could potentailly play with the start value in the model code
+# #also can increase burnin length and itterations 
+# #bayesian model:
+# #CAFI_model <- MCMCglmm(CAFI~ VISIT*POINT.ELEVATION, random = ~POINT + POINT_YEAR,
+#                       #data = central, family = "poisson", prior = prior, 
+#                       #verbose = FALSE, nitt = 45000, burnin = 15000 ) 
+# #summary(CAFI_model)
+# #1:4 burnin ratio is usually good, this helps with convergence, but not with the model estimation 
+# #Comparison of V1 and V2,  V1 and V3. Usually if one is significatn, both should be significant
+# #Creating the figure:
+# #test <- as.data.frame(CAFI_model$Sol)
+# #write_csv(test, "rmd_files/CAFI_central_modeloutput.csv")
+# cafi <- read_csv("rmd_files/CAFI_central_modeloutput.csv")
+# cafi <- cafi %>% 
+#   dplyr::select(`VISIT2:POINT.ELEVATION`, `VISIT3:POINT.ELEVATION`)
+# #sum(cafi$`VISIT2:POINT.ELEVATION`>0)/3000
+# #sum(cafi$`VISIT3:POINT.ELEVATION`>0)/3000
+# #creating the plot
+# library(bayesplot)
+# posterior <- as.matrix(cafi)
+# mcmc_areas(
+#   posterior, 
+#   pars = c("VISIT2:POINT.ELEVATION", "VISIT3:POINT.ELEVATION"),
+#   prob = 0.95, # 80% intervals
+#   prob_outer = 0.99, # 99%
+#   point_est = "mean"
+# )
+```
+
+### Western Sites: Model Output 
+
+```{r echo=F, warning=F, message=F}
+# #western <- read_csv("rmd_files/western_GLMM.csv")
+# setwd("../WEBSITE/marthawohlfeil.github.io")
+# #western$VISIT <- as.factor(western$VISIT)
+# #western$POINT.ELEVATION <- scale(western$POINT.ELEVATION)
+# #western$YEAR <- scale(western$YEAR)
+# #Create a prior distrubtion:
+# #This prior is naive 
+# #prior = list(R = list(V = 1, n = 0, fix = 1), G = list(G1 = list(V = 1, n = 1),
+#                                                       #G2 = list(V = 1, n = 1) ))
+# #G = random, R = fixed 
+# #could potentailly play with the start value in the model code
+# #also can increase burnin length and itterations 
+# #bayesian model:
+# #CAFI_model_W <- MCMCglmm(CAFI~ VISIT*POINT.ELEVATION, random = ~POINT + POINT_YEAR,
+#                       #data = western, family = "poisson", prior = prior, 
+#                       #verbose = FALSE, nitt = 45000, burnin = 15000 ) 
+# #summary(CAFI_model_W)
+# #Creating the figure:
+# #test2 <- as.data.frame(CAFI_model_W$Sol)
+# #write_csv(test2, "rmd_files/CAFI_western_modeloutput.csv")
+# cafi_w <- read_csv("rmd_files/CAFI_western_modeloutput.csv")
+# cafi_w <- cafi_w %>% 
+#   dplyr::select(`VISIT2:POINT.ELEVATION`, `VISIT3:POINT.ELEVATION`)
+# #sum(cafi$`VISIT2:POINT.ELEVATION`>0)/3000
+# #sum(cafi$`VISIT3:POINT.ELEVATION`>0)/3000
+# #creating the plot
+# library(bayesplot)
+# posterior2 <- as.matrix(cafi_w)
+# mcmc_areas(
+#   posterior2, 
+#   pars = c("VISIT2:POINT.ELEVATION", "VISIT3:POINT.ELEVATION"),
+#   prob = 0.95, # 80% intervals
+#   prob_outer = 0.99, # 99%
+#   point_est = "mean"
+# )
+```
+
+

@@ -1,16 +1,11 @@
 ---
 layout: page
-title: About me
-subtitle: Why you'd want to go on a date with me
+title: Ken W. Zillig
+subtitle: PhD(c)
 ---
 
-My name is Inigo Montoya. I have the following qualities:
+Hello! Welcome to my personal website. This space if for the explanation of research results. The website is currently under construction and will be slolwy completed over the next few months.
 
-- I rock a great mustache
-- I'm extremely loyal to my family
+My name is Ken Zillig and I am a 5th year Ph.D Candidate at UC Davis. I am a graduate student in the [Graduate Group in Ecology](https://ecology.ucdavis.edu/) and am a memeber of Nann Fangue's [Fish Physiology Lab](http://fanguelab.ucdavis.edu/). My interests are in conservation biology, marine biology and physiology. My research revolves around the role of temperature (and subsequently temperature change) in driving ecological dynamics and how those processes influence species of conservation concern. More on those topics can be found among the Research pages.
 
-What else do you need?
-
-### my history
-
-To be honest, I'm having some trouble remembering right now, so why don't you just watch [my movie](http://en.wikipedia.org/wiki/The_Princess_Bride_%28film%29) and it will answer **all** your questions.
+Outside of the lab I enjoy sci-fi (current read: Ringwold ~ Larry Nevin), brewing beer (On-Tap: Dunloe's Sunshine Highway & a homebrew IPA), keeping exotic aquariums, fixing bikes (On-stand: Giant MTB with broken spokes), woodworking and watercolor painting. Whenever I get the chance I escape to the wilderness for camping and hiking. 
