@@ -7,6 +7,19 @@ output:
 ---
 
 
+<style>                     
+.navbar {
+  background-color:red;
+  border-color:black;
+}
+.navbar-brand {
+color:black!important;
+}
+</style>
+
+
+
+
 ```{r setup, include=FALSE}
 library(flexdashboard)
 knitr::opts_chunk$set(echo = FALSE, warning=FALSE)
@@ -19,7 +32,7 @@ knitr::opts_knit$set(root.dir = normalizePath("../"))
 
 ### Overview
 
-Chinook salmon ~Oncorhynchus tshawytsca~ span a huge latitudinal gradient with populations in the Yukon River in northern Alaksa all the way to populations in the Central Valley of California. Across this range juvenile fish experience a variety of different environmental conditions (climate, weather patterns, temperature, river intensity etc.) At the southern end of this range, in the Central Valley, Chinook salmon are contending with both the impacts of climate change as well as more local threats associated with expansion of agricultural, industrial and munincipal lands.
+Chinook salmon *Oncorhynchus tshawytsca* span a huge latitudinal gradient with populations in the Yukon River in northern Alaksa all the way to populations in the Central Valley of California. Across this range juvenile fish experience a variety of different environmental conditions (climate, weather patterns, temperature, river intensity etc.) At the southern end of this range, in the Central Valley, Chinook salmon are contending with both the impacts of climate change as well as more local threats associated with expansion of agricultural, industrial and munincipal lands.
 
 Salmonids are famous for their long migration in which returning adults swim all the way back to the local river system where they hatched out 2-5 years earlier. This migration behavior (natal homing) isolates populations form one another an may allow for different popualtions to adapt to local environmental conditions. 
 
@@ -28,10 +41,6 @@ Row {data-height=350}
 -----------------------------------------------------------------------
 
 #### Background
-
-
-
-
 
 # Populations 
 
@@ -149,8 +158,9 @@ Row
 
 ## Example {.sidebar}
 
-### Upslope Movement
+### Many Ways to Measure Performance
 
+To assess how temperature influences the physiology of an organsism, it is important to asses multiple traits. Different traits can reveal different responses and different limitations on thermal capacity. During this experiemnt I assess three physiologicals, temperature dependent growth rate, aerobic metabolism and critical thermal maximum. 
 
 Column {.tabset}
 ------------------------------------------

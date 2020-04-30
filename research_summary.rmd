@@ -1,0 +1,13 @@
+---
+layout: page
+title: Ken W. Zillig
+subtitle: PhD(c)
+---
+
+Hello! Welcome to my personal website. This space if for the explanation of research results. The website is currently under construction and will be slolwy completed over the next few months.
+
+My name is Ken Zillig and I am a 5th year Ph.D Candidate at UC Davis. I am a graduate student in the [Graduate Group in Ecology](https://ecology.ucdavis.edu/) and am a memeber of Nann Fangue's [Fish Physiology Lab](http://fanguelab.ucdavis.edu/). My interests are in conservation biology, marine biology and physiology. My research revolves around the role of temperature (and subsequently temperature change) in driving ecological dynamics and how those processes influence species of conservation concern. More on those topics can be found among the Research pages.
+
+![](/assets/img/Ken_Scott_Base_ANT.JPG)
+
+Outside of the lab I enjoy sci-fi (current read: Ringwold ~ Larry Nevin), brewing beer (On-Tap: Dunloe's Sunshine Highway & a homebrew IPA), keeping exotic aquariums, fixing bikes (On-stand: Giant MTB with broken spokes), woodworking and watercolor painting. Whenever I get the chance I escape to the wilderness for camping and hiking. 
