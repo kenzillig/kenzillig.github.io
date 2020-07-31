@@ -3,18 +3,16 @@ title: "Salmonids with Latitude"
 author: "Ken Zillig"
 date: "4/27/2020"
 output: 
-  flexdashboard::flex_dashboard
+  flexdashboard::flex_dashboard:
+    logo: assets/img/nbsmall.jpg
 ---
 
 
 <style>                     
 .navbar {
-  background-color:red;
-  border-color:black;
+
 }
-.navbar-brand {
-color:black!important;
-}
+
 </style>
 
 
@@ -28,19 +26,18 @@ knitr::opts_knit$set(root.dir = normalizePath("../"))
 
 # Project Background
 
-##  Overview {.sidebar}
-
-### Overview
-
-Chinook salmon *Oncorhynchus tshawytsca* span a huge latitudinal gradient with populations in the Yukon River in northern Alaksa all the way to populations in the Central Valley of California. Across this range juvenile fish experience a variety of different environmental conditions (climate, weather patterns, temperature, river intensity etc.) At the southern end of this range, in the Central Valley, Chinook salmon are contending with both the impacts of climate change as well as more local threats associated with expansion of agricultural, industrial and munincipal lands.
-
-Salmonids are famous for their long migration in which returning adults swim all the way back to the local river system where they hatched out 2-5 years earlier. This migration behavior (natal homing) isolates populations form one another an may allow for different popualtions to adapt to local environmental conditions. 
-
-
 Row {data-height=350}
 -----------------------------------------------------------------------
 
 #### Background
+
+Chinook salmon *Oncorhynchus tshawytsca* span a huge latitudinal gradient with populations in the Yukon River in northern Alaksa all the way to populations in the Central Valley of California. Across this range juvenile fish experience a variety of different environmental conditions (climate, weather patterns, temperature, river intensity etc.) At the southern end of this range, in the Central Valley, Chinook salmon are contending with both the impacts of climate change as well as more local threats associated with expansion of agricultural, industrial and munincipal lands.
+
+
+Salmonids are famous for their long migration in which returning adults swim all the way back to the local river system where they hatched out 2-5 years earlier. This migration behavior (natal homing) isolates populations form one another an may allow for different popualtions to adapt to local environmental conditions. Furthermore, California posesses the southernmost popualtions of fall-run Chinook salmon, and the critically endangered winter-run Chinook salmon. 
+
+![](assets/img/ChinookSalmon_sized.jpg)
+
 
 # Populations 
 
@@ -56,10 +53,10 @@ Row
 #### Popultion Sources for dissertation research 
 
 ```{r echo=F, warning=F, message=F, fig.width=10, fig.height=6.5}
-# library(sf)
-# library(raster)
-# library(leaflet)
-# library(dplyr)
+#library(sf)
+#library(raster)
+#library(leaflet)
+#library(dplyr)
 # setwd("../WEBSITE/marthawohlfeil.github.io")
 # bug2 <- read.csv("rmd_files/logger_insect_2018.csv")
 # bird2 <- read.csv("rmd_files/bird_lat_long2.csv")

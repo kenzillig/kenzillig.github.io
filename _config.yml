@@ -20,13 +20,11 @@ navbar-links:
     - CV: "http://www.google.com"
   Research: 
     - Research Overview: "research_summary"
-    - Salmonids with Latitude: "interpop.html"
-    - Temperature x. Trophic: "http://www.google.com"
+    #- Salmonids with Latitude: "interpop.html"
+    #- Temperature x. Trophic: "http://www.google.com"
     - Antarctic Ecophysiology: "https://antarctica-ecofishiology.github.io/index.html"
   Resources:
-    - Beautiful Jekyll: "http://deanattali.com/beautiful-jekyll/"
-    - Learn markdown: "http://www.markdowntutorial.com/"
-  Author's home: "http://kenzillig.github.io"
+
 
 # --- Logo --- #
 
@@ -52,6 +50,7 @@ social-network-links:
   #facebook: NA
   github: kenzillig
   twitter: kzecofishiology
+  researchgate: Kenneth_Zillig
   rss: true
 #  reddit: yourname
 #  linkedin: daattali
@@ -89,15 +88,15 @@ excerpt_length: 50
 
 # Personalize the colors in your website. Colour values can be any valid CSS colour
 
-navbar-col: "#6DAC45"
-navbar-text-col: "#404040"
-navbar-children-col: "#F5F5F5"
+navbar-col: "#375a90"
+navbar-text-col: "#dccba5"
+navbar-children-col: "#71a1dc"
 page-col: "#FFFFFF"
 link-col: "#008AFF"
-hover-col: "#49adad"
+hover-col: "#DCDCDC"
 footer-col: "#49adad"
 footer-text-col: "#777777"
-footer-link-col: "#404040"
+footer-link-col: "#dccba5"
 
 # Alternatively, the navbar, footer, and page background can be set to use background images
 # instead of colour
