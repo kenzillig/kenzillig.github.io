@@ -1,5 +1,6 @@
 # --- Basic options --- #
 
+
 # Name of website
 title: Ecophysiology of Fish
 bigimg: "assets/img/Ice Edge.jpg"
@@ -17,7 +18,8 @@ author: Ken Zillig
 navbar-links:
   About Me: 
     - Quick Bio: "aboutme"
-    - CV: "http://www.google.com"
+    - CV: "cv_page"
+    - Publications: "publications"
   Research: 
     - Research Overview: "research_summary"
     #- Salmonids with Latitude: "interpop.html"
@@ -111,7 +113,7 @@ footer-link-col: "#dccba5"
 #gtag: ""
 
 # Fill in your Google Analytics ID to track your website using GA
-#google_analytics: ""
+google_analytics: "UA-174237198-1"
 
 # Google Tag Manager ID
 #gtm: ""
