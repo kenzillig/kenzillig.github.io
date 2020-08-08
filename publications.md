@@ -27,7 +27,7 @@ Dai, J.\*, Degtyarev, D.\*, Gao, J.\*, Wang, A.\*, Burman, S., **Zillig, K. W.**
 
 ### Reports
 
-**Zillig, K. W.**, Cocherell, D. E., & Fangue, N. A. (2020). [Interpopulation Variation among Juvenile Chinook Salmon from Califorinia and Oregon]({{https://kenzillig.github.io/}}/assets/pdf/Zillig et al.2020, EPA Report.pdf). San Francisco, California: The United States Environmental Protection Agency Region 9 - Pacific Southwest Region. 68.
+**Zillig, K. W.**, Cocherell, D. E., & Fangue, N. A. (2020). [Interpopulation Variation among Juvenile Chinook Salmon from Califorinia and Oregon]({{https://kenzillig.github.io/}}/assets/pdf/Zillig_et_al._2020_EPA_Report.pdf). San Francisco, California: The United States Environmental Protection Agency Region 9 - Pacific Southwest Region. 68.
 
 **Zillig, K. W.**, Lusardi, R. A., & Fangue, N. A. (2018). [Variation in Thermal Eco-Physiology among California Salmonids: Implications for Management]({{https://kenzillig.github.io/}}/assets/pdf/Waterboard_report_2018.pdf). Sacramento, California: California State Water Resources Control Board. 39.
 
