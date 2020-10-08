@@ -22,10 +22,11 @@ navbar-links:
     - Publications: "publications"
   Research: 
     - Research Overview: "research_summary"
-    #- Salmonids with Latitude: "interpop.html"
     #- Temperature x. Trophic: "http://www.google.com"
     - Antarctic Ecophysiology: "https://antarctica-ecofishiology.github.io/index.html"
-  #Resources:
+    #- Salmonids with Latitude: "interpop.html"
+  Resources:
+    #- SalMap: "salmap.html"
 
 
 # --- Logo --- #

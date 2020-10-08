@@ -1,0 +1,138 @@
+---
+title: "Sal Map"
+author: "Ken Zillig"
+date: "10/7/2020"
+output: 
+  flexdashboard::flex_dashboard:
+    logo: assets/img/nbsmall.jpg
+---
+
+
+<style>                     
+.navbar {
+
+}
+
+</style>
+
+
+
+
+```{r setup, include=FALSE}
+library(flexdashboard)
+knitr::opts_chunk$set(echo = FALSE, warning=FALSE)
+knitr::opts_knit$set(root.dir = normalizePath("../"))
+```
+
+# What is SalMap?
+
+## Example {.sidebar}
+
+### Data to Destination
+
+There is a growing understanding that salmonid biology can be population specific. Furthermore, there is an immense amount of research available on salmonids from all over the world. However current science databases make searching by 'location' challenging. 
+
+SalMap attempts to gather together research on salmonids and provide it to the user geographically, that is tie research to the relevant populations. In this way, SalMap seeks to visualize knowledge gaps, concentrate populations specific-data, and expand the manner in which we interact with scientific resources.
+
+SalMap is definitely under construction and is in no way comprehensive. If you would like to take part in building this resource head over to the Contribute Tab.
+
+Column {.tabset}
+------------------------------------------
+
+
+```{r echo=F, warning=F, message=F, fig.width=10, fig.height=6.5}
+library(sf)
+library(raster)
+library(leaflet)
+library(tidyverse)
+library(rgdal)
+
+## read in the salmap dataset
+salmap.dat <- read_csv("kenzillig.github.io/SalMap/SalMapTest1.csv")
+
+
+test.geo <- salmap.dat %>% 
+  dplyr::select(LAT,LONG)
+coords.test <- SpatialPoints(test.geo)
+
+
+
+bug2 <- read.csv("rmd_files/logger_insect_2018.csv")
+bird2 <- read.csv("rmd_files/bird_lat_long2.csv")
+plant2 <- read.csv("rmd_files/plants_lat_long2.csv")
+names(bug2)[names(bug2) == 'ï..logger'] <- 'location_id'
+names(bird2)[names(bird2) == 'ï..trap_number'] <- 'location_id'
+names(plant2)[names(plant2) == 'ï..trap_number'] <- 'location_id'
+#adding in central points
+central<- read.csv("rmd_files/central_utm.csv")
+central<- plyr::rename(central, c("ï..point" = "point"))
+central2<-central %>%
+  select(UTMx, UTMy)
+
+utm <- SpatialPoints(central2, proj4string=CRS("+proj=utm +zone=11 +datum=WGS84"))
+geo <- spTransform(utm, CRS("+proj=longlat +datum=WGS84"))
+c_geo <- as.data.frame(geo)
+
+idaho_points <- as.data.frame(geo_i)
+#states and GB outline
+states <- sf::st_read("rmd_files/shapes/cb_2016_us_state_20m.shp", quiet = TRUE)
+states2 <- st_transform(states, 4326)
+greatbasin <- sf::st_read("rmd_files/shapes/GreatBasin_LCC.shp", quiet = TRUE)
+greatbasin2 <- st_transform(greatbasin, 4326)
+#color pallet
+#install.packages("RcColorBrewer")
+library(RColorBrewer)
+mapcol <- brewer.pal(3, "Set2")
+####Map         #Plant phenology 2018 locations still need to be added
+leaflet() %>%
+  addTiles() %>%
+  setView(lng = -117, lat = 39, zoom = 6) %>%
+  addProviderTiles(providers$Esri.WorldPhysical) %>%
+
+
+  #Insect data
+
+  addCircleMarkers(data = bug2, group = "Insect Biomass + Microclimate", lat=~long, lng=~lat,
+                   opacity= .5, stroke = TRUE,
+                   popup=paste0 ("Canyon: ", bug2$canyon, ", ",
+                                 "Trap Number: ", bug2$location_id, ", "),
+                   weight=0.6,radius=10, fillColor = mapcol[1]) %>%
+  hideGroup("Insect Biomass + Microclimate") %>%
+
+  #Plant data
+
+  addCircleMarkers(data = plant2, group = "Plant Phenology", lat=~lat, lng=~long, opacity = .5,
+                   popup=paste0 ("Canyon: ", plant2$canyon, ", ",
+                                 "Phenology Point: ", plant2$location_id, " "),
+                   weight=0.6,radius=10, stroke=TRUE, fillColor = mapcol[2]) %>%
+  hideGroup("Plant Phenology") %>%
+
+  #bird data
+
+  addCircleMarkers(data = bird2, group = "Bird Survey", lat=~lat, lng=~long, opacity = .5,
+                   popup=paste0("Canyon: ", bird2$canyon, ", ",
+                                "Survey Point: ", bird2$location_id, " "),
+                   weight=0.6,radius=10, stroke=TRUE, fillColor = mapcol[3]) %>%
+  hideGroup("Bird Survey") %>%
+
+  #central bird points
+  addCircleMarkers(data=c_geo, group = "Bird Survey", lat=~UTMy, lng = ~UTMx, opacity = .5,
+                   weight=0.6,radius=10, stroke=TRUE, fillColor = mapcol[3]) %>%
+
+  #utah and idaho bird points
+  addCircleMarkers(data=utah_points, group = "Bird Survey", lat=~UTMy, lng = ~UTMx, opacity = .5,
+                   weight=0.6,radius=10, stroke=TRUE, fillColor = mapcol[3]) %>%
+  addCircleMarkers(data=idaho_points, group = "Bird Survey", lat=~UTMy, lng = ~UTMx, opacity = .5,
+                   weight=0.6,radius=10, stroke=TRUE, fillColor = mapcol[3]) %>%
+
+  #add states and gb shapes
+  addPolygons(data = states2, color = "black", weight = 1.5, fillColor = "transparent") %>%
+  addPolygons(data = greatbasin2, color = "black", weight = 4, fillColor = "transparent") %>%
+
+  addLayersControl(
+    overlayGroups = c("Bird Survey", "Insect Biomass + Microclimate", "Plant Phenology"),
+    options = layersControlOptions(collapsed = F))
+```
+
+
+## Contribute
