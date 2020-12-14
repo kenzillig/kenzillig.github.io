@@ -6,7 +6,7 @@ subtitle: ""
 
 ### Journal Articles
 
-**Zillig, K. W.**, Lusardi, R. L., Moyle, P. B., Fangue, N. A. (*In Review*). Variation in Thermal Eco-physiology among West Coast Salmonids: Implications for Management. Reviews in Fisheries and Fish Biology.
+**Zillig, K. W.**, Lusardi, R. L., Moyle, P. B., Fangue, N. A. (*Accepted*). One-size does not fit all: Variation in Thermal Eco-physiology among Pacific Salmonids. Reviews in Fisheries and Fish Biology.
 
 Siefert, A., Friesen, M.L., **Zillig, K. W.**, Aguilar, J., and Strauss, S.Y. (*In Review*). An experimental test of stabilizing forces in the field niche. Ecology.
 

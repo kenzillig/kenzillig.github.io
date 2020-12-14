@@ -1,4 +1,4 @@
-Location,LAT,LONG,Genus,Species,CITATION,CITATION_SHORT
-Nimbus Hatchery,38.635384,121.226426,Oncorhynchus,mykiss,test1,
-Coleman Hatchery,40.715904,122.425908,Oncorhynchus,tshawytscha,test2,
-Livingston-Stone Hatchery,40.398136,122.145101,Oncorhynchus,keta,test3,
+LOCATION,LAT,LONG,GENUS,SPECIES,CITATION,CITATION_SHORT,PUBLICATION_YEAR,TAGS
+Nimbus Hatchery,38.6353,-121.2264,Oncorhynchus,mykiss,test1,,2001,"Physiology, Biotelemetry, Field"
+Livingston Stone,40.7159,-122.4259,Oncorhynchus,tshawytscha,test2,,2019,"Laboratory, Physiology"
+Coleman Hatchery,40.3981,-122.1451,Oncorhynchus,keta,test3,,1995,"Field, Energetics, Laboratory, Physiology"

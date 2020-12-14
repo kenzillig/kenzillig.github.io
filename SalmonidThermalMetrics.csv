@@ -1,0 +1,266 @@
+Num,Species,Life-stage,Population,Metric,Value,Value_2,Citation,Citation 2,Notes
+1,Chinook,Eggs,MISSING,CTmin,1.7,,Combs and Burrows 1957,Myrick and Cech 2004,
+2,Chinook ,Eggs,American River Chinook,CTmax,16.7,,Hinze 1959,Myrick and Cech 2004,100% mortality before eye stage when incubated at this temp
+3,Chinook,Eggs,Winter-run,CTM Range,5.6-14.0,,Slater 1963,Myrick and Cech 2004,eggs can be reared between these temps
+4,Chinook,Eggs,Sacrmento River Fall-run,,13.9,,Healey (1979),Myrick and Cech 2004,">82% mortality of eggs, thought not to be different than northern races"
+5,Chinook,Eggs,Sacrmento River Fall-run,,12,,US Fish and Wildlife 1999,Myrick and Cech 2004,increased mortaltiy
+6,Chinook,Eggs,Winter-run,,13.3,,US Fish and Wildlife 1999,Myrick and Cech 2004,increased morality
+7,Chinook ,Eggs,ALL,Optimal Development,6-12,,Myrick and Cech 2004,Myrick and Cech 2004,their synthezied range from the above data points
+8,Steelhead,Eggs,Sacrament-San Joaquin,,NONE,,Myrick and Cech 2004,Myrick and Cech 2004,at the time of writing there was not data
+9,Steelhead,,Eagle Lake vs. Hot Creek,CTmin,,,Hubert 1994,Myrick and Cech 2004,eagle lake strain is more cold tolerant than the hot creek strain
+10,Steelhead,,,,,,Stonecypher and Hubert 1994,Myrick and Cech 2004,gross strain level differences may exist
+11,Steelhead,Eggs,ALL,CTmin,5,,Myrick and Cech 2004,Myrick and Cech 2004,low survival
+12,Steelhead,Eggs,ALL,CTmin,7-10,,Myrick and Cech 2004,Myrick and Cech 2004,optimal range
+13,Steelhead,Eggs,ALL,CTmin,10,,Myrick and Cech 2004,Myrick and Cech 2004,declining survival
+14,Steelhead vs. Chinook,Eggs/Alevin,,,,,Myrick and Cech 2004,Myrick and Cech 2004,steelhead do better in slightly cooler water than Chinooks
+15,Chinook,Juvenile,MISSING,ILLT,0.8,when acclimated to 10C,Brett 1952,Myrick and Cech 2004,can survive 7 days at .8 when acclimated to 10C
+16,Chinook,Juvenile,Dungeness Hatchery,ILLT,7.4,when acclimated to 24C,Brett 1952,Myrick and Cech 2004,acclimated to 24C
+17,Chinook,Juvenile,Dungeness Hatchery,Acclimation,24,,Brett 1952,Myrick and Cech 2004,
+18,Chinook,Juvenile,Feather River,IULT,25,,Hanson 1991,Myrick and Cech 2004,acclimated to 13C
+19,Chinook ,Juvenile,Sacramento River Fall-run,successful rearing,21-24,,Marine and Cech 2004,Myrick and Cech 2004,without significant mortality
+20,Chinook,Juvenile,American River Strain,IULT,24,,Rich 1987,Myrick and Cech 2004,significant moratlity after 8 days at 24C
+21,Chinook,Juvenile,ALL,IULT,24-25,,"Brett 1952, Brett et al. 1982",Myrick and Cech 2004,Conclusion drawn by authors
+22,Chinook,Juvenile,Ameriacn River Fall-run,CTM,28.8,19C Acclimation,Cech and Myrick 1999,Myrick and Cech 2004,then unpublsihed report
+23,Rainbow Trout,Juvenile,MISSING,ILLT,>0,acclimated to 10C,"Becker and Genoway 197, Currie and Tufts 1997",Myrick and Cech 2004,
+24,Rainbow Trout,Juvenile,MIssing,IULT,22.8-26,,"Bidgood and Berst 1969, threader and Houston 1983",Myrick and Cech 2004,Not CA rainbow trout strains
+25,Steelhead,Juvenile,American River,CTM,"27.5, 28.4, 29.6","Acclimated to 11, 15, 19",Myrick 1998,Myrick and Cech 2004,
+26,Steelhead,Juvenile,Feather River,CTM,30.8 vs. 29.4,"Acclimated to 16, Wild vs. Hatchery",Myrick and Cech 2000,Myrick and Cech 2004,
+27,Chinook,Juvenile,Sacrmento River Fall-run,Optimal Growth,reared at 17-20,3.3% wt/d,Myrick and Cech 2004,Myrick and Cech 2004,"fish reared between 21-24C still grew, but were suscpetible to icreased predation, confounded by fish size"
+28,Chinook,Juvenile,American River Fall Run,Optimal Growth,19C,4.4% wt/d,Myrick and Cech 2002,Myrick and Cech 2004,fish reared at 15 and 11 grew at slower rates
+29,Chinook,Juvenile,Big Qualicum River strain,Optimal Growth,20.5C,3.3% wt/d,Clarke and Shlebourn 1985,Myrick and Cech 2004,
+30,Chinook ,Juvneile,Nechako River strain,Optimal Growth,18.9,3.2% wt/d,Brett 1982,Myrick and Cech 2004,
+31,Chinook,Juvenile,ALL,Optimal Growth,17-20C,,,Myrick and Cech 2004,"assuming food is unlimited, no predation, no disease, no competiton"
+32,Chinook ,Juvenile,Modeled,Optimal Growth,18.9-20.5 vs. 15C,Opt feed rate vs. 60% satiation,Brett 1982,Myrick and Cech 2004,
+33,Steelhead,Juvenile,American River,Growth,19C,2.6% wt/d,Myrick 1998,Myrick and Cech 2004,"narrow temp window, no temps tested at 'sub-optimal' temps"
+34,Steelhead,Juvenile,"North Santiam River, OR",Optimal Growth,16.4,3.5%wt/d,"Wursbaugh and Davis 1977, 1977",Myrick and Cech 2004,"growth was capable at 22, optimal growth temp declined when feed restriction was applied"
+35,Chinook,Adult,"Yakima Spring-run, WA",,,,,,
+36,Chinook,Eggs,Snake River Rall-run,Development,16.5,,Geist et al. 2006,,↑ morality above 16.5
+37,Chinook,Juvenile,Snake River Rall-run,CTM,27.4-27.9,CTM rate 1..5C/hr,Geist et al. 2010,,
+38,Chinook,Juvenile,Snake River Rall-run,IULT,25C,,Geist et al. 2011,,survival was highly variable
+39,Chinook,Juvenile,Snake River Rall-run,Optimal growth,11.2%wt/d,"acclimated 20C, stable temp",Geist et al. 2012,,growth was reduced greatly in groups exposed to variable temperatures reachin 27C
+40,Rainbow Trout,Juvenile,Toulumne,Aerobic Scope,17.8-24.6C,95% of peak AS,Verhille et al. 2016,,"wild fish, river temp ~13C"
+41,Chinook,Juvenile,Mokelumne Hatchery,Aerobic Scope,,,,,"No influence of acc temp, or temperature (below 23C) on the aerobic scope"
+42,Cutthroat Trout,,"Bonneville, WY",IULT,24.2,,Johnstone and Rahel 2003,,
+43,Chinook,smolts,Sacrmento River Fall-run (Coleman),Smoltification,>17,,Marine and Cech 2004,,impared smoltification
+44,Chinook,Juvenile,MISSING,Optimal growth,15.6,,Armour 1991,Marine and Cech 2004,sprin Chinook salmon
+45,Chinook,Juvenile,"Hanford Reach, Columbia River",Predation,exposed briefly from 12-26C,,Mesa et al. 2002,,Exposure to thermal stress did not increase predation rate
+46,Steelhead,Juvenile,Nimbus Hatchery,highest growth,19,"highest of the three treatments (11,15,19)",Myrick and Cech 2005,,
+47,O. mykiss,Juvenile,Trinity Tributaries (Wild),Growth,15C,,McCarthy et al 2009,,Fish lost weight at temperatures in excess of 15C
+48,,,,,,,Sutton et al 2004,,
+49,Chinook,Eggs,"Campbell River, BC",Incubation Temp,<6°C,,Heming 1982,,Optimal yolk conversion temperature
+50,Chinook,Eggs,"Campbell River, BC",Incubation Temp,12°C,,Heming 1982,,Temperature at which declining viability was found
+51,Chinook,Eggs,Sacramento River,Viable Range,5.6°C-14°C,,Slater 1963,Myrick and Cech 2001,
+52,Chinook,Eggs,Entiat and Skagit R. Oregon,minimum temp,1.7°C,,Combs and Burrows 1957,Myrick and Cech 2001,Non-California Population
+53,Chinook,Eggs,American River (Fall-run),100% Mortality,16.7°C,,Hinze 1959,Myrick and Cech 2001,
+54,Chinook,Eggs,Sacrament River,82% Mortality,13.9°C,,Healey 1979,Myrick and Cech 2001,
+55,Chinook,Eggs,Saramento R Fall run,Mortality,12.2-15.6°C,16.7°C,USFWS 1999,Myrick and Cech 2001,"Mortality between 11.1-13.3°C was not significant, increased in the 12.2-15.6 range and icreased again at temps above 16.7"
+56,Chinook,Eggs,Sarcrament R Fall and Winter,NA,Increasing,,USFWS 1999,Myrick and Cech 2001,"mortality increased under increasing thermal regimes, wehen compared to constant temperatures"
+57,Chinook,Eggs,Big Qualicum R. Canada,"Thermal Limit, Dewatered Redds",17.4,,Jensen and Groot 1991,Myrick and Cech 2001,
+58,Chinook,Eggs,Big Qualicum R. Canada,No mortality limit,14,,Jensen and Groot 1991,Myrick and Cech 2001,
+59,Steelhead,Eggs,Clearwater R. Salmon R (ID),spawning temps,2-8°C,,Orcutt et al. 1968,Myrick and Cech 2001,
+60,Steelhead,Eggs,Eagle Lake and Hot Creek,cold tolerance,populations(life history stragies),,Stoneycypher et al 1994,Myrick and Cech 2001,tested two different life-history strategies and found differences in egg thermal toerlance (cold tolerance)
+61,Chinook,Juvenile,Dungeness Hatchery (WA),ILLT,0.8°C,Acclimation 10°C,Brett 1952,Myrick and Cech 2001,
+62,Chinook,Juvenile,Dugeness Hatchery,ILLT,7.4°C,Acclimation 24°C,Brett 1952,Myrick and Cech 2001,
+63,Chinook,Juvenile,Washington,UILT,21.5°C,Accliamtion 5°C,Brett 1952,Myrick and Cech 2001,
+64,Chinook,Juvenile,Mokelumne,ULIT,26°C,Acclimation 13°C,Hanson 1991,Myrick and Cech 2001,
+65,Chinook,Juvenile,??,CTM,28.8°C,Acclimation 19°C,Myrick and Cech 1999,Myrick and Cech 2001,
+66,Chinook ,Juvenile,WA & BC pops,Chronic Upper Limit,24.7-25.1°C,,Brett 1952 & Brett 1982,Myrick and Cech 2001,
+67,Chinook,Juvenile,American River,Chronic Upper Limit,24°C,,Rich 1987,Myrick and Cech 2001,"Died after 8 day exposure to river water, is lower than northern stocks, may be due to disease, toxins, water chem as river water was used"
+68,Chinook,Juvenile,Sacramento R Fall-run,High Rearing Temperatures,21-24°C,,Marine 1997,Myrick and Cech 2001,"no significant mortality, reared on well water, counter point to Rich 1987"
+69,Steelhead,Juvenile,American River,CTM,27.7°C,acclimated 11°C,,Myrick and Cech 2001,
+70,Steelhead,Juvenile,American River,CTM,29.6 °C,acclimated to 19°C,,Myrick and Cech 2001,
+71,Rainbow Trout,Juvenile,Eagle Lake,CTM,32°C,acclimated 25°C,Myrick and Cech 2000,Myrick and Cech 2001,
+72,Steelhead,Juvenile,Feather R. Hatcheyr,CTM,29.4°C,acclimated 16°C,... ,Myrick and Cech 2001,"wild fish acclimated to a lower in-river temp, showed an even greater CTM (30.8°C)"
+73,Rainbow Trout,Juvenile,??,IULT,22.8-25.9°C,accliamteion dependent,Threader and Houston 1983,Myrick and Cech 2001,
+74,Chinook (Spring Run),Juvenile,Dungeness Washington Hatchery,Preference,11-13°C,,Brett 1952,Myrick and Cech 2001,"fish acclimated to several temps 10-25°C, non-siginivange effect of acclimation temp."
+75,Rainbow Trout,,Great Lakes,Preference,16.5°C,,Cherry et al 1975,Myrick and Cech 2001,
+76,Rainbow Trout,,Great Lakes,Preference,18.4°C,,Cherry et al. 1977,Myrick and Cech 2001,
+77,Steelhead ,Juvenile ,Feather River (hatchery),Preference,18-19°C,acclimated  to 16°C,Myrick and Cech 2000,Myrick and Cech 2001,
+78,Steelhead ,Juvenile ,Feather River (wild),Preference,17°C,"acclimated to natural conditions, <15°C",Myrick and Cech 2000,Myrick and Cech 2001,
+79,Chinook,Juvenile,Big Qualicum R. Canada (Hatchery),Optimal Growth,20.5°C,,Brett 1982,Myrick and Cech 2001,
+80,Chinook,Juvenile,Nechako R. BC (wild),Optimal Growth,18.9°C,,Brett 1982,Myrick and Cech 2001,
+81,Chinook,Juvenile,Modeled,Optimal Growth,~15°C,feed restricted to 60% of optiaml,,Myrick and Cech 2001,
+82,Chinook ,Juvenile ,America River (Nimbus Strain,Max Growth,"13.2°C, 14.1°C, 15.3°C",wild water,Rich 1987,Myrick and Cech 2001,"reduced grwoth at temps exceeding 15.3°C, exposed to wild water conditions which may explain reduced growth at high temperatures"
+83,Chinook ,Juvenile ,American River (nimbus),Max Growth,19°C,lab conditions,Cech and Myrick 1999,Myrick and Cech 2001,grown in lab conditions
+84,Chinook,Juvenile,Sacramento River,Max Growth,17-20°C,lab conditions,Marine 1997,Myrick and Cech 2001,
+85,Steelhead,Juvenile ,Northern Santiam River OR,Max Growth,15.8°C,"lab conditions, full rations","Wurtsbaugh and Davis 1977a,b,",Myrick and Cech 2001,
+86,Steelhead,Juvenile ,Northern Santiam River OR,Max Growth,14.8°C,"lab conditions, 60-70% feed rate","Wurtsbaugh and Davis 1977a,b,",Myrick and Cech 2001,
+87,Rainbow Trout,Juvenile ,Eagle Lake & MOunt Shasta,Max Growth,19°C,lab conditions,Myrick and Cech 2000,Myrick and Cech 2001,
+88,Chinook,Smolts,Sacramento R fall run,Smoltification,21-24°C,impaired smoltification,Marine 1997,Myrick and Cech 2001,
+89,Chinook,Smolts,Sacramento R Fall run,Smoltification,17-20°C,somewhat impaired smoltification,Marine 1997,Myrick and Cech 2001,
+90,Chinook,Smolts,??,Smoltiicaiton,10-17.5°C,,"Clarke and Shelbourn 1985, Clarke et al. 1992",Myrick and Cech 2001,This range of temperature for rearing was shown to prepare smolts optimally for survival
+91,Steelhead,Juvenile,Nimbus strain,CTM,29.6°CC,acc. 19,Myrick and Cech 2005,,
+92,Steelhead,Juvenile,Nimbus strain,CTM,27.5°C,acc. 11,Myrick and Cech 2005,,
+93,Steelhead,Juvenile,Nimbus strain,Growth,19°C,"optimal of three tested (11, 15, 19)",Myrick and Cech 2005,,
+94,Steelhead,Juvenile,Nimbus strain,CTM,28.4°C,acc. 15,Myrick and Cech 2005,,
+95,Steelhead,Smolts,"Summer run, Skamania Fish Hatchery, WA ",Smotlficiation,15°C,okay at 10°C,Adams et al. 1973,,
+96,Steelhead,Smolts,WA,smoltifcaiton,11.3°C,tested 6 temps from 9-15°C,Adams et al 1975,smoltication did not occure at temps exceeding 11.3,
+97,Steelhead,Smolts,BC,smotlfication,11°C,"optimum of three temsp (5, 11, 17), 17 was worst of three",Johnsson and Clarke 1998,,
+98,Rainbow Trout,Juvenile,Mt Shasta,CTM,27.7,acc. 10,Myrick and Cech 2000,,
+99,Rainbow Trout,Juvenile,Mt Shasta,CTM,28.4,acc 14,Myrick and Cech 2000,,
+100,Rainbow Trout,Juvenile,Mt Shasta,CTM,29.3,acc 19,Myrick and Cech 2000,,
+101,Rainbow Trout,Juvenile,Mt Shasta,CTM,30,acc 19,Myrick and Cech 2000,,
+102,Rainbow Trout,Juvenile,Mt Shasta,CTM,30.7,acc  22,Myrick and Cech 2000,,
+103,Rainbow Trout,Juvenile,Mt Shasta,CTM,31.5,acc 25,Myrick and Cech 2000,,
+104,Rainbow Trout,Juvenile,Eagle Lake,CTM,27.6,acc. 10,Myrick and Cech 2000,,
+105,Rainbow Trout,Juvenile,Eagle Lake,CTM,28.6,acc 14,Myrick and Cech 2000,,
+106,Rainbow Trout,Juvenile,Eagle Lake,CTM,29.6,acc 19,Myrick and Cech 2000,,
+107,Rainbow Trout,Juvenile,Eagle Lake,CTM,30.6,acc 19,Myrick and Cech 2000,,
+108,Rainbow Trout,Juvenile,Eagle Lake,CTM,31,acc  22,Myrick and Cech 2000,,
+109,Rainbow Trout,Juvenile,Eagle Lake,CTM,32,acc 25,Myrick and Cech 2000,,
+110,Rainbow Trout,Juvenile,Eagle Lake,Crt. Swim Speed (BL per sec),5.2,Acc 10,Myrick and Cech 2000,,
+111,Rainbow Trout,Juvenile,Eagle Lake,Crt. Swim Speed (BL per sec),5.72,Acc 14,Myrick and Cech 2000,,
+112,Rainbow Trout,Juvenile,Eagle Lake,Crt. Swim Speed (BL per sec),5.66,Acc 19,Myrick and Cech 2000,,
+113,Rainbow Trout,Juvenile,Mt Shasta,Crt. swim speed,5.27,Acc 10,Myrick and Cech 2000,,
+114,Rainbow Trout,Juvenile,Mt Shasta,Crt. swim speed,5.47,Acc 14,Myrick and Cech 2000,,
+115,Rainbow Trout,Juvenile,Mt Shasta,Crt. swim speed,5.24,Acc 19,Myrick and Cech 2000,,
+116,Steelhead,Juvenile,Nimbus (American R),Crt. Swim Speed,4.34,Acc 11,Myrick and Cech (in review),Myrick and Cech 2000,
+117,Steelhead,Juvenile,Nimbus (American R),Crt. Swim Speed,4.96,Acc 15,Myrick and Cech (in review),Myrick and Cech 2000,
+118,Steelhead,Juvenile,Nimbus (American R),Crt. Swim Speed,4.79,Acc 19,Myrick and Cech (in review),Myrick and Cech 2000,
+119,Rainbow Trout,Juvenile,Case Western,CTM,31.29°C,Acc 20,Hartman 2014,,
+120,Rainbow Trout,Juvenile,Kamloops,CTM,31.142,Acc 20,Hartman 2015,,
+121,Rainbow Trout,Juvenile,Wytheville,CTM,31.198,Acc 20,Hartman 2016,,
+122,Chinook Salmon,Alevin,Snake River Idaho,Rearing Temperatures (declining surviorship),17,,Geist et al. 2006,,
+123,Chinook Salmon,Alevin,Snake River Idaho,Rearing Temp. (equal survival),13-16.5C,,Geist et al. 2006,,
+124,Chinook Salmon,Alevin,Columbia River,Rearing Temp (tolerable),16.1C,,Olson and Foster 1957,,
+125,Chinook Salmon,Alevin,Great Lakes,Rearing Temp 73.7%,15.1C,,Garling and Masterson 1985,,
+126,Chinook Salmon,Alevin,Great Lakes,Rearing Temp 98%,11.4C,,Garling and Masterson 1985,,
+127,Coho Salmon,Embryos,"Toutle River, WA",Thermal Unit to 50% Hatch,471,Acc 6,Konecki et al 1995,,
+128,Coho Salmon,Embryos,"Toutle River, WA",Thermal Unit to 1st Hatch,447 SD 8.2,Acc 6,Konecki et al 1995,,
+129,Coho Salmon,Embryos,"Cowlitz River, WA",Thermal Unit to 50% Hatch,438,Acc 6,Konecki et al 1995,,
+130,Coho Salmon,Embryos,"Cowlitz River, WA",Thermal Unit to 1st Hatch,327 SD 87.3,Acc 6,Konecki et al 1995,,
+131,Coho Salmon,Embryos,"Bingham Creek, WA",Thermal Unit to 1st Hatch,411.7 SD 30.3,Acc 6,Konecki et al 1995,,
+132,Coho Salmon,Embryos,"Bockman Creek, WA",Thermal Unit to 1st Hatch,427.8 SD 32.9,Acc 6,Konecki et al 1995,,
+133,Coho Salmon,Embryos,"Solduc River, WA (Early Spawning)",Thermal Unit to 50% Hatch,606,Acc 6,Konecki et al 1995,,
+134,Coho Salmon,Embryos,"Solduc River, WA (Late Spawning)",Thermal Unit to 50% Hatch,471,Acc 6,Konecki et al 1995,,
+135,Coho Salmon,Embryos,"Solduc River, WA (Late Spawning)",Thermal Unit to 1st Hatch,373. SD 92.0,Acc 6,Konecki et al 1995,,
+136,Coho Salmon,Embryos,"Snow Creek, WA",Thermal Unit to 50% Hatch,462,Acc 6,Konecki et al 1995,,
+137,Coho Salmon,Embryos,"Big Beef Creek, WA",Thermal Unit to 1st Hatch,429.6 SD 22.3,Acc 6,Konecki et al 1995,,
+138,Coho Salmon,Embryos,University of Washington,Thermal Unit to 50% Hatch,459,acc 12.5,Tang et al 1987,,
+139,Coho Salmon,Embryos,University of Washington,Thermal Unit to 50% Hatch,404,acc. 2.5,Tang et al 1987,,
+140,Coho Salmon,Embryos,University of Washington,Embryo Mortality,14.4,85% mortality,Tang et al 1987,,
+141,Coho Salmon,Embryos,University of Washington,Embryo Mortality,21.4,17.2% Mortality,Tang et al 1987,,
+142,Coho Salmon,Embryos,"Dungeness River, WA",Thermal Unit to 50% Hatch,461,acc. 12.5,Tang et al 1987,,
+143,Coho Salmon,Embryos,"Dungeness River, WA",Thermal Unit to 50% Hatch,416,acc.2.4,Tang et al 1987,,
+144,Coho Salmon,Embryos,"Dungeness River, WA",Embryo Mortality,14.4,99% Mortality,Tang et al 1987,,
+145,Coho Salmon,Embryos,"Dungeness River, WA",Embryo Mortality,12.5,23% Mortality,Tang et al 1987,,
+146,Coho Salmon,Embryos,"Gastineau, AK",Days to 50% Hatch,160,No Incubation Temp Reported,Granath et al 2004,,
+147,Coho Salmon,Embryos,"HIdden Falls, AK",Days to 50% Hatch,165,No Incubation Temp Reported,Granath et al 2004,,
+148,Coho Salmon,Embryos,"Neets Bay, AK",Days to 50% Hatch,150,No Incubation Temp Reported,Granath et al 2004,,
+149,Coho Salmon,Adult,"Chehalis River, BC",Aerobic Scope Optima,8.5,,Lee et al. 2003,,
+150,Sockeye Salmon,Adult,"Gates Creek, BC",Aerobic Scope Optima,16.5,,Lee et al. 2003,,
+151,Sockeye Salmon,Adult,"Weaver Creek, BC",Aerobic Scope Optima,14,,Lee et al. 2003,,
+152,Rainbow Trout, Juvenile,South Western Australia,Aerobic Scope Optima,15.8,15 Ac,Chen et al 2015,,
+153,Rainbow Trout, Juvenile, Juvenile,CTM,29,15 acc | .3/.1 rate,Chen et al 2015,,
+154,Rainbow Trout,Juvenile,Washington,CTM,26.9 ± .12,8 Acc | .1C rate,Becker and Wolford 1980,Chen et al 2015,
+155,Rainbow Trout,Juvenile,Pennsylvania,CTM,27.9 ± .05,9.8 acc | .3C rate,Carline and Machung 2001,Chen et al 2015,
+156,Rainbow Trout,Juvenile,Arizona,CTM,28.5 ± .28,10 acc | .02 rate,Lee and Rinne 1980,Chen et al 2015,
+157,Rainbow Trout,Juvenile,Missouri,CTM,28.0 ± .12,10 acc | .3 rate,Currie et al. 1998,Chen et al 2015,
+158,Rainbow Trout,,California,CTM,27.7 ± .08,10 acc | .3 rate,Myrick and Cech 2000,Chen et al 2015,
+159,Rainbow Trout,,California,CTM,27.5,11 acc | .3 rate,Myrick and Cech 2005,Chen et al 2015,
+160,Rainbow Trout,,British Columbia,CTM,29.0±.05,10-12 acc | .3 rate,Scott et al 2014,Chen et al 2015,
+161,Rainbow Trout,,Ontario,CTM,27.9 ± .14,13 acc | .33 rate,Leblanc et al 2011,Chen et al 2015,
+162,Rainbow Trout,,California,CTM,28.5 ± .11,14 acc | .3 rate,Myrick and Cech 2000,Chen et al 2015,
+163,Rainbow Trout,,Oregon,CTM,29.4± .1,14 acc | .033 rate,Rodnick et al 2004,Chen et al 2015,
+164,Rainbow Trout,,??,CTM,29.4 ± .08,15 acc | .3 rate,Strange et al 1993,Chen et al 2015,
+165,Rainbow Trout,Juvenile,Missouri,CTM,29.1 ± .09,15 acc | .3 rate,Currie et al. 1998,Chen et al 2015,
+166,Rainbow Trout,Juvenile,North Carolina,CTM,27.7 ± .03,15 acc | .0014 rate,Galbreath et al 200,Chen et al 2015,
+167,Rainbow Trout,,California,CTM,28.4,15 acc | .3 rate,Myrick and Cech 2005,Chen et al 2015,
+168,Rainbow Trout,,"Miyazaki, Japan",CTM,29.7,15 acc | .083 rate,Ineno et al 2005,Chen et al 2015,
+169,Rainbow Trout,Juvenile,Arizona,CTM,31.2,18 acc | .3 rate,Recsetar et al 2012,Chen et al 2015,
+170,Rainbow Trout,,California,CTM,29.6,19 acc | .3 rate,Myrick and Cech 2005,Chen et al 2015,
+171,Rainbow Trout,,California,CTM,29.9±.17,19 acc | .3 rate,Myrick and Cech 2000,Chen et al 2015,
+172,Rainbow Trout,Juvenile,Arizona,CTM,29.4±.19,20 acc | .02 rate,Lee and Rinne 1980,Chen et al 2015,
+173,Rainbow Trout,Juvenile,Missouri,CTM,29.8±.12,20 acc | .3 rate,Currie et al. 1998,Chen et al 2015,
+174,Rainbow Trout,,"Miyazaki, Japan",CTM,30.4,20 acc | .083 rate,Ineno et al 2005,Chen et al 2015,
+175,Rainbow Trout,,California,CTM,30.9±.13,22 acc | .3 rate,Myrick and Cech 2000,Chen et al 2015,
+176,Rainbow Trout,,California,CTM,31.8±.1,25 acc | .3 rate,Myrick and Cech 2000,Chen et al 2015,
+177,Chinook Salmon,Juvenile - Adult,Capilano (Hatchery),Juvenile Growth Rate,1.79 %bm/d,Reared common garden,Cheng et al. 1987,,
+178,Chinook Salmon ,Juvenile - Adult,Harrison (Wild),Juvenile Growth Rate,1.41 %bm/d,reared common garden,Cheng et al. 1987,,
+179,Sockeye Salmon,Embryo,"Adams River, BC",Survival to Hatch,69,10 acc,Whitney et al 2013,Chen et al 2013,
+180,Sockeye Salmon,Embryo,"Adams River, BC",Survival to Hatch,61.3,14 acc,Whitney et al 2013,Chen et al 2013,
+181,Sockeye Salmon,Embryo,"Adams River, BC",Survival to Hatch,48.9,16 acc,Whitney et al 2013,Chen et al 2013,
+182,Sockeye Salmon,Embryo,"Adams River, BC",Egg Mass (mg),41.3±1.4,NA,Whitney et al 2013,Chen et al 2013,
+183,Sockeye Salmon,Embryo,"Chilko River, BC",Survival to Hatch,45,10 acc,Whitney et al 2013,Chen et al 2013,
+184,Sockeye Salmon,Embryo,"Chilko River, BC",Survival to Hatch,46.1,14 acc,Whitney et al 2013,Chen et al 2013,
+185,Sockeye Salmon,Embryo,"Chilko River, BC",Survival to Hatch,14.2,16 acc,Whitney et al 2013,Chen et al 2013,
+186,Sockeye Salmon,Embryo,"Chilko River, BC",Egg Mass (mg),41.6±0.4,NA,Whitney et al 2013,Chen et al 2013,
+187,Sockeye Salmon,Embryo,"Gates Creek, BC",Survival to Hatch,69.9,10 acc,Whitney et al 2013,Chen et al 2013,
+188,Sockeye Salmon,Embryo,"Gates Creek, BC",Survival to Hatch,63.8,14 acc,Whitney et al 2013,Chen et al 2013,
+189,Sockeye Salmon,Embryo,"Gates Creek, BC",Survival to Hatch,26.6,16 acc,Whitney et al 2013,Chen et al 2013,
+190,Sockeye Salmon,Embryo,"Gates Creek, BC",Egg Mass (mg),42.7±0.4,NA,Whitney et al 2013,Chen et al 2013,
+191,Sockeye Salmon,Embryo,"Harrison River, BC",Survival to Hatch,57.7,10 acc,Whitney et al 2013,Chen et al 2013,
+192,Sockeye Salmon,Embryo,"Harrison River, BC",Survival to Hatch,47.5,14 acc,Whitney et al 2013,Chen et al 2013,
+193,Sockeye Salmon,Embryo,"Harrison River, BC",Survival to Hatch,21.9,16 acc,Whitney et al 2013,Chen et al 2013,
+194,Sockeye Salmon,Embryo,"Harrison River, BC",Egg Mass (mg),72.8±1.0,NA,Whitney et al 2013,Chen et al 2013,
+195,Sockeye Salmon,Embryo,"Horsefly River, BC",Survival to Hatch,70.1,10 acc,Whitney et al 2013,Chen et al 2013,
+196,Sockeye Salmon,Embryo,"Horsefly River, BC",Survival to Hatch,73.7,14 acc,Whitney et al 2013,Chen et al 2013,
+197,Sockeye Salmon,Embryo,"Horsefly River, BC",Survival to Hatch,51.4,16 acc,Whitney et al 2013,Chen et al 2013,
+198,Sockeye Salmon,Embryo,"Horsefly River, BC",Egg Mass (mg),36.1±0.5,NA,Whitney et al 2013,Chen et al 2013,
+199,Sockeye Salmon,Embryo,"Okanagan River, BC",Survival to Hatch,70,10 acc,Whitney et al 2013,Chen et al 2013,
+200,Sockeye Salmon,Embryo,"Okanagan River, BC",Survival to Hatch,68.8,14 acc,Whitney et al 2013,Chen et al 2013,
+201,Sockeye Salmon,Embryo,"Okanagan River, BC",Survival to Hatch,41.5,16 acc,Whitney et al 2013,Chen et al 2013,
+202,Sockeye Salmon,Embryo,"Okanagan River, BC",Egg Mass (mg),38.1±0.6,NA,Whitney et al 2013,Chen et al 2013,
+203,Sockeye Salmon,Embryo,"Scotch Creek, BC",Survival to Hatch,74.4,10 acc,Whitney et al 2013,Chen et al 2013,
+204,Sockeye Salmon,Embryo,"Scotch Creek, BC",Survival to Hatch,72.3,14 acc,Whitney et al 2013,Chen et al 2013,
+205,Sockeye Salmon,Embryo,"Scotch Creek, BC",Survival to Hatch,55.8,16 acc,Whitney et al 2013,Chen et al 2013,
+206,Sockeye Salmon,Embryo,"Scotch Creek, BC",Egg Mass (mg),35.2±0.4,NA,Whitney et al 2013,Chen et al 2013,
+207,Sockeye Salmon,Embryo,"Stellako River, BC",Survival to Hatch,83.5,10 acc,Whitney et al 2013,Chen et al 2013,
+208,Sockeye Salmon,Embryo,"Stellako River, BC",Survival to Hatch,68.7,14 acc,Whitney et al 2013,Chen et al 2013,
+209,Sockeye Salmon,Embryo,"Stellako River, BC",Survival to Hatch,42.6,16 acc,Whitney et al 2013,Chen et al 2013,
+210,Sockeye Salmon,Embryo,"Stellako River, BC",Egg Mass (mg),34.5±0.5,NA,Whitney et al 2013,Chen et al 2013,
+211,Sockeye Salmon,Embryo,"Weaver Creek, BC",Survival to Hatch,94.2,10 acc,Whitney et al 2013,Chen et al 2013,
+212,Sockeye Salmon,Embryo,"Weaver Creek, BC",Survival to Hatch,85.4,14 acc,Whitney et al 2013,Chen et al 2013,
+213,Sockeye Salmon,Embryo,"Weaver Creek, BC",Survival to Hatch,50.8,16 acc,Whitney et al 2013,Chen et al 2013,
+214,Sockeye Salmon,Embryo,"Weaver Creek, BC",Egg Mass (mg),52.2±0.6,NA,Whitney et al 2013,Chen et al 2013,
+215,Sockeye Salmon,Adult,"Chilko River, BC",Aerobic Scope Optima,16.8,19.1 (field acclimated),Eliason et al 2011,,
+216,Sockeye Salmon,Adult,"Early Stuart, BC",Aerobic Scope Optima,17.2,19.1 (field acclimated),Eliason et al 2011,,
+217,Sockeye Salmon,Adult,"Nechacko River, BC",Aerobic Scope Optima,16.8,19.1 (field acclimated),Eliason et al 2011,,
+218,Sockeye Salmon,Adult,"Gates Creek, BC",Aerobic Scope Optima,16.4,19.1 (field acclimated),Eliason et al 2011,,
+219,Sockeye Salmon,Adult,"Weaver Creek, BC",Aerobic Scope Optima,14.5,19.1 (field acclimated),Eliason et al 2011,,
+220,Sockeye Salmon,Adult,"Chilko River, BC",Aerobic Scope Pejus Breadth,7.8,19.1 (field acclimated),Eliason et al 2011,,
+221,Sockeye Salmon,Adult,"Early Stuart, BC",Aerobic Scope Pejus Breadth,5.5,19.1 (field acclimated),Eliason et al 2011,,
+222,Sockeye Salmon,Adult,"Nechacko River, BC",Aerobic Scope Pejus Breadth,4.5,19.1 (field acclimated),Eliason et al 2011,,
+223,Sockeye Salmon,Adult,"Gates Creek, BC",Aerobic Scope Pejus Breadth,6.1,19.1 (field acclimated),Eliason et al 2011,,
+224,Sockeye Salmon,Adult,"Weaver Creek, BC",Aerobic Scope Pejus Breadth,3.9,19.1 (field acclimated),Eliason et al 2011,,
+225,Sockeye Salmon,Embryo,"Adams River, BC","50% Hatch, Thermal Units",605.5±19,10 acc,Whitney et al 2014,,
+226,Sockeye Salmon,Embryo,"Adams River, BC","50% Hatch, Thermal Units",658.7±41,14 acc,Whitney et al 2014,,
+227,Sockeye Salmon,Embryo,"Adams River, BC","50% Hatch, Thermal Units",696.8±38,16 acc,Whitney et al 2014,,
+228,Sockeye Salmon,Embryo,"Chilko River, BC","50% Hatch, Thermal Units",672±25,10 acc,Whitney et al 2014,,
+229,Sockeye Salmon,Embryo,"Chilko River, BC","50% Hatch, Thermal Units",705±42,14 acc,Whitney et al 2014,,
+230,Sockeye Salmon,Embryo,"Chilko River, BC","50% Hatch, Thermal Units",729±41,16 acc,Whitney et al 2014,,
+231,Sockeye Salmon,Embryo,"Gates Creek, BC","50% Hatch, Thermal Units",633.3±16,10 acc,Whitney et al 2014,,
+232,Sockeye Salmon,Embryo,"Gates Creek, BC","50% Hatch, Thermal Units",658.7±31,14 acc,Whitney et al 2014,,
+233,Sockeye Salmon,Embryo,"Gates Creek, BC","50% Hatch, Thermal Units",698.6±35,16 acc,Whitney et al 2014,,
+234,Sockeye Salmon,Embryo,"Harrison River, BC","50% Hatch, Thermal Units",644±15,10 acc,Whitney et al 2014,,
+235,Sockeye Salmon,Embryo,"Harrison River, BC","50% Hatch, Thermal Units",651±28,14 acc,Whitney et al 2014,,
+236,Sockeye Salmon,Embryo,"Harrison River, BC","50% Hatch, Thermal Units",659±21,16 acc,Whitney et al 2014,,
+237,Sockeye Salmon,Embryo,"Horsefly River, BC","50% Hatch, Thermal Units",621±16,10 acc,Whitney et al 2014,,
+238,Sockeye Salmon,Embryo,"Horsefly River, BC","50% Hatch, Thermal Units",633±18,14 acc,Whitney et al 2014,,
+239,Sockeye Salmon,Embryo,"Horsefly River, BC","50% Hatch, Thermal Units",669.7±24,16 acc,Whitney et al 2014,,
+240,Sockeye Salmon,Embryo,"Okanagan River, BC","50% Hatch, Thermal Units",642.5±25,10 acc,Whitney et al 2014,,
+241,Sockeye Salmon,Embryo,"Okanagan River, BC","50% Hatch, Thermal Units",692±39,14 acc,Whitney et al 2014,,
+242,Sockeye Salmon,Embryo,"Okanagan River, BC","50% Hatch, Thermal Units",741.6±41,16 acc,Whitney et al 2014,,
+243,Sockeye Salmon,Embryo,"Scotch Creek, BC","50% Hatch, Thermal Units",619±11,10 acc,Whitney et al 2014,,
+244,Sockeye Salmon,Embryo,"Scotch Creek, BC","50% Hatch, Thermal Units",640.5±21,14 acc,Whitney et al 2014,,
+245,Sockeye Salmon,Embryo,"Scotch Creek, BC","50% Hatch, Thermal Units",678.28±28,16 acc,Whitney et al 2014,,
+246,Sockeye Salmon,Embryo,"Stellako River, BC","50% Hatch, Thermal Units",608.6±9,10 acc,Whitney et al 2014,,
+247,Sockeye Salmon,Embryo,"Stellako River, BC","50% Hatch, Thermal Units",650.5±36,14 acc,Whitney et al 2014,,
+248,Sockeye Salmon,Embryo,"Stellako River, BC","50% Hatch, Thermal Units",678.4±31.8,16 acc,Whitney et al 2014,,
+249,Sockeye Salmon,Embryo,"Weaver Creek, BC","50% Hatch, Thermal Units",617.5±12,10 acc,Whitney et al 2014,,
+250,Sockeye Salmon,Embryo,"Weaver Creek, BC","50% Hatch, Thermal Units",670±29,14 acc,Whitney et al 2014,,
+251,Sockeye Salmon,Embryo,"Weaver Creek, BC","50% Hatch, Thermal Units",688±31,16 acc,Whitney et al 2014,,
+252,Pink Salmon,Adult,"Harrison River, BC",Aerobic Scope: Topt,21C,Field acclimated 13-16C,Clark et al. 2011,,
+253,Chum Salmon,Adult,Kitakami River & Kasshi River - early-run,Aerobic Scope: Topt,17.6C,Field acclimated 13-16C,Abe et al 2019,,Treatments were not acclimated to the same conditions therefore differens found could be due to plastic changes between early and late returners
+254,Chum Salmon,Adult,Kitakami River & Kasshi River - late-run,Aerobic Scope: Topt,14.0C,Field acclimated 13-16C,Abe et al 2019,,Treatments were not acclimated to the same conditions therefore differens found could be due to plastic changes between early and late returners
+255,Chum Salmon,Adult,Kitakami River & Kasshi River - early-run,CTM,27.8C,Field acclimated 13-16C,Abe et al 2019,,Treatments were not acclimated to the same conditions therefore differens found could be due to plastic changes between early and late returners
+256,Chum Salmon,Adult,Kitakami River & Kasshi River - late-run,CTM,25.2C,Field acclimated 13-16C,Abe et al 2019,,Treatments were not acclimated to the same conditions therefore differens found could be due to plastic changes between early and late returners
+257,Rainbow Trout,Juvenile,"Arlee - Hatchery, O.G. from McCloud, reared in MT",Specific Growth Rate %*day^-1,0.06889,10 acc,Bellinger et al 2018,,
+258,Rainbow Trout,Juvenile,"Hot Creek - Hatchery, O.G. from McCloud, reared in CA",Specific Growth Rate %*day^-1,0.06637,10 acc,Bellinger et al 2018,,
+259,Rainbow Trout,Juvenile,"Williamson River, OR",Specific Growth Rate %*day^-1,0.02063,10 acc,Bellinger et al 2018,,
+260,Rainbow Trout,Juvenile,"Swanson River, AK",Specific Growth Rate %*day^-1,0.02723,10 acc,Bellinger et al 2018,,
+261,Rainbow Trout,Juvenile,"Arlee - Hatchery, O.G. from McCloud, reared in MT",Specific Growth Rate %*day^-1,0.1414,18 acc,Bellinger et al 2018,,
+262,Rainbow Trout,Juvenile,"Hot Creek - Hatchery, O.G. from McCloud, reared in CA",Specific Growth Rate %*day^-1,0.1771,18 acc,Bellinger et al 2018,,
+263,Rainbow Trout,Juvenile,"Williamson River, OR",Specific Growth Rate %*day^-1,0.0326,18 acc,Bellinger et al 2018,,
+264,Rainbow Trout,Juvenile,"Swanson River, AK",Specific Growth Rate %*day^-1,0.0861,18 acc,Bellinger et al 2018,,
+,Chinook Salmon,Adult,Columbai River - Summer -run,Thermal Barrier,20-21C,,,,
