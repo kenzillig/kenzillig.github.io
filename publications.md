@@ -10,7 +10,7 @@ subtitle: ""
 
 Siefert, A., Friesen, M.L., **Zillig, K. W.**, Aguilar, J., and Strauss, S.Y. (*In Review*). An experimental test of stabilizing forces in the field niche. Ecology.
 
-Hansen, M. J., Ligocki, I. Y., **Zillig, K. W.**, Steel, A. E., Todgham, A. E., & Fangue, N. A. (2020). [Risk-Taking and Locomotion in Foraging Threespine Sticklebacks (*Gasterosteus Aculeatus*)]({{https://kenzillig.github.io/}}/assets/pdf/Hansen et al._2020.pdf): The Effect of Nutritional Stress Is Dependent on Social Context. Behavioral Ecology and Sociobiology, 74, 12.
+Hansen, M. J., Ligocki, I. Y., **Zillig, K. W.**, Steel, A. E., Todgham, A. E., & Fangue, N. A. (2020). [Risk-Taking and Locomotion in Foraging Threespine Sticklebacks (*Gasterosteus Aculeatus*): The Effect of Nutritional Stress Is Dependent on Social Context]({{https://kenzillig.github.io/}}/assets/pdf/Hansen et al._2020.pdf). Behavioral Ecology and Sociobiology, 74, 12.
 
 Siefert, A., **Zillig, K. W.**, Friesen, M.L., and Strauss, S.Y. 2019. [Mutualists stabilize coexistence of congeneric legumes]({{https://kenzillig.github.io/}}/assets/pdf/Siefert et al._2018.pdf). American Naturalist. 193:2 200-2012. 
 
