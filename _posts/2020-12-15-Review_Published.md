@@ -6,7 +6,7 @@ image: /assets/img/Ice Edge.jpg
 tags: [Publication,Chinook salmon,Dissertation]
 ---
 
-Exciting news! My first 'first-author' publication was just accepted at Reviews in Fish Biology and Fisheries. The manuscript, entitled *One Size Does Not Fit All: Variation in Thermal Eco-physiology among Pacific Salmonids*, summarizes the literature on the thermal biology of Chinook salmon across their life-stages, paying special attention to evidence for variation between populations. The second half of the paper then investigates causes of this variation, exploring the interacting roles of **fundamental** and **ecological** *thermal physiology*. We argue these two halves of thermal biology combine to produce a diverse range of thermal physiologies that vary among populations and offering opportunities for managers to conserve and protect salmonid populations. 
+Exciting news! My first 'first-author' publication was just accepted at Reviews in Fish Biology and Fisheries. The manuscript, entitled [*One Size Does Not Fit All: Variation in Thermal Eco-physiology among Pacific Salmonids*]({{https://kenzillig.github.io/}}/assets/pdf/Zillig_et_al-2021-Reviews_in_Fish_Biology_and_Fisheries.pdf), summarizes the literature on the thermal biology of Chinook salmon across their life-stages, paying special attention to evidence for variation between populations. The second half of the paper then investigates causes of this variation, exploring the interacting roles of **fundamental** and **ecological** *thermal physiology*. We argue these two halves of thermal biology combine to produce a diverse range of thermal physiologies that vary among populations and offering opportunities for managers to conserve and protect salmonid populations. 
 
 ![](/assets/img/figures/RFBF-D-20-00034_R1_thermal_physiology.jpg)
 
@@ -18,6 +18,5 @@ I am in the 6th year of my Ph.D. and this is my first first-author paper. I have
 
 This publication was one of the first projects I took on as a graduate student at UC Davis way back in 2015. It originally began as a literature review for the State Water Board of California, that initial version can be found [here]({{https://kenzillig.github.io/}}/assets/pdf/Waterboard_report_2018.pdf). Over dozens of drafts and years of adjustment it evolved into a more forward looking piece that I hope will motivate more ecosystem focused approaches towards thermal management of at-risk species. I am grateful to my three co-authors for sticking with it this whole time, and to the abundance of others who offered advice and edits over the past years.
 
-###### The manuscript is still being prepared, but when released the online version will be posted here.
 ###### Citation for this manuscript:
-######    Zillig, K. W., Lusardi, R. L., Moyle, P. B., Fangue, N. A. (*Accepted*). One-size does not fit all: Variation in Thermal Eco-physiology among Pacific Salmonids. Reviews in Fisheries and Fish Biology.
+######    Zillig, K. W., Lusardi, R. L., Moyle, P. B., Fangue, N. A. (2021). One-size does not fit all: Variation in Thermal Eco-physiology among Pacific Salmonids. Reviews in Fisheries and Fish Biology.
