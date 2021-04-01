@@ -8,7 +8,7 @@ subtitle: ""
 
 **Zillig, K. W.**, Lusardi, R. L., Moyle, P. B., Fangue, N. A. (2021). [One-size does not fit all: Variation in Thermal Eco-physiology among Pacific Salmonids]({{https://kenzillig.github.io/}}/assets/pdf/Zillig_et_al-2021-Reviews_in_Fish_Biology_and_Fisheries.pdf). Reviews in Fisheries and Fish Biology.
 
-Siefert, A., Friesen, M.L., **Zillig, K. W.**, Aguilar, J., and Strauss, S.Y. (2021). [An experimental test of stabilizing forces in the field niche]({{https://kenzillig.github.io/}}/assets/pdf/Siefert et al._2021.pdf). Ecology.
+Siefert, A., Friesen, M.L., **Zillig, K. W.**, Aguilar, J., and Strauss, S.Y. (2021). [An experimental test of stabilizing forces in the field niche]({{https://kenzillig.github.io/}}/assets/pdf/Siefert et al._2021.pdf). Ecology. 102(4):e03290. 10.1002/ecy.3290
 
 Hansen, M. J., Ligocki, I. Y., **Zillig, K. W.**, Steel, A. E., Todgham, A. E., & Fangue, N. A. (2020). [Risk-Taking and Locomotion in Foraging Threespine Sticklebacks (*Gasterosteus Aculeatus*): The Effect of Nutritional Stress Is Dependent on Social Context]({{https://kenzillig.github.io/}}/assets/pdf/Hansen et al._2020.pdf). Behavioral Ecology and Sociobiology, 74, 12.
 
