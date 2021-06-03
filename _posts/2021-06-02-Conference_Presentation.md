@@ -14,6 +14,6 @@ This is my second time attending and I was excited to expand upon the research I
 
 One perk of virtual conferences is that people from all over the world are able to attend. This is expanded even further if talks become available later...which in this case they are!
 
-For the next few months my talk, alongside all the other conference presentations are available [https://baydeltascienceconference.org/](here). My specific session can be found [https://player.vimeo.com/video/546626686](here) and runs from minute 2:15 to 22:00. 
+For the next few months my talk, alongside all the other conference presentations are available [here](https://baydeltascienceconference.org/). My specific session can be found [here](https://player.vimeo.com/video/546626686) and runs from minute 2:15 to 22:00. 
 
 I hope you enjoy it and if you have any questions on the work presented or other projects plesae don't hesitate to email me.
