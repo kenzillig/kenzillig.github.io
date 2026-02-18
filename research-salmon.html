@@ -1,0 +1,960 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chinook Salmon Thermal Physiology | Ken W. Zillig</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* ============================================================
+       PROJECT PAGE STYLES — research-salmon.html
+       These styles are specific to this page and won't affect
+       the rest of your site.
+    ============================================================ */
+
+    /* ---- PROJECT HERO ---- */
+    #project-hero {
+      position: relative;
+      height: 85vh;
+      min-height: 560px;
+      display: flex;
+      align-items: flex-end;
+      /*
+        HERO BACKGROUND IMAGE
+        Replace images/salmon-hero.jpg with a dramatic salmon photo.
+        Great options: underwater shot, fish in stream, spawning.
+      */
+      background-image: url('images/salmon-hero.jpg');
+      background-size: cover;
+      background-position: center 55%;
+      background-color: var(--deep);
+    }
+
+    #project-hero .hero-overlay {
+      background: linear-gradient(
+        to top,
+        rgba(9,21,32,0.95) 0%,
+        rgba(9,21,32,0.5) 50%,
+        rgba(9,21,32,0.15) 100%
+      );
+    }
+
+    .project-hero-content {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      padding: 4rem 2rem;
+      max-width: var(--max-width);
+      margin: 0 auto;
+    }
+
+    .project-breadcrumb {
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.45);
+      margin-bottom: 1rem;
+    }
+    .project-breadcrumb a { color: var(--water-light); }
+    .project-breadcrumb a:hover { color: white; }
+
+    .project-hero-title {
+      font-family: var(--font-display);
+      font-weight: 300;
+      font-size: clamp(2.2rem, 5vw, 4rem);
+      color: white;
+      line-height: 1.15;
+      max-width: 780px;
+      margin-bottom: 1.25rem;
+    }
+
+    .project-hero-meta {
+      display: flex;
+      gap: 2.5rem;
+      flex-wrap: wrap;
+    }
+    .project-meta-item {
+      display: flex;
+      flex-direction: column;
+    }
+    .project-meta-label {
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.4);
+    }
+    .project-meta-value {
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.85);
+      margin-top: 0.2rem;
+    }
+
+    /* ---- LEAD SUMMARY ---- */
+    #project-lead {
+      padding: 6rem 0;
+      background: var(--paper);
+    }
+
+    .lead-grid {
+      display: grid;
+      grid-template-columns: 1fr 2px 1fr;
+      gap: 4rem;
+      align-items: start;
+    }
+
+    .lead-divider {
+      background: var(--light-gray);
+      height: 100%;
+      min-height: 200px;
+    }
+
+    .lead-question {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: clamp(1.4rem, 2.5vw, 1.9rem);
+      font-weight: 300;
+      line-height: 1.4;
+      color: var(--ink);
+    }
+
+    .lead-summary p {
+      font-size: 1.02rem;
+      line-height: 1.85;
+      color: #2a3a48;
+      margin-bottom: 1.1rem;
+    }
+
+    /* ---- KEY FINDINGS STRIP ---- */
+    #key-findings {
+      background: var(--deep);
+      padding: 5rem 0;
+    }
+
+    .findings-label {
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--water-light);
+      margin-bottom: 2.5rem;
+      text-align: center;
+    }
+
+    .findings-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+
+    .finding-item {
+      padding: 2.5rem 2rem;
+      background: rgba(9,21,32,0.8);
+    }
+
+    .finding-number {
+      font-family: var(--font-display);
+      font-size: 3rem;
+      font-weight: 300;
+      color: var(--water-light);
+      line-height: 1;
+      margin-bottom: 0.75rem;
+    }
+
+    .finding-title {
+      font-size: 1rem;
+      font-weight: 500;
+      color: white;
+      margin-bottom: 0.6rem;
+      line-height: 1.3;
+    }
+
+    .finding-desc {
+      font-size: 0.88rem;
+      color: rgba(255,255,255,0.5);
+      line-height: 1.7;
+    }
+
+    /* ---- STUDY SECTIONS ---- */
+    .study-section {
+      padding: 6rem 0;
+      border-bottom: 1px solid var(--light-gray);
+    }
+    .study-section:nth-child(even) { background: var(--sand); }
+
+    .study-header {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 2rem;
+      align-items: baseline;
+      margin-bottom: 3rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid var(--light-gray);
+    }
+
+    .study-number {
+      font-family: var(--font-display);
+      font-size: 4rem;
+      font-weight: 300;
+      color: var(--light-gray);
+      line-height: 1;
+    }
+
+    .study-header-text {}
+    .study-tag {
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--water-mid);
+      font-weight: 500;
+      margin-bottom: 0.4rem;
+      display: block;
+    }
+    .study-title {
+      font-family: var(--font-display);
+      font-size: clamp(1.4rem, 2.5vw, 2rem);
+      font-weight: 300;
+      line-height: 1.25;
+      color: var(--ink);
+    }
+
+    .study-body {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: start;
+    }
+
+    .study-body.full-width {
+      grid-template-columns: 1fr;
+    }
+
+    .study-text h3 {
+      font-family: var(--font-body);
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--mid-gray);
+      margin-bottom: 0.75rem;
+      margin-top: 2rem;
+    }
+    .study-text h3:first-child { margin-top: 0; }
+
+    .study-text p {
+      font-size: 0.98rem;
+      line-height: 1.85;
+      color: #2a3a48;
+      margin-bottom: 1rem;
+    }
+
+    /* Figure containers — drop your images/figures in here */
+    .figure-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .figure-item {
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: var(--light-gray);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    }
+
+    .figure-item img {
+      width: 100%;
+      display: block;
+      /* aspect-ratio: adjust per figure as needed */
+    }
+
+    /*
+      FIGURE PLACEHOLDER
+      Shown when no image is present. Replace by adding an <img>
+      tag inside .figure-item, or by placing your figure in the
+      images/ folder with the filename shown.
+    */
+    .figure-placeholder {
+      width: 100%;
+      aspect-ratio: 4/3;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #e8eef2 0%, #d8e4ec 100%);
+      color: var(--mid-gray);
+      gap: 0.5rem;
+      padding: 2rem;
+      text-align: center;
+    }
+    .figure-placeholder .fig-icon {
+      font-size: 2rem;
+      opacity: 0.3;
+    }
+    .figure-placeholder .fig-label {
+      font-size: 0.78rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      opacity: 0.6;
+    }
+    .figure-placeholder .fig-hint {
+      font-size: 0.75rem;
+      font-style: italic;
+      opacity: 0.45;
+      max-width: 220px;
+    }
+
+    .figure-caption {
+      padding: 0.9rem 1.1rem;
+      background: white;
+      font-size: 0.82rem;
+      color: var(--mid-gray);
+      line-height: 1.5;
+      border-top: 1px solid var(--light-gray);
+    }
+    .figure-caption strong {
+      color: var(--ink);
+      font-weight: 500;
+    }
+
+    /* ---- PUBLICATIONS STRIP ---- */
+    #project-publications {
+      padding: 6rem 0;
+      background: var(--sand);
+    }
+
+    .project-pub-item {
+      display: grid;
+      grid-template-columns: 70px 1fr auto;
+      gap: 2rem;
+      padding: 2rem 0;
+      border-bottom: 1px solid var(--light-gray);
+      align-items: center;
+    }
+    .project-pub-item:first-child { border-top: 1px solid var(--light-gray); }
+
+    .project-pub-year {
+      font-family: var(--font-display);
+      font-size: 1.4rem;
+      color: var(--water-light);
+      font-weight: 300;
+    }
+
+    .project-pub-content {}
+    .project-pub-title {
+      font-size: 0.98rem;
+      color: var(--ink);
+      line-height: 1.5;
+      margin-bottom: 0.25rem;
+    }
+    .project-pub-journal {
+      font-size: 0.85rem;
+      color: var(--water-mid);
+      font-style: italic;
+    }
+
+    .project-pub-download {
+      flex-shrink: 0;
+    }
+
+    /* ---- SHINY APP SECTION ---- */
+    #project-shiny {
+      padding: 6rem 0;
+      background: var(--deep);
+    }
+
+    .shiny-intro {
+      max-width: 640px;
+      margin: 0 auto 3rem;
+      text-align: center;
+    }
+    .shiny-intro .section-title { color: white; }
+    .shiny-intro p {
+      color: rgba(255,255,255,0.55);
+      font-size: 1rem;
+      line-height: 1.75;
+      font-family: var(--font-display);
+      font-style: italic;
+    }
+
+    /* ---- CONCLUSIONS ---- */
+    #project-conclusions {
+      padding: 7rem 0;
+      background: var(--paper);
+    }
+
+    .conclusions-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: start;
+    }
+
+    .conclusions-lead {
+      font-family: var(--font-display);
+      font-size: clamp(1.5rem, 2.5vw, 2rem);
+      font-weight: 300;
+      font-style: italic;
+      line-height: 1.4;
+      color: var(--ink);
+      margin-bottom: 2rem;
+    }
+
+    .conclusions-lead span {
+      color: var(--water-mid);
+    }
+
+    .takeaway-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .takeaway-item {
+      display: grid;
+      grid-template-columns: 32px 1fr;
+      gap: 1rem;
+      align-items: start;
+    }
+
+    .takeaway-num {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: var(--water);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      font-weight: 500;
+      flex-shrink: 0;
+      margin-top: 0.1rem;
+    }
+
+    .takeaway-text {
+      font-size: 0.98rem;
+      color: #2a3a48;
+      line-height: 1.75;
+    }
+
+    .takeaway-text strong {
+      color: var(--ink);
+      display: block;
+      margin-bottom: 0.2rem;
+    }
+
+    /* ---- NEXT PROJECT LINK ---- */
+    #next-project {
+      background: var(--deep);
+      padding: 4rem 0;
+      text-align: center;
+    }
+    .next-project-label {
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.35);
+      margin-bottom: 1rem;
+    }
+    .next-project-title {
+      font-family: var(--font-display);
+      font-size: 1.8rem;
+      font-weight: 300;
+      color: white;
+      margin-bottom: 1.5rem;
+    }
+
+    /* ---- RESPONSIVE ---- */
+    @media (max-width: 900px) {
+      .lead-grid { grid-template-columns: 1fr; }
+      .lead-divider { display: none; }
+      .findings-grid { grid-template-columns: 1fr; }
+      .study-body { grid-template-columns: 1fr; }
+      .conclusions-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .project-pub-item { grid-template-columns: 60px 1fr; }
+      .project-pub-download { grid-column: 2; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">Ken W. Zillig</a>
+      <button class="nav-toggle" aria-label="Toggle menu">&#9776;</button>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="research.html" class="active">Research</a></li>
+        <li><a href="publications.html">Publications</a></li>
+        <li><a href="cv.html">CV</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ============================================================
+       PROJECT HERO
+       Replace images/salmon-hero.jpg with your best salmon photo.
+       A dramatic underwater or spawning shot works beautifully here.
+  ============================================================ -->
+  <section id="project-hero">
+    <div class="hero-overlay"></div>
+    <div class="project-hero-content">
+      <p class="project-breadcrumb">
+        <a href="research.html">← Research</a> &nbsp;/&nbsp; Chinook Salmon
+      </p>
+      <h1 class="project-hero-title">Interpopulation Variation in the Thermal Physiology of Chinook Salmon</h1>
+      <div class="project-hero-meta">
+        <div class="project-meta-item">
+          <span class="project-meta-label">Institution</span>
+          <span class="project-meta-value">University of California, Davis</span>
+        </div>
+        <div class="project-meta-item">
+          <span class="project-meta-label">Advisor</span>
+          <span class="project-meta-value">Dr. Nann Fangue</span>
+        </div>
+        <div class="project-meta-item">
+          <span class="project-meta-label">Period</span>
+          <span class="project-meta-value">2015 – 2022</span>
+        </div>
+        <div class="project-meta-item">
+          <span class="project-meta-label">Funding</span>
+          <span class="project-meta-value">EPA · CDFW · Yuba Water Agency · ~$444K</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       LEAD SUMMARY
+       The core question and plain-language overview.
+       Edit the text in the <p> tags below.
+  ============================================================ -->
+  <section id="project-lead">
+    <div class="container">
+      <div class="lead-grid">
+        <div>
+          <p class="lead-question">Are California's Chinook salmon populations physiologically distinct — and does that matter for their survival under a warming climate?</p>
+        </div>
+        <div class="lead-divider"></div>
+        <div class="lead-summary">
+          <p>Chinook salmon (<em>Oncorhynchus tshawytscha</em>) are one of California's most ecologically and culturally important species — and one of the most imperilled by climate change. As rivers warm, questions about which populations can tolerate higher temperatures, and why, have become urgent management priorities.</p>
+          <p>My dissertation research tackled this question at scale, designing and conducting some of the largest metabolic performance experiments ever performed on teleost fishes. Working across eight hatchery populations spanning California's diverse river systems, I measured aerobic scope, thermal performance curves, and critical thermal maxima to ask whether populations differ physiologically — and whether those differences reflect local adaptation to historical thermal environments.</p>
+          <p>The answer was a clear yes. Populations differ substantially in how they perform across a temperature gradient, in ways that are consistent with adaptation to local conditions. These findings have direct implications for how we prioritize conservation and manage water for salmon under ongoing climate warming.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       KEY FINDINGS STRIP
+       Three headline numbers or findings from the whole project.
+       Edit the text inside each .finding-item below.
+  ============================================================ -->
+  <section id="key-findings">
+    <div class="container">
+      <p class="findings-label">Key Findings</p>
+      <div class="findings-grid">
+
+        <div class="finding-item">
+          <div class="finding-number">8</div>
+          <p class="finding-title">Populations Tested</p>
+          <p class="finding-desc">Hatchery populations from across California's Central Valley, representing winter, spring, fall, and late-fall seasonal runs with distinct thermal histories.</p>
+        </div>
+
+        <div class="finding-item">
+          <!-- 
+            TO UPDATE: Change the number and text to reflect
+            your most striking quantitative result.
+          -->
+          <div class="finding-number">~4°C</div>
+          <p class="finding-title">Range in Optimal Temperature</p>
+          <p class="finding-desc">Populations differed by approximately 4°C in their optimal temperature for aerobic performance — a biologically and ecologically meaningful range with real conservation implications.</p>
+        </div>
+
+        <div class="finding-item">
+          <div class="finding-number">4</div>
+          <p class="finding-title">Published Papers</p>
+          <p class="finding-desc">Including a comprehensive review, two empirical studies in Conservation Physiology and CJFAS, and a Frontiers in Fish Biology paper on acute thermal tolerance trade-offs.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================================
+       STUDY SECTIONS
+       One section per major study / paper. 
+       
+       TO ADD A FIGURE:
+       1. Upload your figure image to the images/ folder in your repo
+       2. Inside the .figure-item div, replace the .figure-placeholder
+          div with: <img src="images/YOUR-FIGURE.jpg" alt="Description">
+       3. Update the .figure-caption text
+       
+       TO ADD MORE STUDY SECTIONS:
+       Copy one entire <section class="study-section"> block and paste
+       it below. Update the number, title, and text.
+  ================================================================ -->
+
+  <!-- STUDY 1: Review Paper -->
+  <section class="study-section">
+    <div class="container">
+      <div class="study-header">
+        <span class="study-number">01</span>
+        <div class="study-header-text">
+          <span class="study-tag">Review · 2021 · Reviews in Fish Biology and Fisheries</span>
+          <h2 class="study-title">One Size Does Not Fit All: Variation in Thermal Eco-physiology Among Pacific Salmonids</h2>
+        </div>
+      </div>
+
+      <div class="study-body">
+        <div class="study-text">
+          <h3>Background & Motivation</h3>
+          <p>Before embarking on empirical work, it was essential to understand what was already known about thermal variation in salmonid physiology. This review synthesized the existing literature on thermal performance across Pacific salmon species and populations, with a focus on whether and how physiology varies with thermal environment.</p>
+
+          <h3>Approach</h3>
+          <p>We reviewed studies measuring aerobic scope, critical thermal maxima, gill oxygen uptake, and other performance metrics across multiple salmonid species and populations, synthesizing findings across California river systems and the broader Pacific coast.</p>
+
+          <h3>Key Results</h3>
+          <p>The review revealed substantial — and systematically underappreciated — variation in thermal physiology among and within salmonid species. Critically, this variation was not random: it tracked historical thermal environments in ways consistent with local adaptation. The review identified major gaps in the literature, particularly around intraspecific (within-species, among-population) variation, and laid the conceptual groundwork for the empirical studies that followed.</p>
+          <p>This paper has since become a key reference for California salmon management and for researchers designing population-level physiological assessments.</p>
+        </div>
+
+        <div class="figure-wrap">
+          <div class="figure-item">
+            <!--
+              ADD YOUR FIGURE HERE
+              Upload a map or conceptual figure to images/ and replace
+              the .figure-placeholder div with an <img> tag.
+              Suggested: a map of California river systems showing
+              study populations, or a conceptual diagram of thermal
+              performance curves.
+            -->
+            <div class="figure-placeholder">
+              <div class="fig-icon">🗺</div>
+              <div class="fig-label">Figure 1</div>
+              <div class="fig-hint">Upload images/salmon-fig-review-map.jpg — e.g. map of California populations included in the review</div>
+            </div>
+            <div class="figure-caption"><strong>Figure 1.</strong> Add your caption here describing what the figure shows.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STUDY 2: Intraspecific variation / local adaptation -->
+  <section class="study-section">
+    <div class="container">
+      <div class="study-header">
+        <span class="study-number">02</span>
+        <div class="study-header-text">
+          <span class="study-tag">Empirical Study · 2023 · Conservation Physiology</span>
+          <h2 class="study-title">Intraspecific Variation Among Chinook Salmon Populations Indicates Physiological Adaptation to Local Environmental Conditions</h2>
+        </div>
+      </div>
+
+      <div class="study-body">
+        <div class="study-text">
+          <h3>Study Design</h3>
+          <p>Eight hatchery populations of juvenile Chinook salmon were acclimated to a common set of temperatures and measured for aerobic scope — the difference between maximum and resting metabolic rate — across a thermal gradient spanning their ecologically relevant temperature range.</p>
+          <p>This is one of the largest metabolic performance experiments conducted on any teleost fish, involving hundreds of respirometry trials across populations and temperatures. All fish were treated identically in terms of acclimation, feeding, and measurement protocols, ensuring that observed differences reflect true physiological divergence rather than environmental conditioning.</p>
+
+          <h3>Results</h3>
+          <p>Populations showed clear and statistically significant differences in their thermal performance curves. Populations from historically warmer river systems tended to have higher optimal temperatures for aerobic performance and maintained aerobic scope at higher temperatures than populations from cooler systems. This pattern is consistent with local thermal adaptation — fish are physiologically tuned to the temperatures they evolved in.</p>
+          <p>Importantly, no single population performed best across all temperatures, suggesting real trade-offs in thermal specialization.</p>
+        </div>
+
+        <div class="figure-wrap">
+          <div class="figure-item">
+            <!--
+              Suggested figure: thermal performance curves (aerobic scope
+              vs temperature) for multiple populations overlaid.
+              Upload as images/salmon-fig-tpc.jpg
+            -->
+            <div class="figure-placeholder">
+              <div class="fig-icon">📈</div>
+              <div class="fig-label">Figure 2</div>
+              <div class="fig-hint">Upload images/salmon-fig-tpc.jpg — e.g. thermal performance curves across populations</div>
+            </div>
+            <div class="figure-caption"><strong>Figure 2.</strong> Add your caption here.</div>
+          </div>
+
+          <div class="figure-item">
+            <!--
+              Suggested figure: map of collection sites with thermal
+              data overlaid, or a boxplot of optimal temperatures by pop.
+              Upload as images/salmon-fig-map.jpg
+            -->
+            <div class="figure-placeholder">
+              <div class="fig-icon">🗺</div>
+              <div class="fig-label">Figure 3</div>
+              <div class="fig-hint">Upload images/salmon-fig-map.jpg — e.g. collection site map with mean summer temperatures</div>
+            </div>
+            <div class="figure-caption"><strong>Figure 3.</strong> Add your caption here.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STUDY 3: Seasonal runs -->
+  <section class="study-section">
+    <div class="container">
+      <div class="study-header">
+        <span class="study-number">03</span>
+        <div class="study-header-text">
+          <span class="study-tag">Empirical Study · 2023 · Canadian Journal of Fisheries and Aquatic Sciences</span>
+          <h2 class="study-title">Interpopulation Variation in Thermal Physiology Among Seasonal Runs of Chinook Salmon</h2>
+        </div>
+      </div>
+
+      <div class="study-body">
+        <div class="study-text">
+          <h3>Study Design</h3>
+          <p>California's Chinook salmon are divided into four seasonal "runs" — winter, spring, fall, and late-fall — that differ in their timing of ocean entry, river migration, and spawning. These runs encounter very different temperature regimes during their freshwater residency, providing a natural experiment in thermal adaptation.</p>
+          <p>This study compared thermal physiology among populations representing each seasonal run, using the same aerobic scope framework as Study 02 but with a focus on whether run-timing is associated with distinct physiological profiles.</p>
+
+          <h3>Results</h3>
+          <p>Seasonal runs did show physiological differences consistent with the temperatures they encounter during their freshwater life stages. Winter-run Chinook — which migrate and rear in the coldest conditions and are listed as Endangered — showed the lowest thermal optima and the greatest sensitivity to warming temperatures, highlighting their particular vulnerability to climate change.</p>
+          <p>These findings provide a physiological basis for understanding why different runs respond differently to thermal stress, and why a one-size-fits-all thermal threshold for water management is insufficient.</p>
+        </div>
+
+        <div class="figure-wrap">
+          <div class="figure-item">
+            <!--
+              Suggested figure: comparison of thermal optima or Topt
+              across seasonal runs, perhaps with their historical
+              temperature regimes shown alongside.
+              Upload as images/salmon-fig-runs.jpg
+            -->
+            <div class="figure-placeholder">
+              <div class="fig-icon">📊</div>
+              <div class="fig-label">Figure 4</div>
+              <div class="fig-hint">Upload images/salmon-fig-runs.jpg — e.g. comparison across seasonal runs</div>
+            </div>
+            <div class="figure-caption"><strong>Figure 4.</strong> Add your caption here.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STUDY 4: Acute thermal tolerance -->
+  <section class="study-section">
+    <div class="container">
+      <div class="study-header">
+        <span class="study-number">04</span>
+        <div class="study-header-text">
+          <span class="study-tag">Empirical Study · 2024 · Frontiers in Fish Biology</span>
+          <h2 class="study-title">Patterns of Interpopulation Variation and Physiological Trade-offs in the Acute Thermal Tolerance of Juvenile Chinook Salmon</h2>
+        </div>
+      </div>
+
+      <div class="study-body">
+        <div class="study-text">
+          <h3>Study Design</h3>
+          <p>This study moved beyond aerobic scope to examine acute thermal tolerance — how much heat fish can withstand over a short period before losing equilibrium. Critical thermal maximum (CTmax) was measured across populations using standardized ramping protocols. Critically, the same fish used for aerobic scope measurements were also assessed for CTmax, allowing direct examination of the relationship between these two performance traits.</p>
+
+          <h3>Results & Trade-offs</h3>
+          <p>As with aerobic scope, populations differed significantly in CTmax, and these differences tracked historical thermal environments. However, the study also revealed an important physiological trade-off: populations with higher CTmax did not necessarily have better aerobic performance at high temperatures, and vice versa. These traits appear to be at least partially independent, reflecting distinct underlying mechanisms.</p>
+          <p>This has important implications for conservation: a population that can survive a brief heat spike may still suffer physiological costs that impair its long-term growth and reproduction under chronic warming. Management strategies that rely solely on lethal temperature thresholds may underestimate risk.</p>
+        </div>
+
+        <div class="figure-wrap">
+          <div class="figure-item">
+            <!--
+              Suggested figure: CTmax values by population with
+              historical Tmax overlay, or a scatterplot showing
+              the CTmax vs Topt relationship.
+              Upload as images/salmon-fig-ctmax.jpg
+            -->
+            <div class="figure-placeholder">
+              <div class="fig-icon">🌡</div>
+              <div class="fig-label">Figure 5</div>
+              <div class="fig-hint">Upload images/salmon-fig-ctmax.jpg — e.g. CTmax by population or CTmax vs Topt scatterplot</div>
+            </div>
+            <div class="figure-caption"><strong>Figure 5.</strong> Add your caption here.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       PUBLICATIONS
+       The four papers associated with this project.
+       To update a citation or add a DOI link, edit below.
+  ============================================================ -->
+  <section id="project-publications">
+    <div class="container">
+      <h2 class="section-title">Project Publications</h2>
+      <p class="section-sub" style="margin-left:0; text-align:left; max-width:100%">Peer-reviewed papers arising from this research program</p>
+
+      <div class="project-pub-item">
+        <span class="project-pub-year">2024</span>
+        <div class="project-pub-content">
+          <p class="project-pub-title"><strong>Zillig, K. W.</strong>, Bell, H. N., FitzGerald A.M., Fangue, N.A. Patterns of Interpopulation Variation and Physiological Trade-offs in the Acute Thermal Tolerance of Juvenile Chinook Salmon (<em>Oncorhynchus tshawytscha</em>).</p>
+          <p class="project-pub-journal">Frontiers in Fish Biology</p>
+        </div>
+        <div class="project-pub-download">
+          <a href="pdfs/Zillig et al. - 2025 - Patterns of interpopulation variation and physiolo.pdf" class="btn-outline" target="_blank">PDF</a>
+        </div>
+      </div>
+
+      <div class="project-pub-item">
+        <span class="project-pub-year">2023</span>
+        <div class="project-pub-content">
+          <p class="project-pub-title"><strong>Zillig, K. W.</strong>, FitzGerald, A. M., Lusardi, R. L., Cocherell D. E., Fangue, N. A. Intraspecific variation among Chinook salmon populations indicates physiological adaptation to local environmental conditions.</p>
+          <p class="project-pub-journal">Conservation Physiology, 11(1)</p>
+        </div>
+        <div class="project-pub-download">
+          <a href="pdfs/Zillig et al. - 2023 - Intraspecific variation among Chinook Salmon popul.pdf" class="btn-outline" target="_blank">PDF</a>
+        </div>
+      </div>
+
+      <div class="project-pub-item">
+        <span class="project-pub-year">2023</span>
+        <div class="project-pub-content">
+          <p class="project-pub-title"><strong>Zillig, K. W.</strong>, Lusardi, R. L., Cocherell D. E., Fangue, N. A. Interpopulation variation in thermal physiology among seasonal runs of Chinook salmon.</p>
+          <p class="project-pub-journal">Canadian Journal of Fisheries and Aquatic Sciences</p>
+        </div>
+        <div class="project-pub-download">
+          <a href="pdfs/Zillig_et_al._2022_CJFAS.pdf" class="btn-outline" target="_blank">PDF</a>
+        </div>
+      </div>
+
+      <div class="project-pub-item">
+        <span class="project-pub-year">2021</span>
+        <div class="project-pub-content">
+          <p class="project-pub-title"><strong>Zillig, K.W.</strong>, Lusardi, R.A., Moyle, P., Fangue, N.A. One-size does not fit all: variation in thermal eco-physiology among Pacific salmonids.</p>
+          <p class="project-pub-journal">Reviews in Fish Biology and Fisheries, 31(1)</p>
+        </div>
+        <div class="project-pub-download">
+          <a href="pdfs/Zillig_et_al-2021-Reviews_in_Fish_Biology_and_Fisheries.pdf" class="btn-outline" target="_blank">PDF</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SHINY APP SECTION
+       When your app is ready on ShinyApps.io:
+       1. Delete the entire .shiny-placeholder div
+       2. Replace it with:
+          <iframe src="https://YOUR-USERNAME.shinyapps.io/YOUR-APP/"></iframe>
+       3. Adjust the height in .shiny-frame-wrap if needed (css/style.css)
+       
+       Good apps for this project might include:
+       - Interactive thermal performance curve explorer
+       - Population comparison tool
+       - Map of populations with physiological data overlay
+  ============================================================ -->
+  <section id="project-shiny">
+    <div class="container">
+      <div class="shiny-intro">
+        <h2 class="section-title">Explore the Data</h2>
+        <p>An interactive tool for exploring thermal performance curves across Chinook salmon populations — compare aerobic scope, optimal temperatures, and CTmax across river systems.</p>
+      </div>
+      <div class="shiny-frame-wrap">
+        <div class="shiny-placeholder">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" opacity="0.4"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+          <p>Interactive data explorer coming soon</p>
+          <p style="font-size:0.8rem; opacity:0.6">Replace this with your ShinyApps.io iframe when ready</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       CONCLUSIONS
+       Edit the lead italic sentence and each takeaway below.
+       To add a takeaway: copy a .takeaway-item div and paste it,
+       updating the number, title, and text.
+  ============================================================ -->
+  <section id="project-conclusions">
+    <div class="container">
+      <h2 class="section-title">Main Takeaways</h2>
+      <div class="conclusions-grid">
+
+        <div>
+          <p class="conclusions-lead">California's Chinook salmon are not one fish — they are <span>many physiologically distinct populations</span> that cannot be managed as though they were interchangeable.</p>
+          <p style="font-size:0.95rem; color:var(--mid-gray); line-height:1.8; margin-top:1.5rem">This body of work shifts the conversation in salmon conservation from species-level thermal thresholds toward population-specific physiological profiles — a more accurate and ultimately more protective framework for management under climate change.</p>
+        </div>
+
+        <div class="takeaway-list">
+
+          <div class="takeaway-item">
+            <div class="takeaway-num">1</div>
+            <div class="takeaway-text">
+              <strong>Thermal physiology varies meaningfully among populations</strong>
+              Populations from historically warmer rivers tolerate and perform better at higher temperatures than those from cooler systems — a pattern consistent with local thermal adaptation rather than random variation.
+            </div>
+          </div>
+
+          <div class="takeaway-item">
+            <div class="takeaway-num">2</div>
+            <div class="takeaway-text">
+              <strong>Seasonal runs are physiologically distinct</strong>
+              Winter-run Chinook — already Endangered — show the lowest thermal optima and greatest sensitivity to warming, making them disproportionately vulnerable to climate change and extreme heat events.
+            </div>
+          </div>
+
+          <div class="takeaway-item">
+            <div class="takeaway-num">3</div>
+            <div class="takeaway-text">
+              <strong>Aerobic scope and acute tolerance are independent traits</strong>
+              A population's ability to survive a brief heat spike does not predict how it performs under sustained warming. Both metrics are needed for a complete picture of thermal vulnerability.
+            </div>
+          </div>
+
+          <div class="takeaway-item">
+            <div class="takeaway-num">4</div>
+            <div class="takeaway-text">
+              <strong>One-size-fits-all temperature thresholds are insufficient</strong>
+              Current water management frameworks often apply single species-wide thermal limits. This work provides the empirical basis for population-specific physiological criteria in conservation planning.
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       NEXT PROJECT LINK
+       Update the href and title to point to your next project page
+       when you build it.
+  ============================================================ -->
+  <section id="next-project">
+    <div class="container">
+      <p class="next-project-label">Continue Exploring</p>
+      <p class="next-project-title">Oxythermal Tolerance of Great Lakes Coregonids</p>
+      <a href="research.html" class="btn-secondary">← Back to All Research</a>
+    </div>
+  </section>
+
+  <footer id="footer">
+    <div class="container footer-inner">
+      <div class="footer-left">
+        <p class="footer-name">Ken W. Zillig</p>
+        <p class="footer-role">Fish Ecophysiologist · University of Minnesota</p>
+      </div>
+      <div class="footer-links">
+        <a href="https://github.com/kenzillig" target="_blank">GitHub</a>
+        <a href="https://twitter.com/kzecofishiology" target="_blank">Twitter / X</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <p class="footer-copy">&copy; 2025 Ken W. Zillig</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
