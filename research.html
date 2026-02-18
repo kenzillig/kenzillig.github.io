@@ -7,6 +7,16 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
+  <style>
+    .project-title-link {
+      color: inherit;
+      text-decoration: none;
+      border-bottom: 1.5px solid var(--water-light);
+      padding-bottom: 1px;
+      transition: color 0.2s;
+    }
+    .project-title-link:hover { color: var(--water-mid); }
+  </style>
 </head>
 <body>
 
@@ -65,7 +75,7 @@
         <h2>Oxythermal Tolerance of Laurentian Coregonid Fishes</h2>
         <p>Cisco (<em>Coregonus artedi</em>) and lake whitefish (<em>Coregonus clupeaformis</em>) are ecologically and economically important coldwater species throughout the Great Lakes basin. As climate change drives warmer water temperatures and more frequent hypoxic events, understanding the oxythermal limits of these species — and how those limits vary across ecotypes — is critical for predicting population responses and guiding management.</p>
         <p>This project investigates differences in oxythermal tolerance among embryos and larvae of multiple coregonid species and ecotypes. By characterizing the physiological performance curves of early life stages, we aim to build physiologically grounded abundance models that can forecast how populations will respond to changing thermal regimes.</p>
-        <p class="funding-note">Funded by the University of Minnesota ($231,771) · PI: Dr. Gretchen Hansen · Role: Lead Researcher · Photo: D Link</p>
+        <p class="funding-note">Funded by the University of Minnesota ($231,771) · PI: Dr. Gretchen Hansen · Role: Lead Researcher</p>
       </div>
     </div>
   </section>
@@ -73,16 +83,19 @@
   <!-- PROJECT 2: Chinook Salmon Thermal Physiology -->
   <section class="research-section" id="salmonids">
     <div class="container research-section-inner">
-      <div class="research-section-img">
+      <!-- Clicking the image goes to the full project page -->
+      <a href="research-salmon.html" class="research-section-img" style="display:block; cursor:pointer;">
         <img src="images/research-salmon.JPG" alt="Chinook Salmon Research" onerror="this.style.display='none'">
-      </div>
+      </a>
       <div class="research-section-text">
         <span class="research-section-tag">Dissertation Work · UC Davis</span>
-        <h2>Interpopulation Variation in Thermal Physiology of Chinook Salmon</h2>
+        <!-- Clicking the title also goes to the full project page -->
+        <h2><a href="research-salmon.html" class="project-title-link">Interpopulation Variation in Thermal Physiology of Chinook Salmon</a></h2>
         <p>Chinook salmon (<em>Oncorhynchus tshawytscha</em>) exhibit remarkable diversity across California river systems — different seasonal runs, different thermal histories, and increasingly different fates under climate change. My dissertation addressed a fundamental question: are these populations physiologically distinct in ways that reflect local adaptation to their thermal environments?</p>
         <p>I designed and conducted one of the largest metabolic experiments ever performed on teleost fishes, measuring aerobic scope, thermal performance curves, and critical thermal maxima across eight hatchery populations spanning the state. This work demonstrated clear interpopulation variation in thermal physiology and provided evidence for local adaptation — with significant implications for how we manage salmon under climate warming.</p>
         <p>This work yielded three published papers, a book chapter, and an invited talk at NOAA's Groundfish Seminar Series.</p>
-        <p class="funding-note">Funded by EPA, CDFW, and Yuba Water Agency (~$444,000) · Advisor: Dr. Nann Fangue · Photo: K W Zillig</p>
+        <p class="funding-note">Funded by EPA, CDFW, and Yuba Water Agency (~$444,000) · Advisor: Dr. Nann Fangue</p>
+        <a href="research-salmon.html" class="btn-outline" style="margin-top:1.25rem; display:inline-block;">Full Project Page &rarr;</a>
       </div>
     </div>
   </section>
@@ -130,7 +143,7 @@
         <h2>Effects of Feed Restriction on Thermal Performance</h2>
         <p>In drought years, reduced river flows in California's Central Valley concentrate juvenile Chinook salmon in warmer, food-limited conditions simultaneously. How does nutritional stress interact with thermal stress to affect salmon physiology and survival? This is a critical and understudied question for conservation management.</p>
         <p>This three-year study combines a 14-week laboratory experiment with an 8-week field study to quantify how feed rationing affects metabolic thermal performance in Chinook salmon. The work will inform bioenergetic models used by water managers to predict salmon survival under drought operations. Two manuscripts are in progress.</p>
-        <p class="funding-note">Funded by USBR & California Water Board ($749,981) · Advisor: Dr. Nann Fangue · Role: Lead Researcher · Photo: C J Cooper</p>
+        <p class="funding-note">Funded by USBR & California Water Board ($749,981) · Advisor: Dr. Nann Fangue · Role: Lead Researcher</p>
       </div>
     </div>
   </section>
@@ -146,7 +159,7 @@
         <h2>Laser-Timed Burst Swimming Tunnel</h2>
         <p>Burst swimming performance — the capacity for short, explosive anaerobic locomotion — is critical for predator escape and prey capture in fish. Yet methods for measuring it precisely and at scale have been lacking. I designed, built, and tested a Raspberry Pi-powered laser-timed burst swimming tunnel that allows rapid, precise quantification of multiple anaerobic performance traits across species and temperatures.</p>
         <p>Presented at the International Congress on the Biology of Fishes (2022) and the Society for Experimental Biology (2021, 2nd Prize Poster), this system opens new avenues for comparative ecophysiology. The accompanying methods manuscript is currently in review.</p>
-        <p class="funding-note">Advisor: Dr. Nann Fangue · Photo: K W Zillig</p>
+        <p class="funding-note">Advisor: Dr. Nann Fangue · Manuscript in review</p>
       </div>
     </div>
   </section>

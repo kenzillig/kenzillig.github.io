@@ -928,17 +928,233 @@
   </section>
 
   <!-- ============================================================
-       NEXT PROJECT LINK
-       Update the href and title to point to your next project page
-       when you build it.
+       SPINOFF PROJECTS
+       These sections grew directly out of the Chinook salmon work.
+       
+       TO ACTIVATE A CARD when the project page is built:
+       - Replace href="#" with href="research-PROJECTNAME.html"
+       - Remove the "Coming Soon" badge
+       - Update the description if needed
+       
+       TO ADD ANOTHER SPINOFF:
+       Copy one .spinoff-card div and paste it inside .spinoffs-grid.
   ============================================================ -->
-  <section id="next-project">
+  <section id="spinoff-projects">
     <div class="container">
-      <p class="next-project-label">Continue Exploring</p>
-      <p class="next-project-title">Oxythermal Tolerance of Great Lakes Coregonids</p>
-      <a href="research.html" class="btn-secondary">← Back to All Research</a>
+
+      <div class="spinoff-header">
+        <div class="spinoff-thread">
+          <div class="spinoff-thread-line"></div>
+          <span class="spinoff-thread-label">This work raised a new question</span>
+          <div class="spinoff-thread-line"></div>
+        </div>
+        <h2 class="spinoff-title">If salmon are so thermally robust in the lab,<br><em>why are they struggling in the wild?</em></h2>
+        <p class="spinoff-subtitle">Most populations — winter-run excepted — showed surprising thermal tolerance under controlled conditions. This gap between laboratory performance and field outcomes drove a new research focus: the ecological constraints that make high temperatures lethal even when the physiology says they shouldn't be.</p>
+      </div>
+
+      <div class="spinoffs-grid">
+
+        <!-- SPINOFF 1: Predation & thermal performance -->
+        <a href="#" class="spinoff-card spinoff-coming-soon">
+          <div class="spinoff-card-tag">Ecological Thermal Physiology <span class="spinoff-badge">Coming Soon</span></div>
+          <h3 class="spinoff-card-title">Thermal Overlap with Predators</h3>
+          <p class="spinoff-card-desc">At temperatures that are sublethal but physiologically costly, are salmon more vulnerable to predation — and do thermally advantaged predators exploit this window? This project examines how temperature-dependent performance mismatches between prey and predator shape realized mortality in the wild.</p>
+          <span class="spinoff-arrow">&rarr;</span>
+        </a>
+
+        <!-- SPINOFF 2: Food restriction & thermal performance -->
+        <a href="research.html#rationing" class="spinoff-card">
+          <div class="spinoff-card-tag">Bioenergetics</div>
+          <h3 class="spinoff-card-title">Feed Restriction & Thermal Performance</h3>
+          <p class="spinoff-card-desc">In drought years, food limitation and thermal stress co-occur in California rivers. If salmon are energetically constrained, does their thermal tolerance collapse? This multi-year study tests how nutritional stress interacts with temperature to reshape physiological performance — and what it means for bioenergetic models used in water management.</p>
+          <span class="spinoff-arrow">&rarr;</span>
+        </a>
+
+        <!-- SPINOFF 3: Ecological thermal physiology / field work -->
+        <a href="#" class="spinoff-card spinoff-coming-soon">
+          <div class="spinoff-card-tag">Conservation Physiology <span class="spinoff-badge">Coming Soon</span></div>
+          <h3 class="spinoff-card-title">From Lab to River: Ecological Thermal Physiology</h3>
+          <p class="spinoff-card-desc">Laboratory performance curves describe potential — not realized — performance. This work bridges the gap by examining how biotic and abiotic field conditions modify the thermal sensitivity measured in the lab, and what that means for predicting population-level outcomes from physiological data.</p>
+          <span class="spinoff-arrow">&rarr;</span>
+        </a>
+
+      </div>
+
+      <div class="spinoff-back">
+        <a href="research.html" class="btn-outline">← Back to All Research</a>
+      </div>
+
     </div>
   </section>
+
+  <style>
+    /* ---- SPINOFF SECTION STYLES ---- */
+    #spinoff-projects {
+      padding: 7rem 0 6rem;
+      background: var(--sand);
+    }
+
+    .spinoff-header {
+      text-align: center;
+      margin-bottom: 4rem;
+      max-width: 760px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .spinoff-thread {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 2rem;
+      justify-content: center;
+    }
+    .spinoff-thread-line {
+      flex: 1;
+      max-width: 80px;
+      height: 1px;
+      background: var(--water-light);
+      opacity: 0.5;
+    }
+    .spinoff-thread-label {
+      font-size: 0.7rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--water-mid);
+      white-space: nowrap;
+    }
+
+    .spinoff-title {
+      font-family: var(--font-display);
+      font-weight: 300;
+      font-size: clamp(1.5rem, 3vw, 2.2rem);
+      line-height: 1.3;
+      color: var(--ink);
+      margin-bottom: 1.25rem;
+    }
+    .spinoff-title em {
+      color: var(--water-mid);
+    }
+
+    .spinoff-subtitle {
+      font-size: 0.98rem;
+      color: var(--mid-gray);
+      line-height: 1.8;
+    }
+
+    .spinoffs-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-bottom: 3rem;
+    }
+
+    .spinoff-card {
+      display: flex;
+      flex-direction: column;
+      background: white;
+      border-radius: var(--radius);
+      padding: 2rem;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.07);
+      border: 1px solid var(--light-gray);
+      transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+      text-decoration: none;
+      color: inherit;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Teal left-border accent on hover */
+    .spinoff-card::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 3px;
+      background: var(--water-light);
+      transform: scaleY(0);
+      transform-origin: bottom;
+      transition: transform 0.3s ease;
+    }
+    .spinoff-card:hover::before { transform: scaleY(1); }
+
+    .spinoff-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 36px rgba(0,0,0,0.12);
+      border-color: var(--water-light);
+    }
+
+    /* Slightly muted style for coming-soon cards */
+    .spinoff-coming-soon {
+      opacity: 0.75;
+      cursor: default;
+      pointer-events: none;
+    }
+    /* Re-enable pointer events so the badge is still visible */
+    .spinoff-coming-soon { pointer-events: auto; cursor: default; }
+    .spinoff-coming-soon:hover {
+      transform: none;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.07);
+      border-color: var(--light-gray);
+    }
+    .spinoff-coming-soon::before { display: none; }
+
+    .spinoff-card-tag {
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--water-mid);
+      font-weight: 500;
+      margin-bottom: 0.9rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      flex-wrap: wrap;
+    }
+
+    .spinoff-badge {
+      font-size: 0.65rem;
+      background: var(--light-gray);
+      color: var(--mid-gray);
+      padding: 0.15rem 0.5rem;
+      border-radius: 2px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      font-weight: 400;
+    }
+
+    .spinoff-card-title {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      font-weight: 400;
+      line-height: 1.3;
+      color: var(--ink);
+      margin-bottom: 0.9rem;
+    }
+
+    .spinoff-card-desc {
+      font-size: 0.88rem;
+      color: var(--mid-gray);
+      line-height: 1.75;
+      flex: 1;
+      margin-bottom: 1.25rem;
+    }
+
+    .spinoff-arrow {
+      font-size: 1.1rem;
+      color: var(--water-mid);
+      transition: transform 0.25s ease;
+      align-self: flex-start;
+    }
+    .spinoff-card:hover .spinoff-arrow { transform: translateX(5px); }
+
+    .spinoff-back {
+      text-align: center;
+    }
+
+    @media (max-width: 900px) {
+      .spinoffs-grid { grid-template-columns: 1fr; }
+    }
+  </style>
 
   <footer id="footer">
     <div class="container footer-inner">
