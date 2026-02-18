@@ -17,6 +17,56 @@
     }
     .project-title-link:hover { color: var(--water-mid); }
   </style>
+  <style>
+    #page-sidebar {
+      position: fixed;
+      left: 1.5rem;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 500;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+    .sidebar-item {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      text-decoration: none;
+      color: inherit;
+    }
+    .sidebar-dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: var(--light-gray);
+      border: 1.5px solid #aab8c4;
+      flex-shrink: 0;
+      transition: background 0.25s, border-color 0.25s, transform 0.25s;
+    }
+    .sidebar-label {
+      font-size: 0.68rem;
+      letter-spacing: 0.05em;
+      color: var(--mid-gray);
+      white-space: nowrap;
+      opacity: 0;
+      transform: translateX(-6px);
+      transition: opacity 0.2s, transform 0.2s;
+      background: white;
+      padding: 0.2rem 0.55rem;
+      border-radius: 3px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      pointer-events: none;
+    }
+    .sidebar-item:hover .sidebar-label,
+    .sidebar-item.sidebar-active .sidebar-label { opacity: 1; transform: translateX(0); }
+    .sidebar-item.sidebar-active .sidebar-dot,
+    .sidebar-item:hover .sidebar-dot {
+      background: var(--water-light);
+      border-color: var(--water-light);
+      transform: scale(1.35);
+    }
+    @media (max-width: 1280px) { #page-sidebar { display: none; } }
+  </style>
 </head>
 <body>
 
@@ -32,6 +82,17 @@
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </div>
+  </nav>
+
+
+  <!-- SIDEBAR NAV -->
+  <nav id="page-sidebar" aria-label="Page sections">
+    <a href="#coregonids"  class="sidebar-item"><span class="sidebar-dot"></span><span class="sidebar-label">Coregonids</span></a>
+    <a href="#salmonids"   class="sidebar-item"><span class="sidebar-dot"></span><span class="sidebar-label">Chinook Salmon</span></a>
+    <a href="#hydropower"  class="sidebar-item"><span class="sidebar-dot"></span><span class="sidebar-label">Hydropower</span></a>
+    <a href="#antarctica"  class="sidebar-item"><span class="sidebar-dot"></span><span class="sidebar-label">Antarctica</span></a>
+    <a href="#rationing"   class="sidebar-item"><span class="sidebar-dot"></span><span class="sidebar-label">Feed Restriction</span></a>
+    <a href="#burst-tunnel" class="sidebar-item"><span class="sidebar-dot"></span><span class="sidebar-label">Burst Tunnel</span></a>
   </nav>
 
   <!-- Page header -->
@@ -202,5 +263,25 @@
   </footer>
 
   <script src="js/main.js"></script>
+
+  <script>
+    (function() {
+      var items = document.querySelectorAll('#page-sidebar .sidebar-item');
+      var ids = Array.from(items).map(function(el){ return el.getAttribute('href').replace('#',''); });
+      function onScroll() {
+        var scrollY = window.scrollY + window.innerHeight * 0.4;
+        var active = ids[0];
+        ids.forEach(function(id) {
+          var el = document.getElementById(id);
+          if (el && el.offsetTop <= scrollY) active = id;
+        });
+        items.forEach(function(item) {
+          item.classList.toggle('sidebar-active', item.getAttribute('href') === '#' + active);
+        });
+      }
+      window.addEventListener('scroll', onScroll, {passive:true});
+      onScroll();
+    })();
+  </script>
 </body>
 </html>

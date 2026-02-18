@@ -469,6 +469,60 @@
       margin-bottom: 1.5rem;
     }
 
+
+    /* ---- SIDEBAR NAV ---- */
+    #page-sidebar {
+      position: fixed;
+      left: 1.5rem;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 500;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+    .sidebar-item {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      cursor: pointer;
+      text-decoration: none;
+      color: inherit;
+    }
+    .sidebar-dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: var(--light-gray);
+      border: 1.5px solid #aab8c4;
+      flex-shrink: 0;
+      transition: background 0.25s, border-color 0.25s, transform 0.25s;
+    }
+    .sidebar-label {
+      font-size: 0.68rem;
+      letter-spacing: 0.05em;
+      color: var(--mid-gray);
+      white-space: nowrap;
+      opacity: 0;
+      transform: translateX(-6px);
+      transition: opacity 0.2s, transform 0.2s;
+      background: white;
+      padding: 0.2rem 0.55rem;
+      border-radius: 3px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      pointer-events: none;
+    }
+    .sidebar-item:hover .sidebar-label,
+    .sidebar-item.sidebar-active .sidebar-label {
+      opacity: 1; transform: translateX(0);
+    }
+    .sidebar-item.sidebar-active .sidebar-dot,
+    .sidebar-item:hover .sidebar-dot {
+      background: var(--water-light);
+      border-color: var(--water-light);
+      transform: scale(1.35);
+    }
+    @media (max-width: 1280px) { #page-sidebar { display: none; } }
+
     /* ---- RESPONSIVE ---- */
     @media (max-width: 900px) {
       .lead-grid { grid-template-columns: 1fr; }
@@ -495,6 +549,20 @@
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </div>
+  </nav>
+
+
+  <!-- SIDEBAR NAV — dots on left, labels appear on hover -->
+  <nav id="page-sidebar" aria-label="Page sections">
+    <a href="#project-lead"         class="sidebar-item"><span class="sidebar-dot"></span><span class="sidebar-label">Overview</span></a>
+    <a href="#project-conclusions"  class="sidebar-item"><span class="sidebar-dot"></span><span class="sidebar-label">Key Takeaways</span></a>
+    <a href="#study-01"             class="sidebar-item"><span class="sidebar-dot"></span><span class="sidebar-label">Study 01 — Review</span></a>
+    <a href="#study-02"             class="sidebar-item"><span class="sidebar-dot"></span><span class="sidebar-label">Study 02 — Local Adaptation</span></a>
+    <a href="#study-03"             class="sidebar-item"><span class="sidebar-dot"></span><span class="sidebar-label">Study 03 — Seasonal Runs</span></a>
+    <a href="#study-04"             class="sidebar-item"><span class="sidebar-dot"></span><span class="sidebar-label">Study 04 — Acute Tolerance</span></a>
+    <a href="#project-shiny"        class="sidebar-item"><span class="sidebar-dot"></span><span class="sidebar-label">Data Explorer</span></a>
+    <a href="#spinoff-projects"     class="sidebar-item"><span class="sidebar-dot"></span><span class="sidebar-label">Spinoff Projects</span></a>
+    <a href="#project-publications" class="sidebar-item"><span class="sidebar-dot"></span><span class="sidebar-label">Publications</span></a>
   </nav>
 
   <!-- ============================================================
@@ -552,37 +620,56 @@
   </section>
 
   <!-- ============================================================
-       KEY FINDINGS STRIP
-       Three headline numbers or findings from the whole project.
-       Edit the text inside each .finding-item below.
+       CONCLUSIONS
+       Edit the lead italic sentence and each takeaway below.
+       To add a takeaway: copy a .takeaway-item div and paste it,
+       updating the number, title, and text.
   ============================================================ -->
-  <section id="key-findings">
+  <section id="project-conclusions">
     <div class="container">
-      <p class="findings-label">Key Findings</p>
-      <div class="findings-grid">
+      <h2 class="section-title">Main Takeaways</h2>
+      <div class="conclusions-grid">
 
-        <div class="finding-item">
-          <div class="finding-number">8</div>
-          <p class="finding-title">Populations Tested</p>
-          <p class="finding-desc">Hatchery populations from across California's Central Valley, representing winter, spring, fall, and late-fall seasonal runs with distinct thermal histories.</p>
+        <div>
+          <p class="conclusions-lead">California's Chinook salmon are not one fish — they are <span>many physiologically distinct populations</span> that cannot be managed as though they were interchangeable.</p>
+          <p style="font-size:0.95rem; color:var(--mid-gray); line-height:1.8; margin-top:1.5rem">This body of work shifts the conversation in salmon conservation from species-level thermal thresholds toward population-specific physiological profiles — a more accurate and ultimately more protective framework for management under climate change.</p>
         </div>
 
-        <div class="finding-item">
-          <!-- 
-            TO UPDATE: Change the number and text to reflect
-            your most striking quantitative result.
-          -->
-          <div class="finding-number">~4°C</div>
-          <p class="finding-title">Range in Optimal Temperature</p>
-          <p class="finding-desc">Populations differed by approximately 4°C in their optimal temperature for aerobic performance — a biologically and ecologically meaningful range with real conservation implications.</p>
-        </div>
+        <div class="takeaway-list">
 
-        <div class="finding-item">
-          <div class="finding-number">4</div>
-          <p class="finding-title">Published Papers</p>
-          <p class="finding-desc">Including a comprehensive review, two empirical studies in Conservation Physiology and CJFAS, and a Frontiers in Fish Biology paper on acute thermal tolerance trade-offs.</p>
-        </div>
+          <div class="takeaway-item">
+            <div class="takeaway-num">1</div>
+            <div class="takeaway-text">
+              <strong>Thermal physiology varies meaningfully among populations</strong>
+              Populations from historically warmer rivers tolerate and perform better at higher temperatures than those from cooler systems — a pattern consistent with local thermal adaptation rather than random variation.
+            </div>
+          </div>
 
+          <div class="takeaway-item">
+            <div class="takeaway-num">2</div>
+            <div class="takeaway-text">
+              <strong>Seasonal runs are physiologically distinct</strong>
+              Winter-run Chinook — already Endangered — show the lowest thermal optima and greatest sensitivity to warming, making them disproportionately vulnerable to climate change and extreme heat events.
+            </div>
+          </div>
+
+          <div class="takeaway-item">
+            <div class="takeaway-num">3</div>
+            <div class="takeaway-text">
+              <strong>Aerobic scope and acute tolerance are independent traits</strong>
+              A population's ability to survive a brief heat spike does not predict how it performs under sustained warming. Both metrics are needed for a complete picture of thermal vulnerability.
+            </div>
+          </div>
+
+          <div class="takeaway-item">
+            <div class="takeaway-num">4</div>
+            <div class="takeaway-text">
+              <strong>One-size-fits-all temperature thresholds are insufficient</strong>
+              Current water management frameworks often apply single species-wide thermal limits. This work provides the empirical basis for population-specific physiological criteria in conservation planning.
+            </div>
+          </div>
+
+        </div>
       </div>
     </div>
   </section>
@@ -603,7 +690,7 @@
   ================================================================ -->
 
   <!-- STUDY 1: Review Paper -->
-  <section class="study-section">
+  <section class="study-section" id="study-01">
     <div class="container">
       <div class="study-header">
         <span class="study-number">01</span>
@@ -649,7 +736,7 @@
   </section>
 
   <!-- STUDY 2: Intraspecific variation / local adaptation -->
-  <section class="study-section">
+  <section class="study-section" id="study-02">
     <div class="container">
       <div class="study-header">
         <span class="study-number">02</span>
@@ -704,7 +791,7 @@
   </section>
 
   <!-- STUDY 3: Seasonal runs -->
-  <section class="study-section">
+  <section class="study-section" id="study-03">
     <div class="container">
       <div class="study-header">
         <span class="study-number">03</span>
@@ -746,7 +833,7 @@
   </section>
 
   <!-- STUDY 4: Acute thermal tolerance -->
-  <section class="study-section">
+  <section class="study-section" id="study-04">
     <div class="container">
       <div class="study-header">
         <span class="study-number">04</span>
@@ -867,61 +954,6 @@
           <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" opacity="0.4"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
           <p>Interactive data explorer coming soon</p>
           <p style="font-size:0.8rem; opacity:0.6">Replace this with your ShinyApps.io iframe when ready</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============================================================
-       CONCLUSIONS
-       Edit the lead italic sentence and each takeaway below.
-       To add a takeaway: copy a .takeaway-item div and paste it,
-       updating the number, title, and text.
-  ============================================================ -->
-  <section id="project-conclusions">
-    <div class="container">
-      <h2 class="section-title">Main Takeaways</h2>
-      <div class="conclusions-grid">
-
-        <div>
-          <p class="conclusions-lead">California's Chinook salmon are not one fish — they are <span>many physiologically distinct populations</span> that cannot be managed as though they were interchangeable.</p>
-          <p style="font-size:0.95rem; color:var(--mid-gray); line-height:1.8; margin-top:1.5rem">This body of work shifts the conversation in salmon conservation from species-level thermal thresholds toward population-specific physiological profiles — a more accurate and ultimately more protective framework for management under climate change.</p>
-        </div>
-
-        <div class="takeaway-list">
-
-          <div class="takeaway-item">
-            <div class="takeaway-num">1</div>
-            <div class="takeaway-text">
-              <strong>Thermal physiology varies meaningfully among populations</strong>
-              Populations from historically warmer rivers tolerate and perform better at higher temperatures than those from cooler systems — a pattern consistent with local thermal adaptation rather than random variation.
-            </div>
-          </div>
-
-          <div class="takeaway-item">
-            <div class="takeaway-num">2</div>
-            <div class="takeaway-text">
-              <strong>Seasonal runs are physiologically distinct</strong>
-              Winter-run Chinook — already Endangered — show the lowest thermal optima and greatest sensitivity to warming, making them disproportionately vulnerable to climate change and extreme heat events.
-            </div>
-          </div>
-
-          <div class="takeaway-item">
-            <div class="takeaway-num">3</div>
-            <div class="takeaway-text">
-              <strong>Aerobic scope and acute tolerance are independent traits</strong>
-              A population's ability to survive a brief heat spike does not predict how it performs under sustained warming. Both metrics are needed for a complete picture of thermal vulnerability.
-            </div>
-          </div>
-
-          <div class="takeaway-item">
-            <div class="takeaway-num">4</div>
-            <div class="takeaway-text">
-              <strong>One-size-fits-all temperature thresholds are insufficient</strong>
-              Current water management frameworks often apply single species-wide thermal limits. This work provides the empirical basis for population-specific physiological criteria in conservation planning.
-            </div>
-          </div>
-
         </div>
       </div>
     </div>
@@ -1156,6 +1188,63 @@
     }
   </style>
 
+  <!-- ============================================================
+       PUBLICATIONS
+       The four papers associated with this project.
+       To update a citation or add a DOI link, edit below.
+  ============================================================ -->
+  <section id="project-publications">
+    <div class="container">
+      <h2 class="section-title">Project Publications</h2>
+      <p class="section-sub" style="margin-left:0; text-align:left; max-width:100%">Peer-reviewed papers arising from this research program</p>
+
+      <div class="project-pub-item">
+        <span class="project-pub-year">2024</span>
+        <div class="project-pub-content">
+          <p class="project-pub-title"><strong>Zillig, K. W.</strong>, Bell, H. N., FitzGerald A.M., Fangue, N.A. Patterns of Interpopulation Variation and Physiological Trade-offs in the Acute Thermal Tolerance of Juvenile Chinook Salmon (<em>Oncorhynchus tshawytscha</em>).</p>
+          <p class="project-pub-journal">Frontiers in Fish Biology</p>
+        </div>
+        <div class="project-pub-download">
+          <a href="pdfs/Zillig et al. - 2025 - Patterns of interpopulation variation and physiolo.pdf" class="btn-outline" target="_blank">PDF</a>
+        </div>
+      </div>
+
+      <div class="project-pub-item">
+        <span class="project-pub-year">2023</span>
+        <div class="project-pub-content">
+          <p class="project-pub-title"><strong>Zillig, K. W.</strong>, FitzGerald, A. M., Lusardi, R. L., Cocherell D. E., Fangue, N. A. Intraspecific variation among Chinook salmon populations indicates physiological adaptation to local environmental conditions.</p>
+          <p class="project-pub-journal">Conservation Physiology, 11(1)</p>
+        </div>
+        <div class="project-pub-download">
+          <a href="pdfs/Zillig et al. - 2023 - Intraspecific variation among Chinook Salmon popul.pdf" class="btn-outline" target="_blank">PDF</a>
+        </div>
+      </div>
+
+      <div class="project-pub-item">
+        <span class="project-pub-year">2023</span>
+        <div class="project-pub-content">
+          <p class="project-pub-title"><strong>Zillig, K. W.</strong>, Lusardi, R. L., Cocherell D. E., Fangue, N. A. Interpopulation variation in thermal physiology among seasonal runs of Chinook salmon.</p>
+          <p class="project-pub-journal">Canadian Journal of Fisheries and Aquatic Sciences</p>
+        </div>
+        <div class="project-pub-download">
+          <a href="pdfs/Zillig_et_al._2022_CJFAS.pdf" class="btn-outline" target="_blank">PDF</a>
+        </div>
+      </div>
+
+      <div class="project-pub-item">
+        <span class="project-pub-year">2021</span>
+        <div class="project-pub-content">
+          <p class="project-pub-title"><strong>Zillig, K.W.</strong>, Lusardi, R.A., Moyle, P., Fangue, N.A. One-size does not fit all: variation in thermal eco-physiology among Pacific salmonids.</p>
+          <p class="project-pub-journal">Reviews in Fish Biology and Fisheries, 31(1)</p>
+        </div>
+        <div class="project-pub-download">
+          <a href="pdfs/Zillig_et_al-2021-Reviews_in_Fish_Biology_and_Fisheries.pdf" class="btn-outline" target="_blank">PDF</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
   <footer id="footer">
     <div class="container footer-inner">
       <div class="footer-left">
@@ -1172,5 +1261,29 @@
   </footer>
 
   <script src="js/main.js"></script>
+
+  <script>
+    // Sidebar active-dot scroll tracking
+    (function() {
+      var items = document.querySelectorAll('#page-sidebar .sidebar-item');
+      var sectionIds = Array.from(items).map(function(el) {
+        return el.getAttribute('href').replace('#','');
+      });
+      function onScroll() {
+        var scrollY = window.scrollY + window.innerHeight * 0.35;
+        var active = sectionIds[0];
+        sectionIds.forEach(function(id) {
+          var el = document.getElementById(id);
+          if (el && el.offsetTop <= scrollY) active = id;
+        });
+        items.forEach(function(item) {
+          var id = item.getAttribute('href').replace('#','');
+          item.classList.toggle('sidebar-active', id === active);
+        });
+      }
+      window.addEventListener('scroll', onScroll, {passive: true});
+      onScroll();
+    })();
+  </script>
 </body>
 </html>
