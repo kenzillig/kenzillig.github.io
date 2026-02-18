@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ken W. Zillig | Ecophysiology of Fish</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ============================================================
+       NAVIGATION
+       To change nav links: edit the <a> tags below.
+       To add a new page: duplicate a <li> and change href + text.
+  ============================================================ -->
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">Ken W. Zillig</a>
+      <button class="nav-toggle" aria-label="Toggle menu">&#9776;</button>
+      <ul class="nav-links">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="research.html">Research</a></li>
+        <li><a href="publications.html">Publications</a></li>
+        <li><a href="cv.html">CV</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ============================================================
+       HERO SECTION
+       The large full-screen opening. 
+       To change the background image: replace hero-bg.jpg in the
+       images/ folder with your own photo (keep the same filename),
+       OR update the background-image path in css/style.css
+       under the #hero selector.
+  ============================================================ -->
+  <section id="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <p class="hero-eyebrow">Postdoctoral Research Scientist</p>
+      <h1 class="hero-name">Ken W. Zillig</h1>
+      <p class="hero-tagline">Exploring how temperature shapes the physiology,<br>ecology, and fate of fishes in a changing world.</p>
+      <div class="hero-links">
+        <a href="research.html" class="btn-primary">View Research</a>
+        <a href="publications.html" class="btn-secondary">Publications</a>
+      </div>
+    </div>
+    <div class="hero-scroll-hint">scroll</div>
+  </section>
+
+  <!-- ============================================================
+       ABOUT STRIP
+       Short intro below the hero.
+       To edit your bio: change the text inside the <p> tags below.
+  ============================================================ -->
+  <section id="about-strip">
+    <div class="container two-col">
+      <div class="about-image-wrap">
+        <!-- Replace about-photo.jpg in images/ with your own headshot -->
+        <img src="images/about-photo.jpg" alt="Ken Zillig" class="about-photo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+        <div class="photo-placeholder">
+          <span>Photo</span>
+        </div>
+        <div class="about-affiliations">
+          <div class="affil-item">
+            <span class="affil-label">Current Position</span>
+            <span class="affil-value">Postdoctoral Researcher</span>
+          </div>
+          <div class="affil-item">
+            <span class="affil-label">Institution</span>
+            <span class="affil-value">University of Minnesota</span>
+          </div>
+          <div class="affil-item">
+            <span class="affil-label">Advisor</span>
+            <span class="affil-value">Dr. Gretchen Hansen</span>
+          </div>
+        </div>
+      </div>
+      <div class="about-text">
+        <h2 class="section-title">About Me</h2>
+        <!-- ======================================================
+             EDIT YOUR BIO HERE
+             Change any of the text below to update your biography.
+        ====================================================== -->
+        <p>I am a fish ecophysiologist currently conducting postdoctoral research at the University of Minnesota in Dr. Gretchen Hansen's lab. My work investigates how temperature — and the changes wrought upon it by a warming climate — shapes the physiology, ecology, and conservation of aquatic species.</p>
+        <p>My research spans a broad range of taxa and systems, from Chinook salmon in California rivers to Antarctic notothenioids beneath the Ross Ice Shelf, Great Lakes coregonids, green sturgeon, and threespine stickleback. A common thread runs through all of it: understanding how organisms are adapted to their thermal environments, how that adaptation varies among populations, and what it means for their survival under global change.</p>
+        <p>Outside the lab I enjoy sci-fi, keeping exotic aquariums, woodworking, watercolor painting, and escaping into the wilderness for camping, hiking, and birding.</p>
+        <div class="about-stats">
+          <div class="stat">
+            <span class="stat-num">20+</span>
+            <span class="stat-label">Publications</span>
+          </div>
+          <div class="stat">
+            <span class="stat-num">$3.28M</span>
+            <span class="stat-label">Grants Secured</span>
+          </div>
+          <div class="stat">
+            <span class="stat-num">12+</span>
+            <span class="stat-label">Students Mentored</span>
+          </div>
+        </div>
+        <a href="cv.html" class="btn-outline">Full CV &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       RESEARCH HIGHLIGHTS
+       Three featured research areas shown as large cards.
+       To edit a card: change the <h3>, <p>, and emoji/icon.
+       To add a card: duplicate a .research-card div.
+  ============================================================ -->
+  <section id="research-highlights">
+    <div class="container">
+      <h2 class="section-title centered">Research Areas</h2>
+      <p class="section-sub centered">Integrating physiology, ecology, and conservation across aquatic systems</p>
+      <div class="research-grid">
+
+        <a href="research.html#salmonids" class="research-card">
+          <div class="card-img-wrap">
+            <!-- Replace with your own image: images/research-salmon.jpg -->
+            <img src="images/research-salmon.jpg" alt="Chinook Salmon" onerror="this.parentElement.style.background='linear-gradient(135deg,#1a3a4a,#0d2030)'">
+            <div class="card-img-overlay"></div>
+          </div>
+          <div class="card-body">
+            <span class="card-tag">Salmonids</span>
+            <h3>Interpopulation Thermal Physiology</h3>
+            <p>Quantifying how Chinook salmon populations from different river systems are physiologically adapted to local thermal conditions — and what that means for conservation under a warming climate.</p>
+            <span class="card-arrow">&rarr;</span>
+          </div>
+        </a>
+
+        <a href="research.html#antarctica" class="research-card">
+          <div class="card-img-wrap">
+            <img src="images/research-antarctica.jpg" alt="Antarctic Research" onerror="this.parentElement.style.background='linear-gradient(135deg,#1a2a3a,#0d1825)'">
+            <div class="card-img-overlay"></div>
+          </div>
+          <div class="card-body">
+            <span class="card-tag">Antarctica</span>
+            <h3>Global Change Biology of Antarctic Fishes</h3>
+            <p>Studying the combined effects of ocean warming and acidification on notothenioid fishes at McMurdo Station — some of the most thermally sensitive vertebrates on Earth.</p>
+            <span class="card-arrow">&rarr;</span>
+          </div>
+        </a>
+
+        <a href="research.html#coregonids" class="research-card">
+          <div class="card-img-wrap">
+            <img src="images/research-coregonid.jpg" alt="Great Lakes Coregonids" onerror="this.parentElement.style.background='linear-gradient(135deg,#1a3530,#0d201c)'">
+            <div class="card-img-overlay"></div>
+          </div>
+          <div class="card-body">
+            <span class="card-tag">Great Lakes · Current</span>
+            <h3>Oxythermal Tolerance of Coregonids</h3>
+            <p>Investigating differences in oxythermal tolerance among embryos and larvae of multiple Great Lakes whitefish and cisco species to inform physiologically guided abundance models.</p>
+            <span class="card-arrow">&rarr;</span>
+          </div>
+        </a>
+
+      </div>
+      <div class="centered" style="margin-top:3rem">
+        <a href="research.html" class="btn-outline">All Research Projects &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       RECENT PUBLICATIONS STRIP
+       Shows 3 most recent publications.
+       To update: edit the .pub-item entries below.
+       Full list lives in publications.html
+  ============================================================ -->
+  <section id="recent-pubs">
+    <div class="container">
+      <h2 class="section-title">Recent Publications</h2>
+      <div class="pub-list">
+
+        <div class="pub-item">
+          <span class="pub-year">2024</span>
+          <div class="pub-content">
+            <p class="pub-authors"><strong>Zillig, K. W.</strong>, Bell, H. N., FitzGerald A.M., Fangue, N.A.</p>
+            <p class="pub-title">Patterns of Interpopulation Variation and Physiological Trade-offs in the Acute Thermal Tolerance of Juvenile Chinook Salmon (<em>Oncorhynchus tshawytscha</em>).</p>
+            <p class="pub-journal">Frontiers in Fish Biology</p>
+          </div>
+        </div>
+
+        <div class="pub-item">
+          <span class="pub-year">2024</span>
+          <div class="pub-content">
+            <p class="pub-authors"><strong>Zillig, K. W.</strong>, Hannan, K.D., Baird, S.E., Cocherell, D. E., Poletto, J.B., and Fangue, N. A.</p>
+            <p class="pub-title">Effects of acclimation temperature and feed restriction on the metabolic performance of Green Sturgeon.</p>
+            <p class="pub-journal">Conservation Physiology</p>
+          </div>
+        </div>
+
+        <div class="pub-item">
+          <span class="pub-year">2023</span>
+          <div class="pub-content">
+            <p class="pub-authors"><strong>Zillig, K. W.</strong>, FitzGerald, A. M., Lusardi, R. L., Cocherell D. E., Fangue, N. A.</p>
+            <p class="pub-title">Intraspecific variation among Chinook salmon populations indicates physiological adaptation to local environmental conditions.</p>
+            <p class="pub-journal">Conservation Physiology, 11(1)</p>
+          </div>
+        </div>
+
+      </div>
+      <div style="margin-top:2rem">
+        <a href="publications.html" class="btn-outline">All Publications &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FOOTER
+       To update social links: change the href values below.
+       To add a link: duplicate a <a> tag.
+  ============================================================ -->
+  <footer id="footer">
+    <div class="container footer-inner">
+      <div class="footer-left">
+        <p class="footer-name">Ken W. Zillig</p>
+        <p class="footer-role">Fish Ecophysiologist · University of Minnesota</p>
+      </div>
+      <div class="footer-links">
+        <a href="https://github.com/kenzillig" target="_blank">GitHub</a>
+        <a href="https://twitter.com/kzecofishiology" target="_blank">Twitter / X</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <p class="footer-copy">&copy; 2025 Ken W. Zillig</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

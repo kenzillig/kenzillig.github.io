@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | Ken W. Zillig</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">Ken W. Zillig</a>
+      <button class="nav-toggle" aria-label="Toggle menu">&#9776;</button>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="research.html">Research</a></li>
+        <li><a href="publications.html">Publications</a></li>
+        <li><a href="cv.html">CV</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="page-hero">
+    <div class="container">
+      <h1>Get in Touch</h1>
+      <p>Questions about research, collaboration, or data? I'd love to hear from you.</p>
+    </div>
+  </div>
+
+  <div class="contact-page">
+    <div class="container">
+      <div class="contact-grid">
+
+        <!-- LEFT: Contact info -->
+        <div class="contact-info">
+
+          <div class="contact-info-item">
+            <span class="contact-info-label">Email</span>
+            <!-- ============================================================
+                 REPLACE THIS with your actual email address.
+                 Change both the href (after mailto:) and the visible text.
+            ============================================================ -->
+            <span class="contact-info-value">
+              <a href="mailto:kzillig@umn.edu">kzillig@umn.edu</a>
+            </span>
+          </div>
+
+          <div class="contact-info-item">
+            <span class="contact-info-label">Current Institution</span>
+            <span class="contact-info-value">University of Minnesota</span>
+          </div>
+
+          <div class="contact-info-item">
+            <span class="contact-info-label">Department</span>
+            <span class="contact-info-value">Hansen Lab</span>
+          </div>
+
+          <div class="contact-info-item">
+            <span class="contact-info-label">GitHub</span>
+            <span class="contact-info-value">
+              <a href="https://github.com/kenzillig" target="_blank">github.com/kenzillig</a>
+            </span>
+          </div>
+
+          <div class="contact-info-item">
+            <span class="contact-info-label">Twitter / X</span>
+            <span class="contact-info-value">
+              <a href="https://twitter.com/kzecofishiology" target="_blank">@kzecofishiology</a>
+            </span>
+          </div>
+
+          <div style="margin-top:2rem; padding:1.5rem; background:var(--sand); border-radius:4px; border-left:3px solid var(--water-light);">
+            <p style="font-size:0.9rem; color:var(--mid-gray); line-height:1.7;">
+              I welcome inquiries about potential collaborations, data sharing, media requests, or opportunities for students interested in fish ecophysiology. Response time is typically within a few business days.
+            </p>
+          </div>
+        </div>
+
+        <!-- RIGHT: Contact form -->
+        <div>
+          <!-- ============================================================
+               FORMSPREE CONTACT FORM SETUP INSTRUCTIONS
+               
+               This form uses Formspree (formspree.io) to send you emails
+               without needing a server. Here's how to set it up:
+               
+               1. Go to https://formspree.io and create a free account
+               2. Click "New Form" and enter your email address
+               3. Formspree will give you a form ID that looks like:
+                  https://formspree.io/f/xyzabcde
+               4. Replace "YOUR_FORMSPREE_ID" in the action= below
+                  with your actual form ID, e.g.:
+                  action="https://formspree.io/f/xyzabcde"
+               5. That's it! The form will email you on submission.
+               
+               Free tier allows 50 submissions/month which is plenty
+               for a research website.
+          ============================================================ -->
+          <form
+            class="contact-form"
+            action="https://formspree.io/f/YOUR_FORMSPREE_ID"
+            method="POST"
+            id="contact-form"
+          >
+            <div class="form-group">
+              <label for="name">Your Name</label>
+              <input type="text" id="name" name="name" placeholder="Jane Smith" required>
+            </div>
+
+            <div class="form-group">
+              <label for="email">Your Email</label>
+              <input type="email" id="email" name="email" placeholder="jane@university.edu" required>
+            </div>
+
+            <div class="form-group">
+              <label for="subject">Subject</label>
+              <input type="text" id="subject" name="subject" placeholder="Research collaboration / Data request / General inquiry">
+            </div>
+
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" placeholder="Tell me about your question or project..." required></textarea>
+            </div>
+
+            <!-- Hidden field tells Formspree where to redirect after submit -->
+            <input type="hidden" name="_next" value="https://kenzillig.github.io/contact.html?sent=true">
+
+            <button type="submit" class="form-submit">Send Message</button>
+
+            <!-- Success message shown after form submits -->
+            <div class="form-success" id="form-success">
+              ✓ Message sent! I'll be in touch within a few business days.
+            </div>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <footer id="footer">
+    <div class="container footer-inner">
+      <div class="footer-left">
+        <p class="footer-name">Ken W. Zillig</p>
+        <p class="footer-role">Fish Ecophysiologist · University of Minnesota</p>
+      </div>
+      <div class="footer-links">
+        <a href="https://github.com/kenzillig" target="_blank">GitHub</a>
+        <a href="https://twitter.com/kzecofishiology" target="_blank">Twitter / X</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <p class="footer-copy">&copy; 2025 Ken W. Zillig</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+    // Show success message if redirected back after form submit
+    if (window.location.search.includes('sent=true')) {
+      document.getElementById('form-success').style.display = 'block';
+    }
+  </script>
+</body>
+</html>
