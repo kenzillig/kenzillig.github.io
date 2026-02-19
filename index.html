@@ -86,6 +86,36 @@
       transition: background 0.2s, color 0.2s;
     }
     .hero-arrow:hover { background: rgba(255,255,255,0.18); color: white; }
+
+    /* ── Slide caption — bottom-right corner ── */
+    .hero-caption {
+      position: absolute;
+      bottom: 1.1rem;
+      right: 1.5rem;
+      z-index: 3;
+      text-align: right;
+      pointer-events: none;
+      transition: opacity 0.4s ease;
+    }
+    .hero-caption-location {
+      display: block;
+      font-size: 0.72rem;
+      font-family: var(--font-body);
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      color: rgba(255,255,255,0.75);
+      text-shadow: 0 1px 4px rgba(0,0,0,0.6);
+    }
+    .hero-caption-credit {
+      display: block;
+      font-size: 0.65rem;
+      font-family: var(--font-body);
+      color: rgba(255,255,255,0.45);
+      text-shadow: 0 1px 4px rgba(0,0,0,0.6);
+      margin-top: 0.15rem;
+      font-style: italic;
+    }
+    .hero-caption-credit:empty { display: none; }
   </style>
 </head>
 <body>
@@ -123,10 +153,25 @@
          One .hero-slide div per image. Add/remove as needed.
          Update the CSS nth-child rules above to match.
     ============================================================ -->
-    <div class="hero-slide active"></div>
-    <div class="hero-slide"></div>
-    <div class="hero-slide"></div>
-    <div class="hero-slide"></div>
+    <!--
+      HERO SLIDE CAPTIONS
+      Each slide has two optional attributes:
+        data-caption  — location / description of the photo
+        data-credit   — photographer credit (omit or leave empty if photo is yours)
+      The caption updates automatically when the slide changes.
+    -->
+    <div class="hero-slide active"
+         data-caption="Add location or description here"
+         data-credit=""></div>
+    <div class="hero-slide"
+         data-caption="Add location or description here"
+         data-credit="Photo: Photographer Name"></div>
+    <div class="hero-slide"
+         data-caption="Add location or description here"
+         data-credit=""></div>
+    <div class="hero-slide"
+         data-caption="Add location or description here"
+         data-credit=""></div>
 
     <div class="hero-overlay"></div>
 
@@ -150,6 +195,12 @@
         <button class="hero-dot" aria-label="Image 4"></button>
       </div>
       <button class="hero-arrow" id="hero-next" aria-label="Next image">&#8250;</button>
+    </div>
+
+    <!-- Caption display — updated by JS as slides change -->
+    <div class="hero-caption" id="hero-caption">
+      <span class="hero-caption-location" id="hero-caption-location"></span>
+      <span class="hero-caption-credit" id="hero-caption-credit"></span>
     </div>
 
     <div class="hero-scroll-hint">scroll</div>
@@ -357,13 +408,25 @@
       var current = 0;
       var timer;
 
+      var captionLoc  = document.getElementById('hero-caption-location');
+      var captionCred = document.getElementById('hero-caption-credit');
+
+      function updateCaption() {
+        var slide = slides[current];
+        if (captionLoc)  captionLoc.textContent  = slide.dataset.caption || '';
+        if (captionCred) captionCred.textContent  = slide.dataset.credit  || '';
+      }
+
       function goTo(n) {
         slides[current].classList.remove('active');
         dots[current].classList.remove('active');
         current = (n + total) % total;
         slides[current].classList.add('active');
         dots[current].classList.add('active');
+        updateCaption();
       }
+
+      updateCaption(); // set caption for first slide on load
 
       function startTimer() {
         clearInterval(timer);
