@@ -7,6 +7,86 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
+  <style>
+    /*
+      HERO SLIDESHOW
+      The #hero background-image in style.css is overridden here
+      by absolutely-positioned slide divs that sit behind the overlay.
+
+      TO ADD YOUR IMAGES:
+      Upload to images/ and update the background-image on each
+      .hero-slide:nth-child() rule below.
+      Suggested images (use whatever you like):
+        images/hero-bg.jpg        — your existing image (slide 1)
+        images/hero-bg-2.jpg      — fieldwork / fish photo
+        images/hero-bg-3.jpg      — Antarctic / field landscape
+        images/hero-bg-4.jpg      — lab or underwater shot
+
+      TO ADD A SLIDE: add a new nth-child rule and a <div class="hero-slide"> in the HTML.
+      TO REMOVE A SLIDE: delete the rule and the corresponding div.
+    */
+
+    /* Remove the static background from style.css */
+    #hero { background-image: none; }
+
+    .hero-slide {
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center 40%;
+      opacity: 0;
+      transition: opacity 1.2s ease;
+    }
+    .hero-slide.active { opacity: 1; }
+
+    /* ── Slide images — update these paths ── */
+    .hero-slide:nth-child(1) { background-image: url('images/hero-bg.jpg'); }
+    .hero-slide:nth-child(2) { background-image: url('images/hero-bg-2.jpg'); }
+    .hero-slide:nth-child(3) { background-image: url('images/hero-bg-3.jpg'); }
+    .hero-slide:nth-child(4) { background-image: url('images/hero-bg-4.jpg'); }
+
+    /* Slideshow controls — sit at bottom center above scroll hint */
+    .hero-controls {
+      position: absolute;
+      bottom: 4.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      z-index: 3;
+    }
+
+    .hero-dots { display: flex; gap: 0.45rem; }
+
+    .hero-dot {
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.3);
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      transition: background 0.25s, transform 0.25s;
+    }
+    .hero-dot.active {
+      background: var(--water-light);
+      transform: scale(1.4);
+    }
+
+    .hero-arrow {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.18);
+      color: rgba(255,255,255,0.65);
+      width: 28px; height: 28px;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer;
+      font-size: 1rem;
+      line-height: 1;
+      transition: background 0.2s, color 0.2s;
+    }
+    .hero-arrow:hover { background: rgba(255,255,255,0.18); color: white; }
+  </style>
 </head>
 <body>
 
@@ -38,7 +118,18 @@
        under the #hero selector.
   ============================================================ -->
   <section id="hero">
+    <!-- ============================================================
+         HERO SLIDESHOW BACKGROUNDS
+         One .hero-slide div per image. Add/remove as needed.
+         Update the CSS nth-child rules above to match.
+    ============================================================ -->
+    <div class="hero-slide active"></div>
+    <div class="hero-slide"></div>
+    <div class="hero-slide"></div>
+    <div class="hero-slide"></div>
+
     <div class="hero-overlay"></div>
+
     <div class="hero-content">
       <p class="hero-eyebrow">Postdoctoral Research Scientist</p>
       <h1 class="hero-name">Ken W. Zillig</h1>
@@ -48,6 +139,19 @@
         <a href="publications.html" class="btn-secondary">Publications</a>
       </div>
     </div>
+
+    <!-- Slideshow controls — dots + arrows -->
+    <div class="hero-controls">
+      <button class="hero-arrow" id="hero-prev" aria-label="Previous image">&#8249;</button>
+      <div class="hero-dots" id="hero-dots">
+        <button class="hero-dot active" aria-label="Image 1"></button>
+        <button class="hero-dot" aria-label="Image 2"></button>
+        <button class="hero-dot" aria-label="Image 3"></button>
+        <button class="hero-dot" aria-label="Image 4"></button>
+      </div>
+      <button class="hero-arrow" id="hero-next" aria-label="Next image">&#8250;</button>
+    </div>
+
     <div class="hero-scroll-hint">scroll</div>
   </section>
 
@@ -237,5 +341,49 @@
   </footer>
 
   <script src="js/main.js"></script>
+
+  <script>
+    // ── Hero slideshow ────────────────────────────────────────────────────────
+    // Auto-advances every 6 seconds. Pauses on hover.
+    // Click dots or arrows to navigate manually.
+    // TO CHANGE INTERVAL: update the 6000 value (milliseconds).
+    (function() {
+      var slides  = document.querySelectorAll('#hero .hero-slide');
+      var dots    = document.querySelectorAll('#hero-dots .hero-dot');
+      var total   = slides.length;
+      var current = 0;
+      var timer;
+
+      function goTo(n) {
+        slides[current].classList.remove('active');
+        dots[current].classList.remove('active');
+        current = (n + total) % total;
+        slides[current].classList.add('active');
+        dots[current].classList.add('active');
+      }
+
+      function startTimer() {
+        clearInterval(timer);
+        timer = setInterval(function() { goTo(current + 1); }, 6000);
+      }
+
+      dots.forEach(function(dot, i) {
+        dot.addEventListener('click', function() { goTo(i); startTimer(); });
+      });
+
+      var prev = document.getElementById('hero-prev');
+      var next = document.getElementById('hero-next');
+      if (prev) prev.addEventListener('click', function() { goTo(current - 1); startTimer(); });
+      if (next) next.addEventListener('click', function() { goTo(current + 1); startTimer(); });
+
+      var hero = document.getElementById('hero');
+      if (hero) {
+        hero.addEventListener('mouseenter', function() { clearInterval(timer); });
+        hero.addEventListener('mouseleave', startTimer);
+      }
+
+      startTimer();
+    })();
+  </script>
 </body>
 </html>

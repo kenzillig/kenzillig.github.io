@@ -15,30 +15,64 @@
        Think: capable scientist who also builds things.
     ============================================================ */
 
-    /* ---- HERO ---- */
+    /* ---- HERO SLIDESHOW ---- */
     #tools-hero {
-      background: var(--ink);
-      padding: calc(var(--nav-height) + 5rem) 0 4.5rem;
       position: relative;
+      height: 72vh;
+      min-height: 480px;
+      display: flex;
+      align-items: flex-end;
       overflow: hidden;
+      background: var(--deep);
     }
 
-    /* Subtle grid texture in the background */
-    #tools-hero::before {
-      content: '';
+    /* Each slide is a full-cover background image */
+    .hero-slide {
       position: absolute;
       inset: 0;
-      background-image:
-        linear-gradient(rgba(42,168,184,0.06) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(42,168,184,0.06) 1px, transparent 1px);
-      background-size: 40px 40px;
+      background-size: cover;
+      background-position: center;
+      opacity: 0;
+      transition: opacity 1s ease;
       pointer-events: none;
+    }
+    .hero-slide.active { opacity: 1; }
+
+    /*
+      HERO IMAGES
+      Add your images to the images/ folder and update the
+      background-image URLs on each .hero-slide below.
+      You can add or remove slides — just match the JS count.
+
+      Suggested images:
+        images/tool-hero-1.jpg  — burst tunnel in use
+        images/tool-hero-2.jpg  — thermal arena at McMurdo
+        images/tool-hero-3.jpg  — 3D printed device / CAD render
+    */
+    .hero-slide:nth-child(1) { background-image: url('images/tool-hero-1.jpg'); }
+    .hero-slide:nth-child(2) { background-image: url('images/tool-hero-2.jpg'); }
+    .hero-slide:nth-child(3) { background-image: url('images/tool-hero-3.jpg'); }
+
+    /* Dark gradient overlay so text is readable */
+    #tools-hero .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to top,
+        rgba(9,21,32,0.92) 0%,
+        rgba(9,21,32,0.45) 55%,
+        rgba(9,21,32,0.2) 100%
+      );
+      z-index: 1;
     }
 
     .tools-hero-inner {
       position: relative;
-      z-index: 1;
-      max-width: 760px;
+      z-index: 2;
+      width: 100%;
+      padding: 3.5rem 2rem;
+      max-width: var(--max-width);
+      margin: 0 auto;
     }
 
     .tools-hero-eyebrow {
@@ -55,16 +89,60 @@
       font-size: clamp(2.2rem, 5vw, 3.8rem);
       color: white;
       line-height: 1.15;
-      margin-bottom: 1.5rem;
+      margin-bottom: 1.25rem;
     }
 
     .tools-hero-desc {
-      font-size: 1.05rem;
-      color: rgba(255,255,255,0.55);
+      font-size: 1rem;
+      color: rgba(255,255,255,0.65);
       line-height: 1.8;
-      max-width: 600px;
+      max-width: 580px;
       font-family: var(--font-display);
       font-style: italic;
+      margin-bottom: 1.5rem;
+    }
+
+    /* Slideshow controls — dots + prev/next arrows */
+    .hero-controls {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .hero-dots {
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    .hero-dot {
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.3);
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      transition: background 0.25s, transform 0.25s;
+    }
+    .hero-dot.active {
+      background: var(--water-light);
+      transform: scale(1.3);
+    }
+
+    .hero-arrow {
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.2);
+      color: rgba(255,255,255,0.7);
+      width: 32px; height: 32px;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer;
+      font-size: 0.85rem;
+      transition: background 0.2s, color 0.2s;
+      line-height: 1;
+    }
+    .hero-arrow:hover {
+      background: rgba(255,255,255,0.2);
+      color: white;
     }
 
     /* ---- INTRO STRIP ---- */
@@ -378,14 +456,41 @@
   </nav>
 
   <!-- ============================================================
-       HERO
+       HERO SLIDESHOW
+       
+       TO ADD YOUR IMAGES:
+       1. Upload images to your images/ folder named:
+            images/tool-hero-1.jpg
+            images/tool-hero-2.jpg
+            images/tool-hero-3.jpg
+       2. The slideshow auto-advances every 5 seconds.
+       3. Users can click the dot buttons or arrows to navigate.
+       
+       TO ADD/REMOVE SLIDES:
+       - Add/remove .hero-slide divs below
+       - Add/remove corresponding CSS background-image rules above
+       - The JS counts slides automatically — no JS changes needed
   ============================================================ -->
   <section id="tools-hero">
-    <div class="container">
-      <div class="tools-hero-inner">
-        <p class="tools-hero-eyebrow">Instrumentation · Methods · Prototyping</p>
-        <h1 class="tools-hero-title">Tools &amp; Technology</h1>
-        <p class="tools-hero-desc">Good science requires good tools. When the right instrument doesn't exist, I build it — from laser-timed performance chambers to thermal preference arenas to 3D-printed research devices. This page documents the hardware and methods I've developed for measuring fish performance at scale.</p>
+    <!-- Slide backgrounds — one div per image -->
+    <div class="hero-slide active"></div>
+    <div class="hero-slide"></div>
+    <div class="hero-slide"></div>
+
+    <div class="hero-overlay"></div>
+
+    <div class="tools-hero-inner">
+      <p class="tools-hero-eyebrow">Instrumentation · Methods · Prototyping</p>
+      <h1 class="tools-hero-title">Tools &amp; Technology</h1>
+      <p class="tools-hero-desc">Every species presents its own physiological puzzle — and solving it accurately often demands instruments that don't yet exist. This page documents the custom tools and methods developed to measure performance precisely, in species that standard approaches were never designed to handle.</p>
+      <div class="hero-controls">
+        <button class="hero-arrow" id="hero-prev" aria-label="Previous image">&#8249;</button>
+        <div class="hero-dots" id="hero-dots">
+          <button class="hero-dot active" aria-label="Image 1"></button>
+          <button class="hero-dot" aria-label="Image 2"></button>
+          <button class="hero-dot" aria-label="Image 3"></button>
+        </div>
+        <button class="hero-arrow" id="hero-next" aria-label="Next image">&#8250;</button>
       </div>
     </div>
   </section>
@@ -400,19 +505,19 @@
         <div class="tools-intro-item">
           <div class="tools-intro-icon">⚙️</div>
           <span class="tools-intro-label">Custom Instrumentation</span>
-          <p class="tools-intro-text">Designing and building bespoke measurement systems when off-the-shelf solutions are too slow, too expensive, or simply don't exist for the biological questions at hand.</p>
+          <p class="tools-intro-text">Each species has unique biology, behavior, and size — and standard instruments rarely account for this. Building bespoke measurement systems is often the only way to get accurate data from the animals you're actually studying.</p>
         </div>
 
         <div class="tools-intro-item">
           <div class="tools-intro-icon">📐</div>
           <span class="tools-intro-label">Methods Development</span>
-          <p class="tools-intro-text">Standardizing and validating new protocols for quantifying fish performance — from burst swimming and thermal preference to respirometry approaches for fragile or endangered species.</p>
+          <p class="tools-intro-text">A novel instrument is only useful if it produces valid, reproducible measurements. Alongside hardware development, this work involves rigorous protocol design and validation — testing against known standards, identifying error sources, and establishing throughput that makes large comparative studies feasible.</p>
         </div>
 
         <div class="tools-intro-item">
           <div class="tools-intro-icon">🖨️</div>
           <span class="tools-intro-label">3D Prototyping</span>
-          <p class="tools-intro-text">Using rapid prototyping and 3D printing to iterate on research device design — building functional prototypes for respirometry chambers, swim tunnels, and behavioral arenas.</p>
+          <p class="tools-intro-text">FDM printing makes it practical to iterate quickly on chamber geometry, flow dynamics, and fit — going from design to functional prototype in hours rather than weeks. This shortens the gap between a research need and a working solution.</p>
         </div>
 
       </div>
@@ -518,9 +623,8 @@
         <div class="proto-text">
           <h2 class="section-title">3D Prototyping &amp; Rapid Design</h2>
           <p>Designing research equipment from scratch is a slow, expensive process when relying on machine shops and off-the-shelf components. 3D printing and rapid prototyping have transformed my ability to iterate on device design — from the geometry of respirometry chambers to custom mounts, flow straighteners, and behavioral arena components.</p>
-          <p>I use CAD modeling and FDM printing to develop and test functional prototypes before committing to final fabrication, dramatically shortening the design cycle and reducing cost. Several devices developed through this process are now in regular use across multiple labs.</p>
-          <p>If you're working on a similar instrumentation challenge and want to collaborate or license a device design, I'd love to hear from you.</p>
-          <a href="contact.html" class="btn-outline" style="margin-top:0.5rem; display:inline-block;">Get in touch &rarr;</a>
+          <p>CAD modeling and FDM printing make it possible to iterate quickly on chamber geometry, flow dynamics, and fit — producing functional prototypes in hours. Components can be redesigned and reprinted between experimental runs as problems emerge, in a way that machined parts never allow.</p>
+          <p>Below are some examples of prototyping work currently in progress. Images and details will be added as the work develops.</p>
         </div>
 
         <div class="proto-gallery">
@@ -562,8 +666,8 @@
   <section id="tools-cta">
     <div class="container">
       <div class="cta-inner">
-        <h2 class="section-title">Interested in Collaborating?</h2>
-        <p>If you're working on a related instrumentation challenge, need a custom performance measurement solution, or want to discuss licensing or adapting one of these devices for your own research program — get in touch.</p>
+        <h2 class="section-title">Questions or Collaborations</h2>
+        <p>If you're working on a related measurement challenge or have questions about any of these methods, feel free to get in touch.</p>
         <a href="contact.html" class="btn-primary">Contact Me</a>
       </div>
     </div>
@@ -585,6 +689,53 @@
   </footer>
 
   <script src="js/main.js"></script>
+
+  <script>
+    // ── Hero slideshow ────────────────────────────────────────────────────────
+    // Auto-advances every 5 seconds; click dots or arrows to navigate manually.
+    // TO CHANGE INTERVAL: update the 5000 value below (milliseconds).
+    (function() {
+      var slides = document.querySelectorAll('#tools-hero .hero-slide');
+      var dots   = document.querySelectorAll('#hero-dots .hero-dot');
+      var total  = slides.length;
+      var current = 0;
+      var timer;
+
+      function goTo(n) {
+        slides[current].classList.remove('active');
+        dots[current].classList.remove('active');
+        current = (n + total) % total;
+        slides[current].classList.add('active');
+        dots[current].classList.add('active');
+      }
+
+      function startTimer() {
+        clearInterval(timer);
+        timer = setInterval(function() { goTo(current + 1); }, 5000);
+      }
+
+      // Dot clicks
+      dots.forEach(function(dot, i) {
+        dot.addEventListener('click', function() { goTo(i); startTimer(); });
+      });
+
+      // Arrow clicks
+      var prev = document.getElementById('hero-prev');
+      var next = document.getElementById('hero-next');
+      if (prev) prev.addEventListener('click', function() { goTo(current - 1); startTimer(); });
+      if (next) next.addEventListener('click', function() { goTo(current + 1); startTimer(); });
+
+      // Pause on hover
+      var hero = document.getElementById('tools-hero');
+      if (hero) {
+        hero.addEventListener('mouseenter', function() { clearInterval(timer); });
+        hero.addEventListener('mouseleave', startTimer);
+      }
+
+      startTimer();
+    })();
+  </script>
+
   <script>
     (function() {
       var items = document.querySelectorAll('#page-sidebar .sidebar-item');
