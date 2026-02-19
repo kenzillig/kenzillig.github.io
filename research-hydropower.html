@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sturgeon & Hydropower Survival | Ken W. Zillig</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* ============================================================
+       PROJECT PAGE STYLES — research-hydropower.html
+    ============================================================ */
+
+    /* ---- PROJECT HERO ---- */
+    #project-hero {
+      position: relative;
+      height: 85vh;
+      min-height: 560px;
+      display: flex;
+      align-items: flex-end;
+      background-image: url('images/hydropower-hero.jpg');
+      background-size: cover;
+      background-position: center 45%;
+      background-color: var(--deep);
+    }
+
+    #project-hero .hero-overlay {
+      background: linear-gradient(
+        to top,
+        rgba(9,21,32,0.95) 0%,
+        rgba(9,21,32,0.5) 55%,
+        rgba(9,21,32,0.15) 100%
+      );
+    }
+
+    /* Photo credit — bottom right */
+    .hero-photo-credit {
+      position: absolute;
+      bottom: 1.1rem;
+      right: 1.5rem;
+      z-index: 3;
+      font-size: 0.65rem;
+      font-family: var(--font-body);
+      color: rgba(255,255,255,0.45);
+      text-shadow: 0 1px 4px rgba(0,0,0,0.7);
+      font-style: italic;
+      pointer-events: none;
+    }
+
+    .project-hero-content {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      padding: 4rem 2rem;
+      max-width: var(--max-width);
+      margin: 0 auto;
+    }
+
+    .project-breadcrumb {
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.45);
+      margin-bottom: 1rem;
+    }
+    .project-breadcrumb a { color: var(--water-light); }
+    .project-breadcrumb a:hover { color: white; }
+
+    .project-hero-title {
+      font-family: var(--font-display);
+      font-weight: 300;
+      font-size: clamp(2.2rem, 5vw, 4rem);
+      color: white;
+      line-height: 1.15;
+      max-width: 820px;
+      margin-bottom: 1.25rem;
+    }
+
+    .project-hero-meta {
+      display: flex;
+      gap: 2.5rem;
+      flex-wrap: wrap;
+    }
+    .project-meta-item { display: flex; flex-direction: column; }
+    .project-meta-label {
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.4);
+    }
+    .project-meta-value {
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.85);
+      margin-top: 0.2rem;
+    }
+
+    /* ---- LEAD SUMMARY ---- */
+    #project-lead {
+      padding: 6rem 0;
+      background: var(--paper);
+    }
+
+    .lead-grid {
+      display: grid;
+      grid-template-columns: 1fr 2px 1fr;
+      gap: 4rem;
+      align-items: start;
+    }
+
+    .lead-divider {
+      background: var(--light-gray);
+      height: 100%;
+      min-height: 200px;
+    }
+
+    .lead-question {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: clamp(1.4rem, 2.5vw, 1.9rem);
+      font-weight: 300;
+      line-height: 1.4;
+      color: var(--ink);
+    }
+
+    .lead-summary p {
+      font-size: 1.02rem;
+      line-height: 1.85;
+      color: #2a3a48;
+      margin-bottom: 1.1rem;
+    }
+
+    /* ---- CONTEXT STRIP — dark background with key numbers ---- */
+    #project-context {
+      background: var(--deep);
+      padding: 5rem 0;
+    }
+
+    .context-label {
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--water-light);
+      margin-bottom: 2.5rem;
+      text-align: center;
+    }
+
+    .context-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+
+    .context-item {
+      padding: 2.5rem 2rem;
+      background: rgba(9,21,32,0.8);
+    }
+
+    .context-stat {
+      font-family: var(--font-display);
+      font-size: 3rem;
+      font-weight: 300;
+      color: var(--water-light);
+      line-height: 1;
+      margin-bottom: 0.75rem;
+    }
+
+    .context-title {
+      font-size: 1rem;
+      font-weight: 500;
+      color: white;
+      margin-bottom: 0.5rem;
+      line-height: 1.3;
+    }
+
+    .context-desc {
+      font-size: 0.88rem;
+      color: rgba(255,255,255,0.5);
+      line-height: 1.7;
+    }
+
+    /* ---- STUDY SECTIONS ---- */
+    .study-section {
+      padding: 6rem 0;
+      border-bottom: 1px solid var(--light-gray);
+    }
+    .study-section:nth-child(even) { background: var(--sand); }
+
+    .study-header {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 2rem;
+      align-items: baseline;
+      margin-bottom: 3rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid var(--light-gray);
+    }
+
+    .study-number {
+      font-family: var(--font-display);
+      font-size: 4rem;
+      font-weight: 300;
+      color: var(--light-gray);
+      line-height: 1;
+    }
+
+    .study-tag {
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--water-mid);
+      font-weight: 500;
+      margin-bottom: 0.4rem;
+      display: block;
+    }
+
+    .study-title {
+      font-family: var(--font-display);
+      font-size: clamp(1.4rem, 2.5vw, 2rem);
+      font-weight: 300;
+      line-height: 1.25;
+      color: var(--ink);
+    }
+
+    .study-body {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: start;
+    }
+
+    .study-body.full-width { grid-template-columns: 1fr; }
+
+    .study-text h3 {
+      font-family: var(--font-body);
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--mid-gray);
+      margin-bottom: 0.75rem;
+      margin-top: 2rem;
+    }
+    .study-text h3:first-child { margin-top: 0; }
+
+    .study-text p {
+      font-size: 0.98rem;
+      line-height: 1.85;
+      color: #2a3a48;
+      margin-bottom: 1rem;
+    }
+
+    /* ---- FIGURE CONTAINERS ---- */
+    .figure-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .figure-item {
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: var(--light-gray);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    }
+
+    .figure-item img { width: 100%; display: block; }
+
+    .figure-placeholder {
+      width: 100%;
+      aspect-ratio: 4/3;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #e8eef2 0%, #d8e4ec 100%);
+      color: var(--mid-gray);
+      gap: 0.5rem;
+      padding: 2rem;
+      text-align: center;
+    }
+    .figure-placeholder .fig-icon { font-size: 2rem; opacity: 0.3; }
+    .figure-placeholder .fig-label {
+      font-size: 0.78rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      opacity: 0.6;
+    }
+    .figure-placeholder .fig-hint {
+      font-size: 0.75rem;
+      font-style: italic;
+      opacity: 0.45;
+      max-width: 220px;
+    }
+
+    .figure-caption {
+      padding: 0.9rem 1.1rem;
+      background: white;
+      font-size: 0.82rem;
+      color: var(--mid-gray);
+      line-height: 1.5;
+      border-top: 1px solid var(--light-gray);
+    }
+    .figure-caption strong { color: var(--ink); font-weight: 500; }
+
+    /* ---- SHINY APP SECTION ---- */
+    #project-shiny {
+      padding: 6rem 0;
+      background: var(--deep);
+    }
+
+    .shiny-intro {
+      max-width: 640px;
+      margin: 0 auto 3rem;
+      text-align: center;
+    }
+    .shiny-intro .section-title { color: white; }
+    .shiny-intro p {
+      color: rgba(255,255,255,0.55);
+      font-size: 1rem;
+      line-height: 1.75;
+      font-family: var(--font-display);
+      font-style: italic;
+    }
+
+    /* ---- COMING SOON — Study 2 ---- */
+    #study-02 {
+      background: var(--ink);
+      color: white;
+    }
+
+    #study-02 .study-number { color: rgba(255,255,255,0.1); }
+    #study-02 .study-header { border-bottom-color: rgba(255,255,255,0.08); }
+    #study-02 .study-tag { color: var(--water-light); }
+    #study-02 .study-title { color: white; }
+    #study-02 .study-text h3 { color: rgba(255,255,255,0.4); }
+    #study-02 .study-text p { color: rgba(255,255,255,0.6); }
+
+    .coming-soon-banner {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      background: rgba(42,168,184,0.15);
+      border: 1px solid rgba(42,168,184,0.3);
+      border-radius: 3px;
+      padding: 0.5rem 1rem;
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--water-light);
+      margin-bottom: 2rem;
+    }
+    .coming-soon-dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--water-light);
+      animation: pulse 2s ease-in-out infinite;
+    }
+    @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.3} }
+
+    .coming-soon-placeholder {
+      aspect-ratio: 4/3;
+      border-radius: var(--radius);
+      background: rgba(255,255,255,0.03);
+      border: 1px dashed rgba(255,255,255,0.1);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+      color: rgba(255,255,255,0.2);
+      font-size: 0.8rem;
+      font-style: italic;
+      text-align: center;
+      padding: 2rem;
+    }
+    .coming-soon-placeholder svg { opacity: 0.15; }
+
+    /* ---- PUBLICATIONS STRIP ---- */
+    #project-publications {
+      padding: 6rem 0;
+      background: var(--sand);
+    }
+
+    .project-pub-item {
+      display: grid;
+      grid-template-columns: 70px 1fr auto;
+      gap: 2rem;
+      padding: 2rem 0;
+      border-bottom: 1px solid var(--light-gray);
+      align-items: center;
+    }
+    .project-pub-item:first-child { border-top: 1px solid var(--light-gray); }
+
+    .project-pub-year {
+      font-family: var(--font-display);
+      font-size: 1.4rem;
+      color: var(--water-light);
+      font-weight: 300;
+    }
+
+    .project-pub-title {
+      font-size: 0.98rem;
+      color: var(--ink);
+      line-height: 1.5;
+      margin-bottom: 0.25rem;
+    }
+    .project-pub-journal {
+      font-size: 0.85rem;
+      color: var(--water-mid);
+      font-style: italic;
+    }
+
+    /* ---- SIDEBAR ---- */
+    #page-sidebar {
+      position: fixed;
+      left: 1.5rem;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 100;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+
+    .sidebar-item {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .sidebar-dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.25);
+      border: 1px solid rgba(255,255,255,0.15);
+      flex-shrink: 0;
+      transition: background 0.25s, transform 0.25s;
+    }
+
+    .sidebar-label {
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.5);
+      white-space: nowrap;
+      opacity: 0;
+      transform: translateX(-6px);
+      transition: opacity 0.2s, transform 0.2s;
+      background: rgba(9,21,32,0.75);
+      padding: 0.2rem 0.5rem;
+      border-radius: 2px;
+      backdrop-filter: blur(4px);
+    }
+
+    .sidebar-item:hover .sidebar-label,
+    .sidebar-item.sidebar-active .sidebar-label {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .sidebar-item.sidebar-active .sidebar-dot,
+    .sidebar-item:hover .sidebar-dot {
+      background: var(--water-light);
+      transform: scale(1.3);
+    }
+
+    @media (max-width: 1280px) { #page-sidebar { display: none; } }
+
+    /* ---- RESPONSIVE ---- */
+    @media (max-width: 900px) {
+      .lead-grid { grid-template-columns: 1fr; }
+      .lead-divider { display: none; }
+      .study-body { grid-template-columns: 1fr; }
+      .context-grid { grid-template-columns: 1fr; }
+      .project-hero-meta { gap: 1.5rem; }
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">Ken W. Zillig</a>
+      <button class="nav-toggle" aria-label="Toggle menu">&#9776;</button>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="research.html" class="active">Research</a></li>
+        <li><a href="publications.html">Publications</a></li>
+        <li><a href="tools.html">Tools &amp; Technology</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- SIDEBAR -->
+  <nav id="page-sidebar" aria-label="Page sections">
+    <a href="#project-lead"         class="sidebar-item"><span class="sidebar-dot"></span><span class="sidebar-label">Overview</span></a>
+    <a href="#project-context"      class="sidebar-item"><span class="sidebar-dot"></span><span class="sidebar-label">The Problem</span></a>
+    <a href="#study-01"             class="sidebar-item"><span class="sidebar-dot"></span><span class="sidebar-label">01 — Blade Strike & Survival</span></a>
+    <a href="#project-shiny"        class="sidebar-item"><span class="sidebar-dot"></span><span class="sidebar-label">Data Explorer</span></a>
+    <a href="#study-02"             class="sidebar-item"><span class="sidebar-dot"></span><span class="sidebar-label">02 — Sub-lethal Impacts</span></a>
+    <a href="#project-publications" class="sidebar-item"><span class="sidebar-dot"></span><span class="sidebar-label">Publications</span></a>
+  </nav>
+
+  <!-- ============================================================
+       PROJECT HERO
+       Image: images/hydropower-hero.jpg (already uploaded)
+       Credit: National Geographic Photo Ark
+  ============================================================ -->
+  <section id="project-hero">
+    <div class="hero-overlay"></div>
+    <div class="project-hero-content">
+      <p class="project-breadcrumb">
+        <a href="research.html">← Research</a> &nbsp;/&nbsp; Sturgeon &amp; Hydropower
+      </p>
+      <h1 class="project-hero-title">Reconciling Hydropower and Sturgeon Survival: Testing Fish-Safe Turbine Technology</h1>
+      <div class="project-hero-meta">
+        <div class="project-meta-item">
+          <span class="project-meta-label">Institution</span>
+          <span class="project-meta-value">University of California, Davis</span>
+        </div>
+        <div class="project-meta-item">
+          <span class="project-meta-label">Advisor</span>
+          <span class="project-meta-value">Dr. Nann Fangue</span>
+        </div>
+        <div class="project-meta-item">
+          <span class="project-meta-label">Partners</span>
+          <span class="project-meta-value">Natel Energy · USFWS · CDFW</span>
+        </div>
+        <div class="project-meta-item">
+          <span class="project-meta-label">Status</span>
+          <span class="project-meta-value">Study 1 Published · Study 2 In Progress</span>
+        </div>
+      </div>
+    </div>
+    <p class="hero-photo-credit">Photo: National Geographic Photo Ark</p>
+  </section>
+
+  <!-- ============================================================
+       LEAD SUMMARY
+  ============================================================ -->
+  <section id="project-lead">
+    <div class="container">
+      <div class="lead-grid">
+        <div>
+          <p class="lead-question">Hydropower is essential to a clean energy future — but can we build it in a way that doesn't come at the cost of the world's most imperiled fish?</p>
+        </div>
+        <div class="lead-divider"></div>
+        <div class="lead-summary">
+          <p>Sturgeon are among the oldest vertebrates on earth, survivors of mass extinctions, and now the most imperiled group of vertebrates on the planet. Nearly 70% of species are critically endangered — driven to the brink by habitat loss, overharvest, and, critically, dams and hydropower turbines that fragment their migratory routes and kill fish that pass through them.</p>
+          <p>At the same time, hydropower is one of the most important tools we have for generating carbon-free electricity. Globally, it is the largest source of renewable energy, and it will likely play a central role in any realistic transition away from fossil fuels. This creates a genuine tension: societies need clean power, and sturgeon need rivers they can move through safely.</p>
+          <p>This research program asks whether that tension can be resolved through better turbine design. Specifically, it tests whether a new generation of thick-bladed, fish-safe turbines can pass sturgeon with substantially lower rates of injury and mortality than conventional turbines — and, if fish survive, whether they suffer lasting sub-lethal harm that might affect their health, behavior, or reproductive success downstream.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       CONTEXT STRIP
+  ============================================================ -->
+  <section id="project-context">
+    <div class="container">
+      <p class="context-label">Why This Matters</p>
+      <div class="context-grid">
+
+        <div class="context-item">
+          <div class="context-stat">68%</div>
+          <div class="context-title">of sturgeon species are critically endangered</div>
+          <div class="context-desc">Acipenseriformes — sturgeons and paddlefishes — are considered the most imperiled vertebrate order in the world. Of 27 species, two are already extinct and 17 of the remaining 25 face an extremely high risk of extinction in the wild.</div>
+        </div>
+
+        <div class="context-item">
+          <div class="context-stat">#1</div>
+          <div class="context-title">Hydropower is the leading threat to sturgeon globally</div>
+          <div class="context-desc">Dams and turbines are the most widespread and persistent threat to sturgeon populations worldwide. North American species — white, green, lake, pallid, shortnose, and Atlantic sturgeon — all have ranges that substantially overlap with existing hydropower infrastructure.</div>
+        </div>
+
+        <div class="context-item">
+          <div class="context-stat">100+</div>
+          <div class="context-title">years a sturgeon can live — and encounter turbines repeatedly</div>
+          <div class="context-desc">Sturgeon are late-maturing, long-lived, and migratory — capable of traveling thousands of kilometers between feeding and spawning grounds. This means individual fish may encounter multiple turbines many times across their lifetimes, compounding the risks of each passage event.</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       STUDY 1 — Blade Strike, Injury & Acute Mortality
+       Published. Can be fleshed out with figures, Shiny app, etc.
+  ============================================================ -->
+  <section class="study-section" id="study-01">
+    <div class="container">
+      <div class="study-header">
+        <span class="study-number">01</span>
+        <div class="study-header-text">
+          <span class="study-tag">Published · Empirical Study · Fish-Safe Turbine Evaluation</span>
+          <h2 class="study-title">Acute Survival and Injury Rates: Conventional vs. Fish-Safe Turbine Blades in Sturgeon</h2>
+        </div>
+      </div>
+
+      <div class="study-body">
+        <div class="study-text">
+
+          <h3>The Core Question</h3>
+          <p>When a fish passes through a hydropower turbine, the most immediately dangerous event is blade strike — physical contact with the rotating runner. The severity of that strike depends on blade speed, blade thickness, the angle of impact, and the size of the fish. Conventional turbines are designed to move water efficiently, with thin, fast-moving blades that are damaging to fish. Fish-safe turbines take a different approach: thicker blades moving at lower peripheral speeds, designed to push rather than cut.</p>
+          <p>This study directly compared acute mortality and injury rates in sturgeon passed through a conventional thin-bladed turbine runner versus a thick-bladed fish-safe runner, under controlled experimental conditions. The goal was to produce the first rigorous empirical test of whether fish-safe turbine design actually delivers meaningfully better outcomes for one of the most vulnerable fish groups in North America.</p>
+
+          <h3>Study Design</h3>
+          <p>Sturgeon were passed individually through each turbine type at a range of operational conditions, and assessed for acute mortality and a standardized suite of external and internal injuries immediately after passage. The comparison was structured to isolate the effect of blade design from other variables — allowing a clean test of the core engineering claim underlying fish-safe turbine technology.</p>
+
+          <h3>Key Results</h3>
+          <p>The fish-safe turbine produced significantly lower rates of acute mortality and severe injury compared to the conventional turbine. These results provide direct empirical support for the fish-safe turbine concept and establish a quantitative baseline for what passage outcomes are achievable with improved turbine design. The findings have implications for turbine selection, regulatory standards, and the feasibility of retrofitting existing hydropower infrastructure to reduce fish mortality.</p>
+
+        </div>
+
+        <div class="figure-wrap">
+          <!--
+            FIGURE 1
+            Upload images/hydro-fig-survival.jpg
+            e.g. survival curves or injury rate comparison between turbine types
+          -->
+          <div class="figure-item">
+            <div class="figure-placeholder">
+              <div class="fig-icon">📊</div>
+              <div class="fig-label">Figure 1</div>
+              <div class="fig-hint">Upload images/hydro-fig-survival.jpg — survival / injury comparison by turbine type</div>
+            </div>
+            <div class="figure-caption"><strong>Figure 1.</strong> Add your caption here.</div>
+          </div>
+
+          <!--
+            FIGURE 2
+            Upload images/hydro-fig-injury.jpg
+            e.g. injury type breakdown, representative photos, or anatomical diagram
+          -->
+          <div class="figure-item">
+            <div class="figure-placeholder">
+              <div class="fig-icon">🐟</div>
+              <div class="fig-label">Figure 2</div>
+              <div class="fig-hint">Upload images/hydro-fig-injury.jpg — injury classification or representative photos</div>
+            </div>
+            <div class="figure-caption"><strong>Figure 2.</strong> Add your caption here.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SHINY APP PLACEHOLDER
+       When ready, replace .shiny-placeholder with an iframe:
+       <iframe src="https://YOUR-USERNAME.shinyapps.io/YOUR-APP/"
+               style="width:100%; height:600px; border:none;"></iframe>
+  ============================================================ -->
+  <section id="project-shiny">
+    <div class="container">
+      <div class="shiny-intro">
+        <h2 class="section-title">Explore the Data</h2>
+        <p>An interactive tool for exploring turbine passage survival and injury outcomes across species, turbine types, and operational conditions.</p>
+      </div>
+      <div class="shiny-frame-wrap">
+        <div class="shiny-placeholder">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" opacity="0.4"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+          <p>Interactive data explorer coming soon</p>
+          <p style="font-size:0.8rem; opacity:0.6">Replace this with your ShinyApps.io iframe when ready</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       STUDY 2 — Sub-lethal Impacts (In Progress)
+       Styled on dark background with coming-soon treatment.
+  ============================================================ -->
+  <section class="study-section" id="study-02">
+    <div class="container">
+      <div class="study-header">
+        <span class="study-number">02</span>
+        <div class="study-header-text">
+          <span class="study-tag">In Progress · Physiology · Behavior · Reproductive Biology</span>
+          <h2 class="study-title">Beyond Survival: Sub-lethal Impacts of Turbine Passage on Sturgeon Physiology and Health</h2>
+        </div>
+      </div>
+
+      <div class="study-body">
+        <div class="study-text">
+          <div class="coming-soon-banner">
+            <span class="coming-soon-dot"></span>
+            Research in progress — check back for updates
+          </div>
+
+          <h3>The Problem with Only Counting Deaths</h3>
+          <p>Acute mortality is the most visible outcome of turbine passage, but it may not be the most biologically important one. A fish that survives passage but sustains internal injuries, physiological stress, or behavioral disruption may still suffer reduced fitness — with consequences for growth, migration success, and reproduction that are invisible in a standard survival trial.</p>
+          <p>For long-lived, late-maturing species like sturgeon, sub-lethal effects may matter enormously. A female sturgeon that survives turbine passage but fails to successfully spawn as a result of physiological damage represents a significant conservation loss — one that would never be counted in an acute survival study.</p>
+
+          <h3>Research Focus</h3>
+          <p>This portion of the project investigates the sub-lethal consequences of turbine passage in sturgeon, including stress physiology, injury healing trajectories, and impacts on downstream biological performance. By tracking fish beyond the immediate post-passage window, this work aims to characterize the full scope of turbine-related harm — and to determine whether fish-safe turbine designs reduce sub-lethal impacts as well as acute ones.</p>
+          <p>Manuscripts from this work are in preparation. Stay tuned.</p>
+        </div>
+
+        <div>
+          <div class="coming-soon-placeholder">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+            Results and figures will appear here when published
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================================
+       PUBLICATIONS
+  ============================================================ -->
+  <section id="project-publications">
+    <div class="container">
+      <h2 class="section-title">Project Publications</h2>
+      <p class="section-sub" style="margin-left:0; text-align:left; max-width:100%">Peer-reviewed papers arising from this research program</p>
+
+      <!--
+        TO ADD A PUBLICATION:
+        Copy one .project-pub-item block and paste below.
+        Update year, authors, title, journal, and PDF link.
+        Remove the PDF button if no PDF is available yet.
+      -->
+
+      <div class="project-pub-item">
+        <span class="project-pub-year">2025</span>
+        <div class="project-pub-content">
+          <p class="project-pub-title"><strong>Zillig, K. W.</strong>, et al. Acute survival and injury rates of sturgeon passed through conventional and fish-safe hydropower turbines.</p>
+          <p class="project-pub-journal">Journal — update with full citation when available</p>
+        </div>
+        <div class="project-pub-download">
+          <!--
+            Add PDF link when available:
+            <a href="pdfs/YOUR-FILE.pdf" class="btn-outline" target="_blank">PDF</a>
+          -->
+          <span style="font-size:0.8rem; color:var(--mid-gray); font-style:italic;">PDF coming</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer id="footer">
+    <div class="container footer-inner">
+      <div class="footer-left">
+        <p class="footer-name">Ken W. Zillig</p>
+        <p class="footer-role">Fish Ecophysiologist · University of Minnesota</p>
+      </div>
+      <div class="footer-links">
+        <a href="https://github.com/kenzillig" target="_blank">GitHub</a>
+        <a href="https://twitter.com/kzecofishiology" target="_blank">Twitter / X</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <p class="footer-copy">&copy; 2025 Ken W. Zillig</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+
+  <script>
+    // Sidebar active-dot scroll tracking
+    (function() {
+      var items = document.querySelectorAll('#page-sidebar .sidebar-item');
+      var sectionIds = Array.from(items).map(function(el) {
+        return el.getAttribute('href').replace('#','');
+      });
+      function onScroll() {
+        var scrollY = window.scrollY + window.innerHeight * 0.35;
+        var active = sectionIds[0];
+        sectionIds.forEach(function(id) {
+          var el = document.getElementById(id);
+          if (el && el.offsetTop <= scrollY) active = id;
+        });
+        items.forEach(function(item) {
+          var id = item.getAttribute('href').replace('#','');
+          item.classList.toggle('sidebar-active', id === active);
+        });
+      }
+      window.addEventListener('scroll', onScroll, {passive: true});
+      onScroll();
+    })();
+  </script>
+
+</body>
+</html>
