@@ -542,6 +542,81 @@
     gtag('js', new Date());
     gtag('config', 'G-5W2QC7RSRN');
   </script>
+  <style>
+    /* ---- NAV DROPDOWN ---- */
+    #navbar .nav-links li.has-dropdown { position: relative; }
+    #navbar .nav-links li.has-dropdown > a {
+      display: inline-flex; align-items: center; gap: 0.2rem; cursor: pointer;
+    }
+    #navbar .nav-links li.has-dropdown > a::after {
+      content: '▾';
+      font-size: 0.58rem;
+      opacity: 0.5;
+      position: static;
+      width: auto; height: auto;
+      background: none;
+      transition: opacity 0.15s;
+    }
+    #navbar .nav-links li.has-dropdown:hover > a::after { opacity: 1; }
+    #navbar .nav-dropdown {
+      position: absolute;
+      top: calc(100% + 0.6rem);
+      left: 50%;
+      transform: translateX(-50%) translateY(-4px);
+      background: rgba(9,21,32,0.97);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 4px;
+      min-width: 240px;
+      padding: 0.4rem 0;
+      list-style: none;
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transition: opacity 0.17s ease, transform 0.17s ease, visibility 0s linear 0.17s;
+      z-index: 9999;
+      box-shadow: 0 8px 28px rgba(0,0,0,0.45);
+    }
+    #navbar .nav-links li.has-dropdown:hover .nav-dropdown,
+    #navbar .nav-links li.has-dropdown:focus-within .nav-dropdown {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+      transform: translateX(-50%) translateY(0);
+      transition: opacity 0.17s ease, transform 0.17s ease, visibility 0s;
+    }
+    #navbar .nav-dropdown li { display: block; }
+    #navbar .nav-dropdown li a {
+      display: block;
+      padding: 0.5rem 1.2rem;
+      font-size: 0.78rem;
+      letter-spacing: 0.04em;
+      text-transform: none;
+      color: rgba(255,255,255,0.6);
+      white-space: nowrap;
+      transition: color 0.13s, background 0.13s;
+      text-decoration: none;
+    }
+    #navbar .nav-dropdown li a::after { display: none !important; }
+    #navbar .nav-dropdown li a:hover {
+      color: white;
+      background: rgba(255,255,255,0.06);
+    }
+    @media (max-width: 680px) {
+      #navbar .nav-dropdown {
+        position: static;
+        transform: none;
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+        box-shadow: none;
+        border: none;
+        background: transparent;
+        padding: 0.25rem 0 0.25rem 1rem;
+      }
+      #navbar .nav-dropdown li a { font-size: 0.82rem; padding: 0.35rem 0.5rem; }
+    }
+  </style>
 </head>
 <body>
 
@@ -551,14 +626,14 @@
       <button class="nav-toggle" aria-label="Toggle menu">&#9776;</button>
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
-        <li>
-        <a href="research.html" class="active" class="nav-dropdown-label">Research</a>
-        <ul class="nav-dropdown">
-          <li><a href="research.html">All Research</a></li>
-          <li><a href="research-salmon.html">Chinook Salmon Thermal Physiology</a></li>
-          <li><a href="research-hydropower.html">Sturgeon &amp; Hydropower Survival</a></li>
-        </ul>
-      </li>
+                <li class="has-dropdown">
+          <a href="research.html" class="active">Research</a>
+          <ul class="nav-dropdown">
+            <li><a href="research.html">All Research</a></li>
+            <li><a href="research-salmon.html">Chinook Salmon Thermal Physiology</a></li>
+            <li><a href="research-hydropower.html">Sturgeon &amp; Hydropower Survival</a></li>
+          </ul>
+        </li>
         <li><a href="publications.html">Publications</a></li>
         <li><a href="tools.html">Tools &amp; Technology</a></li>
         <li><a href="contact.html">Contact</a></li>
