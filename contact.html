@@ -7,6 +7,14 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5W2QC7RSRN"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-5W2QC7RSRN');
+  </script>
 </head>
 <body>
 
@@ -16,7 +24,14 @@
       <button class="nav-toggle" aria-label="Toggle menu">&#9776;</button>
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
-        <li><a href="research.html">Research</a></li>
+        <li>
+        <a href="research.html" class="nav-dropdown-label">Research</a>
+        <ul class="nav-dropdown">
+          <li><a href="research.html">All Research</a></li>
+          <li><a href="research-salmon.html">Chinook Salmon Thermal Physiology</a></li>
+          <li><a href="research-hydropower.html">Sturgeon &amp; Hydropower Survival</a></li>
+        </ul>
+      </li>
         <li><a href="publications.html">Publications</a></li>
         <li><a href="tools.html">Tools &amp; Technology</a></li>
         <li><a href="contact.html" class="active">Contact</a></li>

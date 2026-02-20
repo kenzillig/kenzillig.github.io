@@ -458,6 +458,14 @@
       .proto-gallery { grid-template-columns: 1fr 1fr; }
     }
   </style>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5W2QC7RSRN"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-5W2QC7RSRN');
+  </script>
 </head>
 <body>
 
@@ -467,7 +475,14 @@
       <button class="nav-toggle" aria-label="Toggle menu">&#9776;</button>
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
-        <li><a href="research.html">Research</a></li>
+        <li>
+        <a href="research.html" class="nav-dropdown-label">Research</a>
+        <ul class="nav-dropdown">
+          <li><a href="research.html">All Research</a></li>
+          <li><a href="research-salmon.html">Chinook Salmon Thermal Physiology</a></li>
+          <li><a href="research-hydropower.html">Sturgeon &amp; Hydropower Survival</a></li>
+        </ul>
+      </li>
         <li><a href="publications.html">Publications</a></li>
         <li><a href="tools.html" class="active">Tools &amp; Technology</a></li>
         <li><a href="contact.html">Contact</a></li>
@@ -507,13 +522,13 @@
         data-credit   — photographer credit (omit or leave empty if photo is yours)
     -->
     <div class="hero-slide active"
-         data-caption="Laser-timed Burst Tunnel"
+         data-caption="Add location or description here"
          data-credit=""></div>
     <div class="hero-slide"
-         data-caption="TBD"
+         data-caption="Add location or description here"
          data-credit="Photo: Photographer Name"></div>
     <div class="hero-slide"
-         data-caption="TBD"
+         data-caption="Add location or description here"
          data-credit=""></div>
 
     <div class="hero-overlay"></div>

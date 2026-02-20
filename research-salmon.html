@@ -534,6 +534,14 @@
       .project-pub-download { grid-column: 2; }
     }
   </style>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5W2QC7RSRN"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-5W2QC7RSRN');
+  </script>
 </head>
 <body>
 
@@ -543,7 +551,14 @@
       <button class="nav-toggle" aria-label="Toggle menu">&#9776;</button>
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
-        <li><a href="research.html" class="active">Research</a></li>
+        <li>
+        <a href="research.html" class="active" class="nav-dropdown-label">Research</a>
+        <ul class="nav-dropdown">
+          <li><a href="research.html">All Research</a></li>
+          <li><a href="research-salmon.html">Chinook Salmon Thermal Physiology</a></li>
+          <li><a href="research-hydropower.html">Sturgeon &amp; Hydropower Survival</a></li>
+        </ul>
+      </li>
         <li><a href="publications.html">Publications</a></li>
         <li><a href="tools.html">Tools &amp; Technology</a></li>
         <li><a href="contact.html">Contact</a></li>
@@ -728,7 +743,7 @@
               <div class="fig-label">Figure 1</div>
               <div class="fig-hint">Upload images/salmon-fig-framework.jpg — e.g. conceptual diagram contrasting fundamental vs ecological thermal physiology</div>
             </div>
-            <div class="figure-caption"><strong>Figure 1.</strong> Add your caption here.</div>
+            <div class="figure-caption"><strong>Fig. 1</strong> Temperature tolerance in fish: theory versus reality. Blue curves show the full temperature range fish can theoretically tolerate based on their biology. Green curves show the narrower range they actually use due to predators and competition. Panels a–b compare cold- versus warm-adapted fish. Stars mark optimal temperatures. Panels demonstrate that identical biology can produce different temperature use (b, d, f, h) and identical environments affect different fish differently (c vs. d, g vs. h).</div>
           </div>
         </div>
       </div>
@@ -759,30 +774,25 @@
 
         <div class="figure-wrap">
           <div class="figure-item">
-            <!--
-              Suggested figure: thermal performance curves (aerobic scope
-              vs temperature) for multiple populations overlaid.
-              Upload as images/salmon-fig-tpc.jpg
-            -->
-            <img src="images/salmon-fig-tpc.jpg" alt="Upload images/salmon-fig-tpc.jpg — e.g. thermal performance "
-                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"
-                 style="width:100%; display:block;">
-            <div class="figure-placeholder" style="display:none;">
-              <div class="fig-icon">📈</div>
-              <div class="fig-label">Figure 2</div>
-              <div class="fig-hint">Upload images/salmon-fig-tpc.jpg — e.g. thermal performance curves across populations</div>
-            </div>
-            <div class="figure-caption"><strong>Figure 2.</strong> Add your caption here.</div>
-          </div>
-
-          <div class="figure-item">
             <img src="images/salmon-fig-map.jpg" alt="Collection site map"
                  onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"
                  style="width:100%; display:block;">
             <div class="figure-placeholder" style="display:none;">
               <div class="fig-icon">🗺</div>
-              <div class="fig-label">Figure 3</div>
+              <div class="fig-label">Figure 2</div>
               <div class="fig-hint">Upload images/salmon-fig-map.jpg — e.g. collection site map with mean summer temperatures</div>
+            </div>
+            <div class="figure-caption"><strong>Figure 2.</strong> Add your caption here.</div>
+          </div>
+
+          <div class="figure-item">
+            <img src="images/salmon-fig-tpc.jpg" alt="Thermal performance curves across populations"
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"
+                 style="width:100%; display:block;">
+            <div class="figure-placeholder" style="display:none;">
+              <div class="fig-icon">📈</div>
+              <div class="fig-label">Figure 3</div>
+              <div class="fig-hint">Upload images/salmon-fig-tpc.jpg — e.g. thermal performance curves across populations</div>
             </div>
             <div class="figure-caption"><strong>Figure 3.</strong> Add your caption here.</div>
           </div>
@@ -853,8 +863,9 @@
           <p>This study moved beyond aerobic scope to examine acute thermal tolerance. Critical thermal maximum (CTmax) was measured across populations and acclimation temperatures using standardized ramping protocols. Critically, the same populations used for aerobic scope measurements were also assessed for CTmax, allowing direct examination of the relationship between these two performance traits.</p>
 
           <h3>Results & Trade-offs</h3>
-          <p>As with aerobic scope, populations and thermal acclimation groups differed significantly in CTmax, and these differences tracked historical thermal environments. However, the study also revealed an important physiological trade-off: populations with higher CTmax did not necessarily have better aerobic performance at high temperatures, and vice versa. These traits appear to be at least partially independent, reflecting distinct underlying mechanisms.</p>
-          <p>This has important implications for conservation: a population that can survive a brief heat spike may still suffer physiological costs that impair its long-term growth and reproduction under chronic warming. Management strategies that rely solely on lethal temperature thresholds may underestimate risk.</p>
+          <p>At the individual level, fish exhibited a trade-off between thermal tolerance and plasticity — those with higher baseline CTmax showed less capacity to adjust that limit through acclimation or heat hardening, and vice versa. Interestingly, this trade-off did not hold at the population level, suggesting that individual variation and population-level adaptation operate through partially distinct mechanisms.</p>
+          <p>Thermal plasticity was associated with the thermal environment of origin: populations from historically warmer habitats demonstrated greater acclimation capacity and heat hardening ability than those from cooler systems. Populations from colder habitats — most notably the Trinity population — showed both lower thermal plasticity and limited capacity to buffer against warming, marking them as particularly conservation-vulnerable.</p>
+          <p>These findings underscore the importance of accounting for interpopulation differences when predicting species-wide responses to climate change. Aggregate or average thermal tolerance metrics obscure meaningful variation in which populations are most at risk and least able to adjust — precisely the information needed for targeted conservation planning.</p>
         </div>
 
         <div class="figure-wrap">
@@ -1184,7 +1195,7 @@
           <h2 class="study-title">Salmon Physiology at Scale: Translating Lab Measurements into Landscape-Level Predictions</h2>
         </div>
       </div>
-      <div class="study-body">
+      <div class="study-body full-width">
         <div class="study-text">
           <h3>The Scaling Problem</h3>
           <p>Controlled laboratory experiments are essential for establishing mechanisms, but individual fish trials cannot directly answer the management question that matters most: across an entire watershed, under realistic thermal regimes, how many salmon are physiologically at risk — and where? Bridging this gap requires embedding population-specific physiology into spatial and temporal frameworks that operate at the scales where conservation decisions are made.</p>
@@ -1195,19 +1206,6 @@
 
           <h3>Why It Matters</h3>
           <p>Individual-level thermal tolerance data, no matter how precise, has limited management utility unless it can be scaled to population outcomes. This line of work represents a broader interest in applying mechanistic physiology at the scales relevant to conservation planning — translating what we measure in the lab into predictions that inform habitat protection, flow management, and species recovery.</p>
-        </div>
-        <div class="figure-wrap">
-          <div class="figure-item">
-            <img src="images/salmon-fig-scale.jpg" alt="Upload images/salmon-fig-scale.jpg — e.g. map of predicted p"
-                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"
-                 style="width:100%; display:block;">
-            <div class="figure-placeholder" style="display:none;">
-              <div class="fig-icon">🗺️</div>
-              <div class="fig-label">Figure 8</div>
-              <div class="fig-hint">Upload images/salmon-fig-scale.jpg — e.g. map of predicted physiological stress across river network</div>
-            </div>
-            <div class="figure-caption"><strong>Figure 8.</strong> Add your caption here.</div>
-          </div>
         </div>
       </div>
     </div>

@@ -67,6 +67,14 @@
     }
     @media (max-width: 1280px) { #page-sidebar { display: none; } }
   </style>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5W2QC7RSRN"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-5W2QC7RSRN');
+  </script>
 </head>
 <body>
 
@@ -76,7 +84,14 @@
       <button class="nav-toggle" aria-label="Toggle menu">&#9776;</button>
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
-        <li><a href="research.html" class="active">Research</a></li>
+        <li>
+        <a href="research.html" class="active" class="nav-dropdown-label">Research</a>
+        <ul class="nav-dropdown">
+          <li><a href="research.html">All Research</a></li>
+          <li><a href="research-salmon.html">Chinook Salmon Thermal Physiology</a></li>
+          <li><a href="research-hydropower.html">Sturgeon &amp; Hydropower Survival</a></li>
+        </ul>
+      </li>
         <li><a href="publications.html">Publications</a></li>
         <li><a href="tools.html">Tools &amp; Technology</a></li>
         <li><a href="contact.html">Contact</a></li>

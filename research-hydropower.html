@@ -483,6 +483,14 @@
     }
 
   </style>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5W2QC7RSRN"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-5W2QC7RSRN');
+  </script>
 </head>
 <body>
 
@@ -493,7 +501,14 @@
       <button class="nav-toggle" aria-label="Toggle menu">&#9776;</button>
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
-        <li><a href="research.html" class="active">Research</a></li>
+        <li>
+        <a href="research.html" class="active" class="nav-dropdown-label">Research</a>
+        <ul class="nav-dropdown">
+          <li><a href="research.html">All Research</a></li>
+          <li><a href="research-salmon.html">Chinook Salmon Thermal Physiology</a></li>
+          <li><a href="research-hydropower.html">Sturgeon &amp; Hydropower Survival</a></li>
+        </ul>
+      </li>
         <li><a href="publications.html">Publications</a></li>
         <li><a href="tools.html">Tools &amp; Technology</a></li>
         <li><a href="contact.html">Contact</a></li>
@@ -561,6 +576,24 @@
           <p>This research program asks whether that tension can be resolved through better turbine design. Specifically, it tests whether a new generation of thick-bladed, fish-safe turbines can pass sturgeon with substantially lower rates of injury and mortality than conventional turbines — and, if fish survive, whether they suffer lasting sub-lethal harm that might affect their health, behavior, or reproductive success downstream.</p>
         </div>
       </div>
+
+      <!--
+        MAP FIGURE — North American sturgeon ranges + hydropower sites
+        Upload: images/hydro-fig-map.jpg
+      -->
+      <div class="figure-item" style="margin-top: 3rem;">
+        <img src="images/hydro-fig-map.jpg" alt="North American sturgeon ranges and hydropower installations"
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"
+             style="width:100%; display:block;">
+        <div class="figure-placeholder" style="display:none; aspect-ratio: 16/9;">
+          <div class="fig-icon">🗺️</div>
+          <div class="fig-label">Figure 1</div>
+          <div class="fig-hint">Upload images/hydro-fig-map.jpg — North American sturgeon ranges overlaid with hydropower installations</div>
+        </div>
+        <div class="figure-caption">
+          <strong>Figure 1.</strong> North American sturgeon species ranges overlaid with existing hydropower sites. Conservation status reflects the most imperiled subpopulation of each species. Range data: NatureServe &amp; IUCN Red List; hydropower data: Oak Ridge National Lab / Natural Resources Canada.
+        </div>
+      </div>
     </div>
   </section>
 
@@ -590,28 +623,6 @@
           <div class="context-desc">Sturgeon are late-maturing, long-lived, and migratory — capable of traveling thousands of kilometers between feeding and spawning grounds. This means individual fish may encounter multiple turbines many times across their lifetimes, compounding the risks of each passage event.</div>
         </div>
 
-      </div>
-
-      <!--
-        MAP FIGURE
-        Upload your sturgeon range + hydropower installations map as:
-          images/hydro-fig-map.jpg  (or .png)
-        Then replace the figure-placeholder div with:
-          <img src="images/hydro-fig-map.jpg" alt="...">
-        and update the caption text below.
-      -->
-      <div class="figure-item" style="margin-top: 3rem;">
-        <img src="images/hydro-fig-map.jpg" alt="North American sturgeon ranges and hydropower installations"
-             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"
-             style="width:100%; display:block;">
-        <div class="figure-placeholder" style="display:none; aspect-ratio: 16/9;">
-          <div class="fig-icon">🗺️</div>
-          <div class="fig-label">Figure 1</div>
-          <div class="fig-hint">Upload images/hydro-fig-map.jpg — North American sturgeon ranges overlaid with hydropower installations</div>
-        </div>
-        <div class="figure-caption" style="background: rgba(255,255,255,0.05); border-top-color: rgba(255,255,255,0.08); color: rgba(255,255,255,0.5);">
-          <strong style="color:rgba(255,255,255,0.75);">Figure 1.</strong> North American sturgeon species ranges overlaid with existing hydropower sites. Conservation status reflects the most imperiled subpopulation of each species. Range data: NatureServe &amp; IUCN Red List; hydropower data: Oak Ridge National Lab / Natural Resources Canada.
-        </div>
       </div>
 
     </div>
