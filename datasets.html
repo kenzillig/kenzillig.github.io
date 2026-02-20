@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Published Datasets | Ken W. Zillig</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5W2QC7RSRN"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-5W2QC7RSRN');
+  </script>
+  <style>
+    /* ---- NAV DROPDOWN ---- */
+    #navbar .nav-links li.has-dropdown { position: relative; }
+    #navbar .nav-links li.has-dropdown > a {
+      display: inline-flex; align-items: center; gap: 0.2rem; cursor: pointer;
+    }
+    #navbar .nav-links li.has-dropdown > a::after {
+      content: '▾';
+      font-size: 0.58rem;
+      opacity: 0.5;
+      position: static;
+      width: auto; height: auto;
+      background: none;
+      transition: opacity 0.15s;
+    }
+    #navbar .nav-links li.has-dropdown:hover > a::after { opacity: 1; }
+    #navbar .nav-dropdown {
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      padding-top: 1rem;
+      background: transparent;
+      min-width: 240px;
+      list-style: none;
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transition: opacity 0.17s ease, visibility 0s linear 0.17s;
+      z-index: 9999;
+    }
+    #navbar .nav-dropdown::before {
+      content: '';
+      position: absolute;
+      top: 1rem; left: 0; right: 0; bottom: 0;
+      background: rgba(9,21,32,0.97);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 4px;
+      box-shadow: 0 8px 28px rgba(0,0,0,0.45);
+      z-index: -1;
+    }
+    #navbar .nav-links li.has-dropdown:hover .nav-dropdown,
+    #navbar .nav-links li.has-dropdown:focus-within .nav-dropdown {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+      transition: opacity 0.17s ease, visibility 0s;
+    }
+    #navbar .nav-dropdown li { display: block; }
+    #navbar .nav-dropdown li:first-child a { margin-top: 0.4rem; }
+    #navbar .nav-dropdown li:last-child a  { margin-bottom: 0.4rem; }
+    #navbar .nav-dropdown li a {
+      display: block;
+      padding: 0.5rem 1.2rem;
+      font-size: 0.78rem;
+      letter-spacing: 0.04em;
+      text-transform: none;
+      color: rgba(255,255,255,0.6);
+      white-space: nowrap;
+      transition: color 0.13s, background 0.13s;
+      text-decoration: none;
+    }
+    #navbar .nav-dropdown li a::after { display: none !important; }
+    #navbar .nav-dropdown li a:hover {
+      color: white;
+      background: rgba(255,255,255,0.06);
+    }
+    @media (max-width: 680px) {
+      #navbar .nav-dropdown {
+        position: static;
+        transform: none;
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+        padding-top: 0;
+      }
+      #navbar .nav-dropdown::before { display: none; }
+      #navbar .nav-dropdown li a {
+        font-size: 0.82rem;
+        padding: 0.35rem 0.5rem;
+        color: rgba(255,255,255,0.5);
+      }
+    }
+
+    /* ---- PAGE-SPECIFIC STYLES ---- */
+    .datasets-intro {
+      max-width: 680px;
+      margin: 0 auto 4rem;
+      text-align: center;
+    }
+    .datasets-intro p {
+      color: var(--mid-gray);
+      font-size: 1rem;
+      line-height: 1.8;
+    }
+
+    /* Dataset entry */
+    .dataset-list {
+      max-width: 860px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .dataset-entry {
+      display: grid;
+      grid-template-columns: 80px 1fr;
+      gap: 0 2.5rem;
+      padding: 2.5rem 0;
+      border-bottom: 1px solid var(--light-gray);
+    }
+    .dataset-entry:first-child { border-top: 1px solid var(--light-gray); }
+
+    .dataset-year {
+      font-family: var(--font-display);
+      font-size: 1.05rem;
+      color: var(--water-light);
+      padding-top: 0.2rem;
+      font-weight: 300;
+    }
+
+    .dataset-content { display: flex; flex-direction: column; gap: 0.6rem; }
+
+    .dataset-title {
+      font-family: var(--font-display);
+      font-size: 1.2rem;
+      font-weight: 400;
+      line-height: 1.4;
+      color: var(--ink);
+    }
+
+    .dataset-authors {
+      font-size: 0.85rem;
+      color: var(--mid-gray);
+      line-height: 1.5;
+    }
+    .dataset-authors strong { color: var(--ink); font-weight: 500; }
+
+    .dataset-repo {
+      font-size: 0.8rem;
+      color: var(--mid-gray);
+      font-style: italic;
+    }
+
+    .dataset-description {
+      font-size: 0.9rem;
+      color: var(--mid-gray);
+      line-height: 1.75;
+      margin-top: 0.25rem;
+    }
+
+    .dataset-footer {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-top: 0.5rem;
+    }
+
+    .dataset-doi {
+      font-size: 0.78rem;
+      font-family: var(--font-body);
+      color: var(--mid-gray);
+      letter-spacing: 0.01em;
+    }
+    .dataset-doi a {
+      color: var(--water-mid);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .dataset-doi a:hover { color: var(--water-light); text-decoration: underline; }
+
+    .dataset-tags {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+    .dataset-tag {
+      font-size: 0.72rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      background: var(--sand);
+      color: var(--mid-gray);
+      padding: 0.2rem 0.6rem;
+      border-radius: 2px;
+    }
+
+    .dataset-project-link {
+      font-size: 0.8rem;
+      color: var(--water-mid);
+      text-decoration: none;
+      transition: color 0.2s;
+      margin-left: auto;
+    }
+    .dataset-project-link:hover { color: var(--water-light); }
+
+    /* Repository banner */
+    .repo-note {
+      max-width: 860px;
+      margin: 3.5rem auto 0;
+      padding: 1.25rem 1.5rem;
+      background: var(--sand);
+      border-left: 3px solid var(--water-light);
+      border-radius: 0 4px 4px 0;
+      font-size: 0.88rem;
+      color: var(--mid-gray);
+      line-height: 1.7;
+    }
+    .repo-note a { color: var(--water-mid); text-decoration: none; }
+    .repo-note a:hover { text-decoration: underline; }
+
+    @media (max-width: 680px) {
+      .dataset-entry { grid-template-columns: 1fr; gap: 0.3rem; }
+      .dataset-year { font-size: 0.85rem; }
+      .dataset-project-link { margin-left: 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">Ken W. Zillig</a>
+      <button class="nav-toggle" aria-label="Toggle menu">&#9776;</button>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li class="has-dropdown">
+          <a href="research.html">Research</a>
+          <ul class="nav-dropdown">
+            <li><a href="research.html">All Research</a></li>
+            <li><a href="research-salmon.html">Chinook Salmon Thermal Physiology</a></li>
+            <li><a href="research-hydropower.html">Sturgeon &amp; Hydropower Survival</a></li>
+          </ul>
+        </li>
+        <li><a href="publications.html">Publications</a></li>
+        <li><a href="datasets.html" class="active">Datasets</a></li>
+        <li><a href="tools.html">Tools &amp; Technology</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="page-hero">
+    <div class="container">
+      <h1 class="page-title">Published Datasets</h1>
+      <p class="page-sub">Archived data from peer-reviewed research, openly available for reuse</p>
+    </div>
+  </div>
+
+  <section style="padding: 5rem 0 6rem;">
+    <div class="container">
+
+      <div class="datasets-intro">
+        <p>All datasets listed here are archived in the <a href="https://datadryad.org" target="_blank" style="color:var(--water-mid); text-decoration:none;">UC Davis Dryad repository</a> and assigned a permanent DOI. They are freely available for download and reuse under open data licenses. If you use these data, please cite the associated publication and/or dataset DOI.</p>
+      </div>
+
+      <div class="dataset-list">
+
+        <!-- DATASET 1 -->
+        <div class="dataset-entry">
+          <div class="dataset-year">2024</div>
+          <div class="dataset-content">
+            <div class="dataset-title">Effects of acclimation temperature and feed restriction on the metabolic performance of Green Sturgeon</div>
+            <div class="dataset-authors"><strong>Zillig, K. W.</strong>, Hannan, K., Baird, S., Cocherell, D., Poletto, J., &amp; Fangue, N. A.</div>
+            <div class="dataset-repo">UC Davis Dryad · Published March 20, 2024</div>
+            <div class="dataset-description">Respirometry data from juvenile Green Sturgeon (<em>Acipenser medirostris</em>) reared at two acclimation temperatures (13°C and 19°C) and two feed rations (optimal and 40% of optimal). Includes resting metabolic rate (RMR), maximum metabolic rate (MMR), aerobic scope, factorial aerobic scope, and standard morphometric measurements. Contains all data necessary to replicate analyses from the associated manuscript.</div>
+            <div class="dataset-footer">
+              <div class="dataset-tags">
+                <span class="dataset-tag">Green Sturgeon</span>
+                <span class="dataset-tag">Metabolic Performance</span>
+                <span class="dataset-tag">Respirometry</span>
+              </div>
+              <div class="dataset-doi">DOI: <a href="https://doi.org/10.25338/B8HS83" target="_blank">10.25338/B8HS83</a></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- DATASET 2 -->
+        <div class="dataset-entry">
+          <div class="dataset-year">2024</div>
+          <div class="dataset-content">
+            <div class="dataset-title">Intraspecific variation among Chinook salmon populations indicates physiological adaptation to local environmental conditions</div>
+            <div class="dataset-authors"><strong>Zillig, K. W.</strong>, FitzGerald, A. M., Lusardi, R. L., Cocherell, D. E., &amp; Fangue, N. A.</div>
+            <div class="dataset-repo">UC Davis Dryad · Published February 20, 2024</div>
+            <div class="dataset-description">Physiological performance data from six populations of juvenile fall-run Chinook salmon (<em>Oncorhynchus tshawytscha</em>) reared at three acclimation temperatures. Includes aerobic scope, critical thermal maximum (CTmax), growth rate, condition factor, and hematocrit, along with environmental predictor variables for each population's native habitat. One of the largest multi-population metabolic performance datasets assembled for any teleost species.</div>
+            <div class="dataset-footer">
+              <div class="dataset-tags">
+                <span class="dataset-tag">Chinook Salmon</span>
+                <span class="dataset-tag">Thermal Physiology</span>
+                <span class="dataset-tag">Local Adaptation</span>
+              </div>
+              <div class="dataset-doi">DOI: <a href="https://doi.org/10.25338/B8P63W" target="_blank">10.25338/B8P63W</a></div>
+              <a href="research-salmon.html#study-02" class="dataset-project-link">→ Salmon Project, Study 02</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- DATASET 3 -->
+        <div class="dataset-entry">
+          <div class="dataset-year">2024</div>
+          <div class="dataset-content">
+            <div class="dataset-title">Interpopulation variation in growth, CTmax and metabolism among seasonal phenologies of Chinook Salmon</div>
+            <div class="dataset-authors"><strong>Zillig, K. W.</strong>, Lusardi, R. L., Cocherell, D. E., &amp; Fangue, N. A.</div>
+            <div class="dataset-repo">UC Davis Dryad · Published January 18, 2024</div>
+            <div class="dataset-description">Growth, acute thermal tolerance, and metabolic performance data for juvenile Chinook salmon representing multiple seasonal run types (winter, spring, fall, late-fall). Fish were reared at common garden temperatures and measured for CTmax, resting metabolic rate, maximum metabolic rate, and aerobic scope, enabling direct comparison of physiology across run types that differ in the timing and thermal conditions of their migration.</div>
+            <div class="dataset-footer">
+              <div class="dataset-tags">
+                <span class="dataset-tag">Chinook Salmon</span>
+                <span class="dataset-tag">Run Timing</span>
+                <span class="dataset-tag">CTmax</span>
+                <span class="dataset-tag">Aerobic Scope</span>
+              </div>
+              <div class="dataset-doi">DOI: <a href="https://doi.org/10.25338/B8QS66" target="_blank">10.25338/B8QS66</a></div>
+              <a href="research-salmon.html#study-03" class="dataset-project-link">→ Salmon Project, Study 03</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- DATASET 4 -->
+        <div class="dataset-entry">
+          <div class="dataset-year">2024</div>
+          <div class="dataset-content">
+            <div class="dataset-title">Data from: A laser-equipped tunnel for the assessment of multiple burst swimming traits in fishes</div>
+            <div class="dataset-authors"><strong>Zillig, K. W.</strong>, Cocherell, D. E., &amp; Fangue, N. A.</div>
+            <div class="dataset-repo">UC Davis Dryad · Published January 2, 2024</div>
+            <div class="dataset-description">Burst swimming performance data collected using a custom laser-timed swim tunnel capable of measuring multiple sprint traits simultaneously — including maximum burst speed, acceleration, and fatigue rate — across a range of water temperatures. Data support the methods validation and performance characterization described in the associated instrumentation paper, and provide a baseline dataset for temperature-dependent burst performance in juvenile Chinook salmon.</div>
+            <div class="dataset-footer">
+              <div class="dataset-tags">
+                <span class="dataset-tag">Burst Swimming</span>
+                <span class="dataset-tag">Methods</span>
+                <span class="dataset-tag">Instrumentation</span>
+                <span class="dataset-tag">Chinook Salmon</span>
+              </div>
+              <div class="dataset-doi">DOI: <a href="https://doi.org/10.25338/B8NH1X" target="_blank">10.25338/B8NH1X</a></div>
+              <a href="tools.html" class="dataset-project-link">→ Tools &amp; Technology</a>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /.dataset-list -->
+
+      <div class="repo-note">
+        All datasets are archived with the <a href="https://datadryad.org" target="_blank">UC Davis Dryad Data Repository</a> and are freely available for download. For questions about data structure, collection protocols, or potential collaborations involving these data, please <a href="contact.html">get in touch</a>.
+      </div>
+
+    </div>
+  </section>
+
+  <footer id="footer">
+    <div class="container footer-inner">
+      <div class="footer-left">
+        <p class="footer-name">Ken W. Zillig</p>
+        <p class="footer-role">Fish Ecophysiologist · University of Minnesota</p>
+      </div>
+      <div class="footer-links">
+        <a href="https://github.com/kenzillig" target="_blank">GitHub</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <p class="footer-copy">&copy; 2025 Ken W. Zillig</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
